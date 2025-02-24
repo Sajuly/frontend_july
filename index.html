@@ -1,22 +1,27 @@
 <!DOCTYPE html>  <!-- Указывайте Doctype -->
 <html lang="ru">  <!-- Указывайте язык документа -->
-    <head>  <!-- Визуально отделяйте вложенные элементы двойным пробелом -->
-        <meta charset="UTF-8"/>  <!-- Указывайте кодировку -->
-        <title>My_site</title> <!-- Задавайте заголовок -->
-        <link rel="stylesheet" href="styles/styles.css">
-       
-    </head>
-    <body>
-        <div class="article">
-            <h1>Заголовок страницы</h1> <!-- Всегда закрывайте парные теги -->
-            <br> <!-- Не закрывайте одиночные теги -->
-            <p title="Подсказка">Параграф <span style="color: red">текста</span></p><!-- Используйте двойные кавычки для значений атрибутов. -->
-            
-            <a href="https://github.com/">GitHub</a>
-            <br>
-            <p><button style="width: 100px; height: 25px;">Кнопка</button></p>
-            
-            
-        </div>
-    </body>
+<head>  <!-- Визуально отделяйте вложенные элементы двойным пробелом -->
+
+    <meta charset="UTF-8"/>  <!-- Указывайте кодировку -->
+    <title>My_site</title> <!-- Задавайте заголовок -->
+    <link rel="stylesheet" href="styles/styles.css">  <!-- подключить стили -->
+
+</head>
+<body>
+<div class="article">
+    <h1>Арт - пространство</h1> <!-- Всегда закрывайте парные теги -->
+
+    <section class="about">
+        <button type="button" class="btn btn--red">Провести мероприятие</button>
+        <button type="button" class="btn">Стать арендатором</button>
+    </section>
+
+    <section>
+        <p class="contact-link">Офис</p>
+        <a href="https://github.com/" class="contact-link">Ссылка</a>
+
+    </section>
+
+</div>
+</body>
 </html>
