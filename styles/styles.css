@@ -53,8 +53,117 @@ h1 {
     cursor: pointer;
 }
 
-.btn--red {
-    border: 1px solid red;
-    background-color: darkred;
-    color: #fff;
+.event-container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1414px; /* 1334 + 80*/
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.home__about {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1414px; /* 1334 + 80*/
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.event-card {
+    display: flex;
+    min-width: 280px;
+    width: 405px;
+    max-width: 100%;
+}
+
+.event-card__link {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-decoration: none;
+    color: #1F1E1E;
+}
+
+.event_card__picture {
+    display: block;
+    position: relative;
+    margin-bottom: 25px;
+    width: 100%;
+    font-size: 0;
+    overflow: hidden;
+}
+
+.event_card__picture::before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 107.16%; /*434/405 делим высоту на ширину картинки*/
+}
+
+.event-card__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-card__title {
+    margin: 0 0 15px;
+    min-height: 64px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.375; /* 33:24 */
+}
+
+.event-card__text {
+    margin: 0 0 auto;
+}
+
+.event-card__time {
+    margin-top: 15px;
+}
+
+.listing {
+    display: flex;
+    flex-wrap: wrap; /* если не хватает места элемент уходит ниже*/
+    gap: 120px 60px; /* отступы между карточками сбоку сверху*/
+}
+
+.listing__event-card {
+    width: calc(33.3333333% - 40px);
+}
+
+.home__about-block2 {
+    display: grid;
+    grid-template-columns: 1fr 404px;
+    grid-template-areas:
+            "men gallery"
+            "title gallery"
+            "text text";
+    gap: 100px 50px;
+}
+
+.home__about-picture1 {
+    grid-area: men;
+}
+.home__about-picture2 {
+    grid-area: gallery;
+    align-self: flex-end;  /* margin-top: auto   то же самое*/
+}
+
+.home__about-title {
+    grid-area: title;
+    margin: 0;
+    font-size: 44px;
+}
+
+.home__about_text {
+    grid-area: text;
+    margin: 0 0 0 auto;
+    max-width: 870px;
+    width: 100%;
 }

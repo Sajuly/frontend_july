@@ -3,25 +3,34 @@
 <head>  <!-- Визуально отделяйте вложенные элементы двойным пробелом -->
 
     <meta charset="UTF-8"/>  <!-- Указывайте кодировку -->
-    <title>My_site</title> <!-- Задавайте заголовок -->
+    <title>home</title> <!-- Задавайте заголовок -->
     <link rel="stylesheet" href="styles/styles.css">  <!-- подключить стили -->
 
 </head>
 <body>
-<div class="article">
-    <h1>Арт - пространство</h1> <!-- Всегда закрывайте парные теги -->
+<div class="home">
+    <section class="home__about">
+        <div class="home__about-block1">
+            <h3 class="home__about-title"></h3>
+            <p class="home__about-text"></p>
+        </div>
 
-    <section class="about">
-        <button type="button" class="btn btn--red">Провести мероприятие</button>
-        <button type="button" class="btn">Стать арендатором</button>
+        <div class="home__about-block2">
+            <picture class="home__about-picture1">
+                <img src="images/men_in_scene.jpeg" alt="men">
+            </picture>
+            <h3 class="home__about-title">Мы представляем площади для вашего мероприятия</h3>
+            <p class="home__about_text">
+                И оказываем помощь с организацией, если вам это нужно.
+                Наша цель: вовлечь в культурную жизнь города как можно больше людей, помочь молодым ребятам сделать
+                первые шаги к своей мечте и рассказать всем о том, что их волнует.
+            </p>
+            <picture class="home__about-picture2">
+                <img src="images/gallery.jpeg" alt="men">
+            </picture>
+        </div>
+
     </section>
-
-    <section>
-        <p class="contact-link">Офис</p>
-        <a href="https://github.com/" class="contact-link">Ссылка</a>
-
-    </section>
-
 </div>
 </body>
 </html>
