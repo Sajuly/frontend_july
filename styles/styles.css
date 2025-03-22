@@ -35,24 +35,6 @@ h1 {
     color: red;
 }
 
-.btn {
-    display: inline-block;
-    box-sizing: border-box;
-    padding: 15px 40px;
-    border: 1px solid black;
-    background-color: transparent;
-    outline: none;
-    color: black;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
-    text-decoration: none;
-    transition: color 0.2s, background-color 0.2s;
-    overflow: hidden;
-    cursor: pointer;
-}
-
 .event-container {
     box-sizing: border-box;
     width: 100%;
@@ -62,12 +44,32 @@ h1 {
     padding-right: 40px;
 }
 
+.home {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1920px;
+}
+
+.home__start_text {
+    width: 100%;
+    font-size: 47px;
+    text-align: center;
+    font-family: Lora;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+}
+
 .home__about {
     box-sizing: border-box;
     width: 100%;
-    max-width: 1414px; /* 1334 + 80*/
-    margin: 0 auto;
-    padding-left: 40px;
+    /*max-width: 1414px; !* 1334 + 80 = 1414*!*/
+    /*margin: 0 auto;*/
+    padding-left: 100px;
     padding-right: 40px;
 }
 
@@ -150,9 +152,10 @@ h1 {
 .home__about-picture1 {
     grid-area: men;
 }
+
 .home__about-picture2 {
     grid-area: gallery;
-    align-self: flex-end;  /* margin-top: auto   то же самое*/
+    align-self: flex-end; /* margin-top: auto   то же самое*/
 }
 
 .home__about-title {
