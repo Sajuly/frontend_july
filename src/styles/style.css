@@ -1,0 +1,178 @@
+html, body {
+  width: 100%; /* Устанавливает ширину для html и body на 100% */
+  margin: 0; /* Убирает внешние отступы по умолчанию */
+  padding: 0; /* Убирает внутренние отступы по умолчанию */
+}
+.body {
+  box-sizing: border-box; /* Учитывает отступы и границы в общей ширине и высоте элемента */
+  display: flex; /* Использует Flexbox для размещения дочерних элементов */
+  flex-direction: column; /* Располагает дочерние элементы в колонку */
+  min-height: 100vh; /* Минимальная высота равна 100% высоты окна браузера */
+  padding-top: 147px; /* Отступ сверху, чтобы учесть фиксированный заголовок */
+  color: #1F1E1E; /* Цвет текста */
+  font-family: "Open Sans", sans-serif; /* Шрифт и запасной шрифт */
+  font-size: 16px; /* Размер шрифта */
+  font-weight: 400; /* Нормальная жирность шрифта */
+  font-style: normal; /* Обычный стиль шрифта */
+  line-height: 1.375; /* Высота строки */
+}
+
+/*------ Шапка-навигатор ------------------------------------------------------------*/
+.page-header {
+  position: fixed; /* Фиксирует заголовок в верхней части окна */
+  top: 0; /* Расположение вверху */
+  left: 0; /* Расположение слева */
+  width: 100%; /* Занимает 100% ширины экрана */
+  height: 147px; /* Фиксированная высота заголовка */
+  display: flex; /* Использует Flexbox для размещения элементов */
+  align-items: center; /* Выравнивание элементов по центру по вертикали */
+  background-color: rgba(222, 222, 222, 0.98); /* Полупрозрачный фон */
+  backdrop-filter: blur(20px); /* Эффект размытия фона */
+  z-index: 100; /* Уровень наложения для обеспечения видимости над другими элементами */
+}
+/* @supports проверяет, поддерживает ли браузер указанное свойство.*/
+@supports (backdrop-filter: blur(20px)) {
+  .page-header {
+    background-color: rgba(222, 222, 222, 0.5); /* Полупрозрачный фон */
+    backdrop-filter: blur(20px); /* Применяет эффект размытия к фону */
+  }
+}
+.page-header__container {
+  box-sizing: border-box; /* Учитывает отступы и границы в общей ширине и высоте элемента */
+  display: flex; /* Использует Flexbox для размещения дочерних элементов в строку */
+  align-items: center; /* Выравнивание элементов по центру по вертикали */
+  width: 100%; /* Занимает 100% ширины родительского элемента */
+  max-width: 1414px; /* Максимальная ширина контейнера */
+  margin: 0 auto; /* Центрирование контейнера по горизонтали */
+  padding-left: 40px; /* Левый отступ */
+  padding-right: 40px; /* Правый отступ */
+}
+.page-header__logo {
+  flex-shrink: 0; /* Запрещает уменьшение размера логотипа при сжатии контейнера */
+  width: 202px; /* Ширина логотипа */
+  height: 147px; /* Высота логотипа */
+  font-size: 0; /* Убирает размер шрифта (если текст не нужен) */
+  text-decoration: none; /* Убирает подчеркивание у ссылки */
+}
+.page-header__logo-icon {
+  width: 100%;
+  height: 100%;
+}
+.page-header__nav {
+  display: flex;
+  align-items: baseline;  /* выравнивает элементы по их базовой линии */
+  margin: 0 auto; /* центрирует навигацию в пределах родительского контейнера */
+}
+.page-header__nav-link {
+  margin: 0 25px; /* Отступы */
+  color: #1f1e1e; /* Цвет текста */
+  font-weight: 600; /* Жирность шрифта */
+  font-size: 18px;  /* Размер шрифта */
+  line-height: 25px;  /*  */
+  text-decoration: none;
+  transition: color 0.2s; /* добавляет плавный эффект изменения цвета при наведении */
+}
+.page-header__nav-link:hover {
+  color: #bc3324;  /* Цвет при наведении */
+}
+
+.btn {
+  display: inline-block; /* Кнопка ведет себя как блочный элемент, но остается в строке */
+  box-sizing: border-box; /* Учитывает границы и отступы в ширине и высоте элемента */
+  padding: 15px 40px; /* Внутренние отступы: 15px сверху и снизу, 40px слева и справа */
+  border: 1px solid #1F1E1E; /* Граница кнопки */
+  background-color: transparent; /* Прозрачный фон по умолчанию */
+  outline: none; /* Убирает обводку при фокусировке */
+  color: #1F1E1E; /* Цвет текста */
+  font-family: "Open Sans", sans-serif; /* Шрифт */
+  font-weight: 600; /* Жирность шрифта */
+  font-size: 16px; /* Размер шрифта */
+  line-height: 20px; /* Высота строки */
+  text-align: center; /* Центрирует текст внутри кнопки */
+  text-decoration: none; /* Убирает подчеркивание текста */
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s; /* Плавные переходы для цвета текста, фона и границы */
+  overflow: hidden; /* Скрывает содержимое, выходящее за пределы кнопки */
+  cursor: pointer; /* Указывает, что элемент кликабельный */
+}
+.btn:hover {
+  background-color: #1F1E1E; /* Цвет фона при наведении */
+  color: #ffffff; /* Цвет текста при наведении */
+}
+.page-header__right-block {
+  display: flex; /* Использует Flexbox для расположения элементов внутри блока */
+  justify-content: flex-end; /* Выравнивает элементы по горизонтали вправо */
+  align-items: center; /* Выравнивает элементы по вертикали по центру */
+  width: 202px; /* Устанавливает фиксированную ширину блока */
+}
+
+/*------ Заголовок --------------------------------------------------------------*/
+.home {
+  margin-right: auto; /* Центрирование элемента справа */
+  margin-left: auto;  /* Центрирование элемента слева */
+  max-width: 1920px; /* Максимальная ширина 1920 пикселей */
+}
+.home__text {
+  font-family: Lora;        /* Шрифт Lora */
+  font-weight: 400;         /* Нормальный вес шрифта */
+  font-size: 45px;          /* Размер шрифта 45 пикселей */
+  line-height: 100%;        /* Высота строки 100% */
+  letter-spacing: 0%;       /* Межбуквенный интервал 0% */
+  text-align: center;       /* Центрирование текста */
+  vertical-align: middle;   /* Вертикальное выравнивание по центру */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+}
+
+.home__text--custom {
+  font-size: 22px;          /* Размер шрифта 22 пикселя для кастомного текста */
+}
+.home__btn-iwant {
+  display: flex;            /* Использует Flexbox для расположения кнопок */
+  justify-content: center;  /* Центрирует кнопки по горизонтали */
+  align-items: center;      /* Выравнивает элементы по вертикали по центру */
+}
+
+.home__about {
+  box-sizing: border-box;   /* Включает отступы и границы в общую ширину */
+  width: 100%;              /* Ширина 100% от родителя */
+  max-width: 1414px;       /* Максимальная ширина 1414 пикселей */
+  margin: 0 auto;          /* Центрирование блока */
+  padding-left: 100px;     /* Левый отступ 100 пикселей */
+  padding-right: 40px;     /* Правый отступ 40 пикселей */
+}
+.home__about-title {
+  grid-area: title;
+  margin: 0;
+  font-size: 44px;
+}
+.home__about_text {
+  grid-area: text;
+  margin: 0 0 0 auto;
+  max-width: 870px;
+  width: 100%;
+}
+.home__about-block2 {
+  display: grid;
+  grid-template-columns: 1fr 404px;
+  grid-template-areas:
+          "men gallery"
+          "title gallery"
+          "text text";
+  gap: 100px 50px;
+}
+.home__about-picture1 {
+  grid-area: men;
+}
+.home__about-picture2 {
+  grid-area: gallery;
+  align-self: flex-end; /* margin-top: auto   то же самое*/
+}
+
+
+/*------  --------------------------------------------------------------*/
+.main {
+  flex: 1 0 auto;
+}
+
+.page-footer {
+  flex: 0 0 auto;
+}
