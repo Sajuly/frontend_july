@@ -2,6 +2,7 @@ html, body {
   width: 100%; /* Устанавливает ширину для html и body на 100% */
   margin: 0; /* Убирает внешние отступы по умолчанию */
   padding: 0; /* Убирает внутренние отступы по умолчанию */
+  background-color: #e6e1e1;
 }
 .body {
   box-sizing: border-box; /* Учитывает отступы и границы в общей ширине и высоте элемента */
@@ -110,6 +111,7 @@ html, body {
   margin-right: auto; /* Центрирование элемента справа */
   margin-left: auto;  /* Центрирование элемента слева */
   max-width: 1920px; /* Максимальная ширина 1920 пикселей */
+  background-color: #ffffff;
 }
 .home__text {
   font-family: Lora;        /* Шрифт Lora */
@@ -124,11 +126,71 @@ html, body {
 
 .home__text--custom {
   font-size: 22px;          /* Размер шрифта 22 пикселя для кастомного текста */
+  margin-top: 100px;
 }
 .home__btn-iwant {
   display: flex;            /* Использует Flexbox для расположения кнопок */
+  flex-direction: row;
   justify-content: center;  /* Центрирует кнопки по горизонтали */
   align-items: center;      /* Выравнивает элементы по вертикали по центру */
+}
+
+.btn-iwant {
+  display: flex;           /* Включаем Flexbox */
+  width: 272px;           /* Ширина элемента */
+  height: 32px;           /* Высота элемента */
+  top: 1062px;            /* Отступ сверху */
+  left: 648px;            /* Отступ слева */
+
+  border: 5px solid black;   /* Граница */
+
+  justify-content: center;   /* Центрируем по горизонтали */
+  align-items: center;       /* Центрируем по вертикали */
+
+  color: #1F1E1E;        /* цвет текста */
+  margin: 50px 60px;          /* Добавляет горизонтальные отступы между кнопками */
+  padding: 10px 20px;      /* Внутренние отступы для кнопок */
+  text-decoration: none;   /* Убирает подчеркивание текста */
+
+  font-family: "Open Sans", sans-serif; /* Шрифт */
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.btn_red {
+  background-color: #bc3324;
+  color: white;
+  border-color: #bc3324;      /* Цвет границы */
+}
+.btn_about {
+  width: 724px;
+  height: 50px;
+  top: 1314px;
+  left: 648px;
+  background: rgba(31, 30, 30, 1);
+  color: white;
+  font-family: Lora;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  margin: 100px auto;
+}
+.home__about-title {
+  width: 473;
+  height: 60;
+  top: 1526px;
+  left: 293px;
+  font-family: "Open Sans", sans-serif; /* Шрифт */
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
 }
 
 .home__about {
@@ -140,7 +202,7 @@ html, body {
   padding-right: 40px;     /* Правый отступ 40 пикселей */
 }
 .home__about-title {
-  grid-area: title;
+  grid-area: title;  /* используется для задания области сетки, в которой будет размещён элемент*/
   margin: 0;
   font-size: 44px;
 }
@@ -150,7 +212,8 @@ html, body {
   max-width: 870px;
   width: 100%;
 }
-.home__about-block2 {
+
+.home__about-block {
   display: grid;
   grid-template-columns: 1fr 404px;
   grid-template-areas:
@@ -158,6 +221,7 @@ html, body {
           "title gallery"
           "text text";
   gap: 100px 50px;
+  margin-top: 100px;
 }
 .home__about-picture1 {
   grid-area: men;
@@ -166,7 +230,9 @@ html, body {
   grid-area: gallery;
   align-self: flex-end; /* margin-top: auto   то же самое*/
 }
-
+.home__about-picture3 {
+  grid-area: cafe;
+}
 
 /*------  --------------------------------------------------------------*/
 .main {
