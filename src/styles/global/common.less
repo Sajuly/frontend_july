@@ -1,0 +1,44 @@
+html, body {
+  width: 100%; /* Устанавливает ширину для html и body на 100% */
+  margin: 0; /* Убирает внешние отступы по умолчанию */
+  padding: 0; /* Убирает внутренние отступы по умолчанию */
+  background-color: #e6e1e1;
+}
+.body {
+  box-sizing: border-box; /* Учитывает отступы и границы в общей ширине и высоте элемента */
+  display: flex; /* Использует Flexbox для размещения дочерних элементов */
+  flex-direction: column; /* Располагает дочерние элементы в колонку */
+  min-height: 100vh; /* Минимальная высота равна 100% высоты окна браузера */
+  background-color: @gray;
+  background-image: url(../../assets/images/noise.png), url(../../assets/images/bg.png);
+  background-position: 0 0, 0 0;
+  background-size: auto, 100% auto;
+  background-repeat: repeat, repeat-y;
+  color: @black; /* Цвет текста */
+  font-family: "Open Sans", sans-serif; /* Шрифт и запасной шрифт */
+  font-size: 16px; /* Размер шрифта */
+  font-weight: 400; /* Нормальная жирность шрифта */
+  font-style: normal; /* Обычный стиль шрифта */
+  line-height: 1.375; /* Высота строки */
+  overflow-x: hidden;
+  padding-top: 147px; /* Отступ сверху, чтобы учесть фиксированный заголовок */
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.page-footer {
+  flex: 0 0 auto;
+}
+
+a {
+  color: black;
+  outline: none;
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}

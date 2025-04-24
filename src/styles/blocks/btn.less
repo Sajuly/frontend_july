@@ -1,0 +1,29 @@
+.btn {
+  display: inline-block; /* Кнопка ведет себя как блочный элемент, но остается в строке */
+  box-sizing: border-box; /* Учитывает границы и отступы в ширине и высоте элемента */
+  padding: 15px 40px; /* Внутренние отступы: 15px сверху и снизу, 40px слева и справа */
+  border: 1px solid #1F1E1E; /* Граница кнопки */
+  background-color: transparent; /* Прозрачный фон по умолчанию */
+  outline: none; /* Убирает обводку при фокусировке */
+  color: #1F1E1E; /* Цвет текста */
+  font-family: "Open Sans", sans-serif; /* Шрифт */
+  font-weight: 600; /* Жирность шрифта */
+  font-size: 16px; /* Размер шрифта */
+  line-height: 20px; /* Высота строки */
+  text-align: center; /* Центрирует текст внутри кнопки */
+  text-decoration: none; /* Убирает подчеркивание текста */
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s; /* Плавные переходы для цвета текста, фона и границы */
+  overflow: hidden; /* Скрывает содержимое, выходящее за пределы кнопки */
+  cursor: pointer; /* Указывает, что элемент кликабельный */
+
+  &--red {
+    border-color: #bc3324; /* Цвет границы */
+    background-color: #bc3324;
+    color: white;
+  }
+}
+
+//.btn:hover {
+//  background-color: #1F1E1E; /* Цвет фона при наведении */
+//  color: #ffffff; /* Цвет текста при наведении */
+//}
