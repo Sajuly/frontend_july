@@ -2,7 +2,6 @@ html, body {
   width: 100%; /* Устанавливает ширину для html и body на 100% */
   margin: 0; /* Убирает внешние отступы по умолчанию */
   padding: 0; /* Убирает внутренние отступы по умолчанию */
-  background-color: #e6e1e1;
 }
 .body {
   box-sizing: border-box; /* Учитывает отступы и границы в общей ширине и высоте элемента */
@@ -14,8 +13,8 @@ html, body {
   background-position: 0 0, 0 0;
   background-size: auto, 100% auto;
   background-repeat: repeat, repeat-y;
-  color: @black; /* Цвет текста */
-  font-family: "Open Sans", sans-serif; /* Шрифт и запасной шрифт */
+  color: @black;   /* цвет текста */
+  font-family: @font1; /* Шрифт и запасной шрифт */
   font-size: 16px; /* Размер шрифта */
   font-weight: 400; /* Нормальная жирность шрифта */
   font-style: normal; /* Обычный стиль шрифта */
@@ -33,7 +32,7 @@ html, body {
 }
 
 a {
-  color: black;
+  color: @black;
   outline: none;
 }
 
