@@ -1,0 +1,65 @@
+.i-want {
+  display: grid; /* Используем Grid Layout */
+  grid-template-areas:
+        "text"
+        "btns"
+        "about"; /* Определяем области для элементов */
+  grid-template-columns: 1fr; /* Одна колонка */
+  grid-template-rows: auto 80px 400px; /* Высота строк: автоматическая для текста, 100px для кнопок, автоматическая для ссылки "О нас" */
+  justify-items: center; /* Центрируем элементы по горизонтали */
+  align-items: center; /* Центрируем элементы по вертикали */
+  gap: 20px; /* Промежутки между элементами */
+
+  &__text {
+    grid-area: text; /* Назначаем область для текста */
+    font-family: Lora; /* Шрифт Lora */
+    font-weight: 400; /* Нормальный вес шрифта */
+    font-size: 22px; /* Размер шрифта 22 пикселя */
+    line-height: 30px; /* Высота строки 30 пикселей */
+    letter-spacing: 2%; /* Межбуквенный интервал 2% */
+    text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  }
+
+  &__btns {
+    grid-area: btns; /* Назначаем область для кнопок */
+    display: grid; /* Используем Grid для кнопок */
+    grid-template-columns: 1fr 1fr; /* Две колонки */
+    justify-items: center; /* Центрируем кнопки по горизонтали */
+    gap: 150px; /* Промежутки между кнопками */
+
+    &__btn1,
+    &__btn2 {
+      text-decoration: none; /* Убирает подчеркивание текста */
+      border: 1px solid black; /* Граница */
+      padding: 15px 25px; /* Отступы для кнопок */
+      text-align: center;
+      line-height: 1.5; /* Высота строки для текста кнопок */
+      width: 100%;
+    }
+
+    &__btn1 {
+      color: @white; /* Цвет текста для кнопок */
+      background-color: @red;
+      border: 1px solid @red; /* Убираем границу только у btn1 */
+    }
+  }
+
+  &__about {
+    grid-area: about; /* Назначаем область для ссылки "О нас" */
+    text-align: center; /* Центрируем текст */
+    width: 100%;
+
+    &__link {
+      text-decoration: none; /* Убирает подчеркивание текста */
+      border: 1px solid black; /* Граница */
+      font-family: Lora;
+      font-size: 36px;
+      color: @white; /* Цвет текста для кнопок */
+      background-color: @black;
+      padding: 10px 280px; /* Отступы для кнопок */
+      text-transform: uppercase; /* Преобразование текста в верхний регистр */
+      width: 100%;
+    }
+  }
+}
+

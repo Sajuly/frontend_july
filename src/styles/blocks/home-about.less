@@ -1,0 +1,75 @@
+.home-about {
+  box-sizing: border-box; /* Включает отступы и границы в общую ширину */
+  width: 100%; /* Ширина 100% от родителя */
+  max-width: 1414px; /* Максимальная ширина 1414 пикселей */
+  margin: 0 auto; /* Центрирование блока */
+  padding-left: 100px; /* Левый отступ 100 пикселей */
+  padding-right: 40px; /* Правый отступ 40 пикселей */
+
+  display: grid; /* Используем сетку */
+  grid-template-columns: 1fr 404px; /* Первая колонка - оставшееся пространство, вторая - 404px */
+  //grid-template-rows:
+  grid-template-areas:
+          "title-millennials title-millennials" /* Заголовок занимает обе колонки */
+          "text-millennials text-millennials" /* Текст занимает обе колонки */
+          "men gallery" /* Мужчины и галерея в одной строке */
+          "title gallery" /* Заголовок и галерея в одной строке */
+          "text text" /* Текст занимает обе колонки */
+          "cafe text-cafe";
+
+  gap: 70px 50px; /* 100px между строками, 50px между колонками */
+
+  &__text {
+    font-family: Open Sans;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 400;
+    width: 100%;
+    max-width: 870px;
+    text-align: left;
+    margin: 0 0 0 auto;
+    align-self: center;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 44px;
+    width: 100%;
+    max-width: 900px;
+  }
+
+  &__title-millennials {
+    grid-area: title-millennials; /* используется для задания области сетки, в которой будет размещён элемент*/
+  }
+
+  &__titleS {
+    grid-area: title; /* используется для задания области сетки, в которой будет размещён элемент*/
+  }
+
+  &__text-millennials {
+    grid-area: text-millennials;
+
+  }
+
+  &__text-title {
+    grid-area: text;
+  }
+
+  &__text-cafe {
+    grid-area: text-cafe;
+  }
+
+  &__pic-man {
+    grid-area: men;
+  }
+
+  &__pic-gallery {
+    grid-area: gallery;
+    align-self: flex-end;
+  }
+
+  &__pic-cafe {
+    grid-area: cafe;
+  }
+
+}

@@ -1,3 +1,20 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="ru">-->
+
+<!--<body class="body">-->
+
+<!--<main class="main">-->
+<!--    <div class="home">-->
+<!--        &lt;!&ndash; прочая разметка &ndash;&gt;-->
+<!--        &lt;!&ndash; prettier-ignore &ndash;&gt;-->
+
+<!--        &lt;!&ndash; прочая разметка &ndash;&gt;-->
+<!--    </div>-->
+<!--</main>-->
+
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -40,150 +57,154 @@
     </div>
   </header>
 
-  <div class="home">
-    <p class="home__text">арт — пространство</p>
+  <div class="art">
+    <p class="art__text">арт — пространство</p>
 
-    <picture class="home__lenni-picture">
-      <img src="../assets/images/LENNI.jpg" alt="lenni">
+    <picture class="art__lenni-picture">
+      <img src="assets/images/LENNI.jpg" alt="lenni">
     </picture>
 
-    <p class="home__text"> для людей, горящих сердцем и делом
+    <p class="art__text"> для людей, горящих сердцем и делом
       <br>место для настоящего
     </p>
-
-    <p class="home__text home__text--custom"> Я хочу: </p>
-
-    <div class="home__btn-iwant">
-      <a href="#" class="btn-iwant btn_red"> Провести мероприятие </a>
-      <a href="#" class="btn-iwant"> Стать арендатором </a>
-    </div>
-    <div class="home__btn-iwant">
-      <a href="#" class="btn-iwant btn_about"> о нас </a>
-    </div>
-
-    <section class="home__about">
-
-      <div class="home__about-block">
-        <h3 class="home__about-title-millennials">Проект «Millennials» </h3>
-        <p class="home__about_text-millennials">Вдохновлен молодыми идейными людьми, увлеченными творчеством,
-          эмоциями и
-          желанием сделать мир лучше, проявить себя. У них есть талант и стремление, у нас возможность помочь им
-          воплотить их мечту в реальность.
-        </p>
-
-        <picture class="home__about-picture1">
-          <img src="assets/images/men_in_scene.jpeg" alt="men">
-        </picture>
-        <h3 class="home__about-title">Мы представляем площади для вашего мероприятия</h3>
-        <p class="home__about_text">
-          И оказываем помощь с организацией, если вам это нужно.
-          Наша цель: вовлечь в культурную жизнь города как можно больше людей, помочь молодым ребятам сделать
-          первые шаги к своей мечте и рассказать всем о том, что их волнует.
-        </p>
-        <picture class="home__about-picture2">
-          <img src="assets/images/gallery.jpeg" alt="men">
-        </picture>
-
-        <picture class="home__about-picture3">
-          <img src="assets/images/cafe.jpg" alt="cafe">
-        </picture>
-        <p class="home__about_text-cafe">
-          Мы уже успешно организовали и провели более 100 проектов. Посмотрите, как это было классно.
-        </p>
-      </div>
-
-    </section>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
   </div>
 
 
-  <main class="main">
-    <!-- Здесь будут хлебные крошки -->
+  <div class="centre-card">
+    <div class="i-want">
+      <p class="i-want__text">Я хочу:</p>
 
-    <!-- контент содержится в файле events-->
-    <div class="events">
-      <section class="listing events__listing">
-        <h2 class="listing__title section-title">Мероприятия</h2>
-        <div class="listing__events-list">
-          <!-- prettier-ignore -->
-          @@loop('blocks/event-card.html', [
+      <div class="i-want__btns">
+        <a href="#" class="i-want__btns__btn1">Провести мероприятие</a>
+        <a href="#" class="i-want__btns__btn2">Стать арендатором</a>
+      </div>
 
-          {
-          "class": "listing__event-card",
-          "img": "assets/images/nirvana.jpeg",
-          "alt": "nirvana",
-          "title": "Собираемся и слушаем альбом Nirvana",
-          "description": "Это третий альбом группы, выпущенный после смерти Курта Кобейна и первый, содержащий студийный материал.",
-          "datetime": "2022-12-07T18:00",
-          "time":"07.12.2022 | начало 18.00"
-          },
-          {
-          "class": "listing__event-card",
-          "img": "assets/images/stuff.jpg",
-          "alt": "stuff",
-          "title": Есть тема, нужно обсудить с HowStuffWorks,
-          "description": "Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.",
-          "datetime": "2022-12-07T18:00",
-          "time":"4.12.2022 | начало 18.30"
-          },
-
-          ])
-          <!--                <article class="event-card listing__event-card">-->
-          <!--                    <a href="#" class="event-card__link">-->
-          <!--                        <picture class="event-card__picture">-->
-          <!--                            <img src="../assets/images/nirvana.jpeg" alt="nirvana" class="event-card__img"/>-->
-          <!--                        </picture>-->
-          <!--                        <h4 class="event-card__title">Собираемся и слушаем альбом Nirvana</h4>-->
-          <!--                        <p class="event-card__description">-->
-          <!--                            Это третий альбом группы, выпущенный после смерти Курта Кобейна и первый, содержащий-->
-          <!--                            студийный материал.-->
-          <!--                        </p>-->
-          <!--                        <time datetime="2022-12-07T18:00" class="event-card__time">-->
-          <!--                            07.12.2022 | начало 18.00-->
-          <!--                        </time>-->
-          <!--                    </a>-->
-          <!--                </article>-->
-          <!--                <article class="event-card listing__event-card">-->
-          <!--                    <a href="#" class="event-card__link">-->
-          <!--                        <picture class="event-card__picture">-->
-          <!--                            <img src="../assets/images/stuff.jpg" alt="stuff" class="event-card__img"/>-->
-          <!--                        </picture>-->
-          <!--                        <h4 class="event-card__title">Есть тема, нужно обсудить с HowStuffWorks</h4>-->
-          <!--                        <p class="event-card__description">-->
-          <!--                            Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.-->
-          <!--                        </p>-->
-          <!--                        <time datetime="2022-12-07T18:00" class="event-card__time">-->
-          <!--                            4.12.2022 | начало 18.30-->
-          <!--                        </time>-->
-          <!--                    </a>-->
-          <!--                </article>-->
-          <!--                <article class="event-card listing__event-card">-->
-          <!--                    <a href="#" class="event-card__link">-->
-          <!--                        <picture class="event-card__picture">-->
-          <!--                            <img src="../assets/images/woman.jpg" alt="woman" class="event-card__img"/>-->
-          <!--                        </picture>-->
-          <!--                        <h4 class="event-card__title">Вечер | The Best of Sade</h4>-->
-          <!--                        <p class="event-card__description">-->
-          <!--                            Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза,-->
-          <!--                            ритм-блюза и фанка.-->
-          <!--                        </p>-->
-          <!--                        <time datetime="2022-12-07T18:00" class="event-card__time">-->
-          <!--                            16.12.2022 | начало 20.00-->
-          <!--                        </time>-->
-          <!--                    </a>-->
-          <!--                </article>-->
-        </div>
-      </section>
+      <div class="i-want__about">
+        <a href="#" class="i-want__about__link">О нас</a>
+      </div>
     </div>
 
-    <!-- Здесь будут дополнительные услуги -->
-  </main>
+    <section class="home-about">
+
+      <h3 class="home-about__title-millennials home-about__title">Проект «Millennials» </h3>
+
+      <p class="home-about__text-millennials home-about__text">Вдохновлен молодыми идейными людьми, увлеченными творчеством,
+        эмоциями и желанием сделать мир лучше, проявить себя. У них есть талант и стремление, у нас возможность помочь
+        им воплотить их мечту в реальность.
+      </p>
+
+      <picture class="home-about__pic-man">
+        <img src="assets/images/men_in_scene.jpeg" alt="man">
+      </picture>
+
+      <h3 class="home-about__titleS home-about__title">Мы представляем площади для вашего мероприятия</h3>
+
+      <p class="home-about__text-title home-about__text">
+        И оказываем помощь с организацией, если вам это нужно.
+        <br>
+        Наша цель: вовлечь в культурную жизнь города как можно больше людей, помочь молодым ребятам сделать
+        первые шаги к своей мечте и рассказать всем о том, что их волнует.
+      </p>
+
+      <picture class="home-about__pic-gallery">
+        <img src="assets/images/gallery.jpeg" alt="gallery">
+      </picture>
+
+      <picture class="home-about__pic-cafe">
+        <img src="assets/images/cafe.jpg" alt="cafe">
+      </picture>
+
+      <p class="home-about__text-cafe home-about__text">
+        Мы уже успешно организовали и провели более 100 проектов. Посмотрите, как это было классно.
+      </p>
+
+    </section>
+
+
+    <!--<main class="main">-->
+    <!--    &lt;!&ndash; Здесь будут хлебные крошки &ndash;&gt;-->
+
+    <!--    &lt;!&ndash; контент содержится в файле events&ndash;&gt;-->
+    <!--    <div class="events">-->
+    <!--        <section class="listing events__listing">-->
+    <!--            <h2 class="listing__title section-title">Мероприятия</h2>-->
+
+    <!--            <div class="listing__events-list">-->
+    <!--                &lt;!&ndash; prettier-ignore &ndash;&gt;-->
+    <!--                @@loop('blocks/event-card.html', [-->
+
+    <!--                {-->
+    <!--                "class": "listing__event-card",-->
+    <!--                "img": "assets/images/nirvana.jpeg",-->
+    <!--                "alt": "nirvana",-->
+    <!--                "title": "Собираемся и слушаем альбом Nirvana",-->
+    <!--                "description": "Это третий альбом группы, выпущенный после смерти Курта Кобейна и первый, содержащий-->
+    <!--                студийный материал.",-->
+    <!--                "datetime": "2022-12-07T18:00",-->
+    <!--                "time":"07.12.2022 | начало 18.00"-->
+    <!--                },-->
+    <!--                {-->
+    <!--                "class": "listing__event-card",-->
+    <!--                "img": "assets/images/stuff.jpg",-->
+    <!--                "alt": "stuff",-->
+    <!--                "title": Есть тема, нужно обсудить с HowStuffWorks,-->
+    <!--                "description": "Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные-->
+    <!--                вещи.",-->
+    <!--                "datetime": "2022-12-07T18:00",-->
+    <!--                "time":"4.12.2022 | начало 18.30"-->
+    <!--                },-->
+
+    <!--                ])-->
+    <!--                &lt;!&ndash;                <article class="event-card listing__event-card">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    <a href="#" class="event-card__link">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <picture class="event-card__picture">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            <img src="../assets/images/nirvana.jpeg" alt="nirvana" class="event-card__img"/>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        </picture>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <h4 class="event-card__title">Собираемся и слушаем альбом Nirvana</h4>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <p class="event-card__description">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            Это третий альбом группы, выпущенный после смерти Курта Кобейна и первый, содержащий&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            студийный материал.&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        </p>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <time datetime="2022-12-07T18:00" class="event-card__time">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            07.12.2022 | начало 18.00&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        </time>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    </a>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                </article>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                <article class="event-card listing__event-card">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    <a href="#" class="event-card__link">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <picture class="event-card__picture">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            <img src="../assets/images/stuff.jpg" alt="stuff" class="event-card__img"/>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        </picture>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <h4 class="event-card__title">Есть тема, нужно обсудить с HowStuffWorks</h4>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <p class="event-card__description">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        </p>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <time datetime="2022-12-07T18:00" class="event-card__time">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            4.12.2022 | начало 18.30&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        </time>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    </a>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                </article>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                <article class="event-card listing__event-card">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    <a href="#" class="event-card__link">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <picture class="event-card__picture">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            <img src="../assets/images/woman.jpg" alt="woman" class="event-card__img"/>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        </picture>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <h4 class="event-card__title">Вечер | The Best of Sade</h4>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <p class="event-card__description">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза,&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            ритм-блюза и фанка.&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        </p>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <time datetime="2022-12-07T18:00" class="event-card__time">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            16.12.2022 | начало 20.00&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        </time>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    </a>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                </article>&ndash;&gt;-->
+    <!--            </div>-->
+    <!--        </section>-->
+  </div>
+
+  <!--    &lt;!&ndash; Здесь будут дополнительные услуги &ndash;&gt;-->
+  <!--</main>-->
 
   <footer class="page-footer">
     FOOTER
