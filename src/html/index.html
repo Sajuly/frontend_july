@@ -1,20 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="ru">-->
-<!--@@include('blocks/head.html')-->
-<!--<body class="body">-->
-<!--@@include('blocks/page-header.html')-->
-<!--<main class="main">-->
-<!--    <div class="home">-->
-<!--        &lt;!&ndash; прочая разметка &ndash;&gt;-->
-<!--        &lt;!&ndash; prettier-ignore &ndash;&gt;-->
-<!--        @@include('blocks/blog-listing.html', {"class": "home__listing"})-->
-<!--        &lt;!&ndash; прочая разметка &ndash;&gt;-->
-<!--    </div>-->
-<!--</main>-->
-<!--@@include('blocks/page-footer.html')-->
-<!--</body>-->
-<!--</html>-->
-
 <!DOCTYPE html>
 <html lang="ru">
 @@include('blocks/head.html')
@@ -27,94 +10,27 @@
 <div class="centre-card">
     @@include('blocks/i-want.html')
 
+
+    <h2 href="#" class="title-texts">О нас</h2>
+
     @@include('blocks/home-about.html')
 
+    <main class="main">
 
-    <!--<main class="main">-->
-    <!--    &lt;!&ndash; Здесь будут хлебные крошки &ndash;&gt;-->
+        <h2 href="#" class="title-texts">Мероприятия</h2>
 
-    <!--    &lt;!&ndash; контент содержится в файле events&ndash;&gt;-->
-    <!--    <div class="events">-->
-    <!--        <section class="listing events__listing">-->
-    <!--            <h2 class="listing__title section-title">Мероприятия</h2>-->
+        <!--  Здесь будут хлебные крошки -->
 
-    <!--            <div class="listing__events-list">-->
-    <!--                &lt;!&ndash; prettier-ignore &ndash;&gt;-->
-    <!--                @@loop('blocks/event-card.html', [-->
+        @@include('blocks/article-card-events.html')
 
-    <!--                {-->
-    <!--                "class": "listing__event-card",-->
-    <!--                "img": "assets/images/nirvana.jpeg",-->
-    <!--                "alt": "nirvana",-->
-    <!--                "title": "Собираемся и слушаем альбом Nirvana",-->
-    <!--                "description": "Это третий альбом группы, выпущенный после смерти Курта Кобейна и первый, содержащий-->
-    <!--                студийный материал.",-->
-    <!--                "datetime": "2022-12-07T18:00",-->
-    <!--                "time":"07.12.2022 | начало 18.00"-->
-    <!--                },-->
-    <!--                {-->
-    <!--                "class": "listing__event-card",-->
-    <!--                "img": "assets/images/stuff.jpg",-->
-    <!--                "alt": "stuff",-->
-    <!--                "title": Есть тема, нужно обсудить с HowStuffWorks,-->
-    <!--                "description": "Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные-->
-    <!--                вещи.",-->
-    <!--                "datetime": "2022-12-07T18:00",-->
-    <!--                "time":"4.12.2022 | начало 18.30"-->
-    <!--                },-->
+        <h2 href="#" class="title-texts">Блог</h2>
 
-    <!--                ])-->
-    <!--                &lt;!&ndash;                <article class="event-card listing__event-card">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                    <a href="#" class="event-card__link">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <picture class="event-card__picture">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            <img src="../assets/images/nirvana.jpeg" alt="nirvana" class="event-card__img"/>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        </picture>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <h4 class="event-card__title">Собираемся и слушаем альбом Nirvana</h4>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <p class="event-card__description">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            Это третий альбом группы, выпущенный после смерти Курта Кобейна и первый, содержащий&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            студийный материал.&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        </p>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <time datetime="2022-12-07T18:00" class="event-card__time">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            07.12.2022 | начало 18.00&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        </time>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                    </a>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                </article>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                <article class="event-card listing__event-card">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                    <a href="#" class="event-card__link">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <picture class="event-card__picture">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            <img src="../assets/images/stuff.jpg" alt="stuff" class="event-card__img"/>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        </picture>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <h4 class="event-card__title">Есть тема, нужно обсудить с HowStuffWorks</h4>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <p class="event-card__description">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        </p>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <time datetime="2022-12-07T18:00" class="event-card__time">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            4.12.2022 | начало 18.30&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        </time>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                    </a>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                </article>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                <article class="event-card listing__event-card">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                    <a href="#" class="event-card__link">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <picture class="event-card__picture">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            <img src="../assets/images/woman.jpg" alt="woman" class="event-card__img"/>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        </picture>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <h4 class="event-card__title">Вечер | The Best of Sade</h4>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <p class="event-card__description">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза,&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            ритм-блюза и фанка.&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        </p>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <time datetime="2022-12-07T18:00" class="event-card__time">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            16.12.2022 | начало 20.00&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        </time>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                    </a>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                </article>&ndash;&gt;-->
-    <!--            </div>-->
-    <!--        </section>-->
+        @@include('blocks/article-card-blog.html')
+
+    </main>
 </div>
 
-<!--    &lt;!&ndash; Здесь будут дополнительные услуги &ndash;&gt;-->
-<!--</main>-->
-
+<br><br><br><br><br><br><br><br><br>
 <footer class="page-footer">
     FOOTER
 </footer>

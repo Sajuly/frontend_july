@@ -1,110 +1,28 @@
-.home {
-  padding: 100px 0;
+<article class="article-card @@class">
 
-  &__listing {
-    margin-bottom: 95px;
-  }
-}
+    <a href="#" class="article-card__link">
+        <picture class="article-card__picture">
+            <img src="@@img" alt="@@alt" class="article-card__img"/>
+        </picture>
+    </a>
 
-.article-card {
-  box-sizing: border-box;
-  display: flex;
-  width: 100%;
-  &:hover {
-    .article-card__picture {
-      box-shadow: 0 0 30px fade(@black, 55%);
-    }
-  }
-  &__link {
-    flex-shrink: 0;
-    align-self: flex-start;
-    display: block;
-    width: 467px;
-    margin-right: 60px;
-    font-size: 0;
-    text-decoration: none;
-  }
-  &__picture {
-    display: block;
-    position: relative;
-    width: 100%;
-    transition: box-shadow 0.2s;
-    overflow: hidden;
-    &::after {
-      content: "";
-      display: block;
-      width: 100%;
-      padding-top: 62.3126%;
-    }
-  }
-  &__img {
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  &__info {
-    box-sizing: border-box;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding: 30px 0;
-    padding-right: 150px;
-  }
-  &__time {
-    margin: 0 0 40px;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 22px;
-  }
-  &__title-link,
-  &__description {
-    max-width: 470px;
-  }
-  &__title-link {
-    margin: auto 0 40px;
-    color: @black;
-    text-decoration-color: transparent;
-    transition: color 0.2s, text-decoration-color 0.2s;
-    &:hover {
-      color: @red;
-      text-decoration-color: @red;
-    }
-  }
-  &__title {
-    margin: 0;
-    color: inherit;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 33px;
-  }
-  &__description {
-    margin: 0;
-    font-size: 16px;
-    line-height: 22px;
-  }
-  &__arrow {
-    position: absolute;
-    right: 0;
-    bottom: 30px;
-    color: inherit;
-    transition: none;
-  }
- &__link {
-  /* прочие стили */
-    &:hover {
-      & ~ .article-card__info {
-        .article-card__title-link {
-          color: @red;
-          text-decoration-color: @red;
-        }
-      }
-    }
-  }
-}
+    <div class="article-card__info">
+
+        <time datetime="@@datetime" class="article-card__time">@@time</time>
+
+        <a href="#" class="article-card__title-link">
+            <h4 class="article-card__title">@@title</h4>
+
+            <div class="article-card__arrow arrow">
+                <svg class="arrow__icon" width="92" height="62">
+                    <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+                </svg>
+            </div>
+
+        </a>
+
+        <p class="article-card__description">@@description</p>
+
+    </div>
+
+</article>

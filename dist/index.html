@@ -1,20 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="ru">-->
-
-<!--<body class="body">-->
-
-<!--<main class="main">-->
-<!--    <div class="home">-->
-<!--        &lt;!&ndash; прочая разметка &ndash;&gt;-->
-<!--        &lt;!&ndash; prettier-ignore &ndash;&gt;-->
-
-<!--        &lt;!&ndash; прочая разметка &ndash;&gt;-->
-<!--    </div>-->
-<!--</main>-->
-
-<!--</body>-->
-<!--</html>-->
-
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -79,10 +62,10 @@
         <a href="#" class="i-want__btns__btn2">Стать арендатором</a>
       </div>
 
-      <div class="i-want__about">
-        <a href="#" class="i-want__about__link">О нас</a>
-      </div>
     </div>
+
+
+    <h2 href="#" class="title-texts">О нас</h2>
 
     <section class="home-about">
 
@@ -94,7 +77,7 @@
       </p>
 
       <picture class="home-about__pic-man">
-        <img src="assets/images/men_in_scene.jpeg" alt="man">
+        <img src="assets/images/about/men_in_scene.jpeg" alt="man">
       </picture>
 
       <h3 class="home-about__titleS home-about__title">Мы представляем площади для вашего мероприятия</h3>
@@ -107,11 +90,11 @@
       </p>
 
       <picture class="home-about__pic-gallery">
-        <img src="assets/images/gallery.jpeg" alt="gallery">
+        <img src="assets/images/about/gallery.jpeg" alt="gallery">
       </picture>
 
       <picture class="home-about__pic-cafe">
-        <img src="assets/images/cafe.jpg" alt="cafe">
+        <img src="assets/images/about/cafe.jpg" alt="cafe">
       </picture>
 
       <p class="home-about__text-cafe home-about__text">
@@ -120,92 +103,192 @@
 
     </section>
 
+    <main class="main">
 
-    <!--<main class="main">-->
-    <!--    &lt;!&ndash; Здесь будут хлебные крошки &ndash;&gt;-->
+      <h2 href="#" class="title-texts">Мероприятия</h2>
 
-    <!--    &lt;!&ndash; контент содержится в файле events&ndash;&gt;-->
-    <!--    <div class="events">-->
-    <!--        <section class="listing events__listing">-->
-    <!--            <h2 class="listing__title section-title">Мероприятия</h2>-->
+      <!--  Здесь будут хлебные крошки -->
 
-    <!--            <div class="listing__events-list">-->
-    <!--                &lt;!&ndash; prettier-ignore &ndash;&gt;-->
-    <!--                @@loop('blocks/event-card.html', [-->
+      <div class="events">
+        <!-- prettier-ignore -->
+        <article class="event-card listing__event-card">
+          <a href="#" class="event-card__link">
 
-    <!--                {-->
-    <!--                "class": "listing__event-card",-->
-    <!--                "img": "assets/images/nirvana.jpeg",-->
-    <!--                "alt": "nirvana",-->
-    <!--                "title": "Собираемся и слушаем альбом Nirvana",-->
-    <!--                "description": "Это третий альбом группы, выпущенный после смерти Курта Кобейна и первый, содержащий-->
-    <!--                студийный материал.",-->
-    <!--                "datetime": "2022-12-07T18:00",-->
-    <!--                "time":"07.12.2022 | начало 18.00"-->
-    <!--                },-->
-    <!--                {-->
-    <!--                "class": "listing__event-card",-->
-    <!--                "img": "assets/images/stuff.jpg",-->
-    <!--                "alt": "stuff",-->
-    <!--                "title": Есть тема, нужно обсудить с HowStuffWorks,-->
-    <!--                "description": "Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные-->
-    <!--                вещи.",-->
-    <!--                "datetime": "2022-12-07T18:00",-->
-    <!--                "time":"4.12.2022 | начало 18.30"-->
-    <!--                },-->
+            <picture class="event-card__picture">
+              <img class="event-card__img" src=assets/images/events/nirvana.jpeg alt=nirvana />
+            </picture>
 
-    <!--                ])-->
-    <!--                &lt;!&ndash;                <article class="event-card listing__event-card">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                    <a href="#" class="event-card__link">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <picture class="event-card__picture">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            <img src="../assets/images/nirvana.jpeg" alt="nirvana" class="event-card__img"/>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        </picture>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <h4 class="event-card__title">Собираемся и слушаем альбом Nirvana</h4>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <p class="event-card__description">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            Это третий альбом группы, выпущенный после смерти Курта Кобейна и первый, содержащий&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            студийный материал.&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        </p>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <time datetime="2022-12-07T18:00" class="event-card__time">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            07.12.2022 | начало 18.00&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        </time>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                    </a>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                </article>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                <article class="event-card listing__event-card">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                    <a href="#" class="event-card__link">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <picture class="event-card__picture">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            <img src="../assets/images/stuff.jpg" alt="stuff" class="event-card__img"/>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        </picture>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <h4 class="event-card__title">Есть тема, нужно обсудить с HowStuffWorks</h4>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <p class="event-card__description">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        </p>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <time datetime="2022-12-07T18:00" class="event-card__time">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            4.12.2022 | начало 18.30&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        </time>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                    </a>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                </article>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                <article class="event-card listing__event-card">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                    <a href="#" class="event-card__link">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <picture class="event-card__picture">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            <img src="../assets/images/woman.jpg" alt="woman" class="event-card__img"/>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        </picture>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <h4 class="event-card__title">Вечер | The Best of Sade</h4>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <p class="event-card__description">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза,&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            ритм-блюза и фанка.&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        </p>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        <time datetime="2022-12-07T18:00" class="event-card__time">&ndash;&gt;-->
-    <!--                &lt;!&ndash;                            16.12.2022 | начало 20.00&ndash;&gt;-->
-    <!--                &lt;!&ndash;                        </time>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                    </a>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                </article>&ndash;&gt;-->
-    <!--            </div>-->
-    <!--        </section>-->
+            <h4 class="event-card__title">Собираемся и слушаем альбом Nirvana</h4>
+            <p class="event-card__description">Это третий альбом группы, выпущенный после смерти Курта Кобейна и первый, содержащий студийный материал.</p>
+            <time datetime=2024-12-07T18:00 class="event-card__time">07.12.2024 | начало 18.00</time>
+          </a>
+        </article>
+        <article class="event-card listing__event-card">
+          <a href="#" class="event-card__link">
+
+            <picture class="event-card__picture">
+              <img class="event-card__img" src=assets/images/events/stuff.jpg alt=stuff />
+            </picture>
+
+            <h4 class="event-card__title">Есть тема, нужно обсудить с HowStuffWorks</h4>
+            <p class="event-card__description">Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.</p>
+            <time datetime=2024-12-14T18:30 class="event-card__time">14.12.2024 | начало 18.30</time>
+          </a>
+        </article>
+        <article class="event-card listing__event-card">
+          <a href="#" class="event-card__link">
+
+            <picture class="event-card__picture">
+              <img class="event-card__img" src=assets/images/events/woman.jpg alt=woman />
+            </picture>
+
+            <h4 class="event-card__title">Вечер | The Best of Sade</h4>
+            <p class="event-card__description">Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза, ритм-блюза и фанка.</p>
+            <time datetime=2024-12-16T20:00 class="event-card__time">16.12.2024 | начало 20.00</time>
+          </a>
+        </article>
+        <article class="event-card listing__event-card">
+          <a href="#" class="event-card__link">
+
+            <picture class="event-card__picture">
+              <img class="event-card__img" src=assets/images/events/exhibition.jpeg alt=exhibition />
+            </picture>
+
+            <h4 class="event-card__title">Выставка Малевича в Томске</h4>
+            <p class="event-card__description">Это будет самая полная выставка с 1988 года, того времени, когда впервые заговорили о Малевиче. Экспозиция займёт два этажа павильона.</p>
+            <time datetime=2024-12-23T20:00 class="event-card__time">23.12.2024 | начало 20.00</time>
+          </a>
+        </article>
+        <article class="event-card listing__event-card">
+          <a href="#" class="event-card__link">
+
+            <picture class="event-card__picture">
+              <img class="event-card__img" src=assets/images/events/art-shooting.jpeg alt=art-shooting />
+            </picture>
+
+            <h4 class="event-card__title">ВМастер — класс по студийной съемке от Tatler</h4>
+            <p class="event-card__description">Фотографы издания расскажут, как им удается создавать потрясающие кадры и что может испортить весь процесс.</p>
+            <time datetime=2024-12-25T13:00 class="event-card__time">25.12.2024 | начало 13.00</time>
+          </a>
+        </article>
+        <article class="event-card listing__event-card">
+          <a href="#" class="event-card__link">
+
+            <picture class="event-card__picture">
+              <img class="event-card__img" src=assets/images/events/hatters.jpeg alt=hatters />
+            </picture>
+
+            <h4 class="event-card__title">Повеселимся на славу на концерте The Hatters</h4>
+            <p class="event-card__description">Российская джипси-фолк-рок группа, основанная в 2016 году в Санкт-Петербурге. В основной состав группы входят Юрий Музыченко</p>
+            <time datetime=2024-12-27T10:00 class="event-card__time">27.12.2024 | начало 10.00</time>
+          </a>
+        </article>
+      </div>
+
+      <h2 href="#" class="title-texts">Блог</h2>
+
+      <div class="listing__article-list">
+        <!-- prettier-ignore -->
+        <article class="article-card listing__article-card">
+
+          <a href="#" class="article-card__link">
+            <picture class="article-card__picture">
+              <img src="assets/images/blog/photoshoot.jpeg" alt="Theatre Photosession" class="article-card__img" />
+            </picture>
+          </a>
+
+          <div class="article-card__info">
+
+            <time datetime="2024-11-26T00:00" class="article-card__time">26.11.2024</time>
+
+            <a href="#" class="article-card__title-link">
+              <h4 class="article-card__title">Фотосессия в стенах Театра драмы</h4>
+
+              <div class="article-card__arrow arrow">
+                <svg class="arrow__icon" width="92" height="62">
+                  <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+                </svg>
+              </div>
+
+            </a>
+
+            <p class="article-card__description">Организовывая фотосессию для...</p>
+
+          </div>
+
+        </article>
+        <article class="article-card listing__article-card">
+
+          <a href="#" class="article-card__link">
+            <picture class="article-card__picture">
+              <img src="assets/images/blog/vr.jpeg" alt="vr" class="article-card__img" />
+            </picture>
+          </a>
+
+          <div class="article-card__info">
+
+            <time datetime="2024-11-05T00:00" class="article-card__time">05.11.2024</time>
+
+            <a href="#" class="article-card__title-link">
+              <h4 class="article-card__title">Выставка VR в Томске</h4>
+
+              <div class="article-card__arrow arrow">
+                <svg class="arrow__icon" width="92" height="62">
+                  <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+                </svg>
+              </div>
+
+            </a>
+
+            <p class="article-card__description">Клуб виртуальной реальности - это другие миры. яркие эмоции. новый опыт. ... Мы предоставляем нашим клиентам лучший игровой VR-опыт в Томске.</p>
+
+          </div>
+
+        </article>
+        <article class="article-card listing__article-card">
+
+          <a href="#" class="article-card__link">
+            <picture class="article-card__picture">
+              <img src="assets/images/blog/rocking-radio.jpeg" alt="rocking-radio" class="article-card__img" />
+            </picture>
+          </a>
+
+          <div class="article-card__info">
+
+            <time datetime="2024-11-01T00:00" class="article-card__time">01.11.2024</time>
+
+            <a href="#" class="article-card__title-link">
+              <h4 class="article-card__title">Rocking radio в заброшенном ангаре</h4>
+
+              <div class="article-card__arrow arrow">
+                <svg class="arrow__icon" width="92" height="62">
+                  <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+                </svg>
+              </div>
+
+            </a>
+
+            <p class="article-card__description">15 электрогенераторов, километры проводов и пару тонн света. Все это для того, чтобы организовать лучшую вечеринку года для ребят из Новосибирска.</p>
+
+          </div>
+
+        </article>
+      </div>
+      <a href="#" class="listing__link link">Смотреть все</a>
+
+
+    </main>
   </div>
 
-  <!--    &lt;!&ndash; Здесь будут дополнительные услуги &ndash;&gt;-->
-  <!--</main>-->
-
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <footer class="page-footer">
     FOOTER
   </footer>

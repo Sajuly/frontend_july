@@ -5,7 +5,7 @@
         "btns"
         "about"; /* Определяем области для элементов */
   grid-template-columns: 1fr; /* Одна колонка */
-  grid-template-rows: auto 80px 400px; /* Высота строк: автоматическая для текста, 100px для кнопок, автоматическая для ссылки "О нас" */
+  grid-template-rows: auto 80px; /* Высота строк: автоматическая для текста, 100px для кнопок, автоматическая для ссылки "О нас" */
   justify-items: center; /* Центрируем элементы по горизонтали */
   align-items: center; /* Центрируем элементы по вертикали */
   gap: 20px; /* Промежутки между элементами */
@@ -44,22 +44,5 @@
     }
   }
 
-  &__about {
-    grid-area: about; /* Назначаем область для ссылки "О нас" */
-    text-align: center; /* Центрируем текст */
-    width: 100%;
-
-    &__link {
-      text-decoration: none; /* Убирает подчеркивание текста */
-      border: 1px solid black; /* Граница */
-      font-family: Lora;
-      font-size: 36px;
-      color: @white; /* Цвет текста для кнопок */
-      background-color: @black;
-      padding: 10px 280px; /* Отступы для кнопок */
-      text-transform: uppercase; /* Преобразование текста в верхний регистр */
-      width: 100%;
-    }
-  }
 }
 

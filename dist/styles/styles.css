@@ -63,10 +63,34 @@ body {
   max-width: 1920px;
   /* Максимальная ширина 1920 пикселей */
 }
+.title-texts {
+  text-decoration: none;
+  /* Убирает подчеркивание текста */
+  border: 1px solid black;
+  /* Граница */
+  font-family: "Lora", serif;
+  font-size: 36px;
+  color: #ffffff;
+  /* Цвет текста для кнопок */
+  background-color: #1f1e1e;
+  text-transform: uppercase;
+  /* Преобразование текста в верхний регистр */
+  display: block;
+  /* Позволяет элементу занимать всю ширину родительского элемента */
+  text-align: center;
+  /* Центрирование текста внутри элемента */
+  margin: 150px auto 150px;
+  /* Центрирование самого элемента и отступ снизу на 150 пикселей */
+  max-width: 670px;
+  /* Максимальная ширина кнопки */
+}
 .main {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+  margin-right: auto;
+  /* Центрирование элемента справа */
+  margin-left: auto;
+  /* Центрирование элемента слева */
+  max-width: 1920px;
+  /* Максимальная ширина 1920 пикселей */
 }
 .page-footer {
   -webkit-box-flex: 0;
@@ -75,7 +99,9 @@ body {
 }
 a {
   color: #1f1e1e;
+  /* Устанавливает цвет текста для ссылок */
   outline: none;
+  /* Убирает контур вокруг ссылки при фокусировке */
 }
 .img {
   max-width: 100%;
@@ -233,7 +259,7 @@ a {
   /* Определяем области для элементов */
   grid-template-columns: 1fr;
   /* Одна колонка */
-  grid-template-rows: auto 80px 400px;
+  grid-template-rows: auto 80px;
   /* Высота строк: автоматическая для текста, 100px для кнопок, автоматическая для ссылки "О нас" */
   justify-items: center;
   /* Центрируем элементы по горизонтали */
@@ -292,35 +318,12 @@ a {
   border: 1px solid #bc3324;
   /* Убираем границу только у btn1 */
 }
-.i-want__about {
-  grid-area: about;
-  /* Назначаем область для ссылки "О нас" */
-  text-align: center;
-  /* Центрируем текст */
-  width: 100%;
-}
-.i-want__about__link {
-  text-decoration: none;
-  /* Убирает подчеркивание текста */
-  border: 1px solid black;
-  /* Граница */
-  font-family: Lora;
-  font-size: 36px;
-  color: #ffffff;
-  /* Цвет текста для кнопок */
-  background-color: #1f1e1e;
-  padding: 10px 280px;
-  /* Отступы для кнопок */
-  text-transform: uppercase;
-  /* Преобразование текста в верхний регистр */
-  width: 100%;
-}
 .event-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   /* Используем flex для размещения элементов */
-  width: 405px;
+  width: calc(33.3333333% - 40px);
   /* Ширина карточки 405px */
   max-width: 100%;
   /* Максимальная ширина 100% от родителя */
@@ -339,7 +342,7 @@ a {
   /* Элементы располагаются по колонкам */
   width: 100%;
   /* Ширина 100% от родителя */
-  color: #1F1E1E;
+  color: #1f1e1e;
   /* Цвет текста */
   text-decoration: none;
   /* Без подчеркивания */
@@ -361,18 +364,19 @@ a {
      object-fit: cover;
   /* Заполнение контейнера без искажений */
 }
-.event-card____title {
+.event-card__title {
   margin: 0 0 15px;
   /* Отступы: 0 сверху, 15px снизу */
-  min-height: 66px;
+  min-height: 64px;
   /* Минимальная высота заголовка */
+  font-family: "Open Sans", sans-serif;
   color: #1F1E1E;
   /* Цвет текста */
-  font-weight: 600;
+  font-weight: 700;
   /* Нагрузка шрифта */
   font-size: 24px;
   /* Размер шрифта */
-  line-height: 33px;
+  line-height: 1.375;
   /* Высота строки */
   -webkit-text-decoration: underline transparent;
           text-decoration: underline transparent;
@@ -384,6 +388,8 @@ a {
 .event-card__description {
   margin: 0 0 auto;
   /* Автоматический отступ снизу */
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
   font-size: 16px;
   /* Размер шрифта */
   line-height: 22px;
@@ -424,6 +430,351 @@ a {
   /* Ширина 100% */
   padding-top: 107.16%;
   /* Высота элемента пропорциональна ширине */
+}
+.article-card {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* Учитывает границы и отступы в ширине/высоте элемента */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* Используем flexbox для расположения дочерних элементов */
+  width: 100%;
+  /* Ширина карточки 100% от родителя */
+}
+.article-card:hover .article-card__picture {
+  -webkit-box-shadow: 0 0 30px rgba(31, 30, 30, 0.55);
+          box-shadow: 0 0 30px rgba(31, 30, 30, 0.55);
+  /* Добавляет теневой эффект при наведении */
+}
+.article-card + .article-card {
+  /* Селектор для следующего элемента .article-card после текущего */
+  margin-top: 120px;
+  /* Отступ сверху 120px для разделения элементов */
+}
+.article-card + .article-card::before {
+  /* Псевдоэлемент перед .article-card */
+  content: "";
+  /* Создает пустое содержимое для псевдоэлемента */
+  display: block;
+  /* Отображение как блочный элемент */
+  position: absolute;
+  /* Абсолютное позиционирование относительно родителя */
+  margin: 0 auto 60px;
+  /* Центрирование по горизонтали и отступ снизу 60px */
+  bottom: 100%;
+  /* Расположение на 100% высоты родителя (то есть выше) */
+  left: 0;
+  /* Прикрепление к левому краю */
+  right: 0;
+  /* Прикрепление к правому краю */
+  width: 100%;
+  /* Ширина 100% от родителя */
+  max-width: 1254px;
+  /* Максимальная ширина 1254px */
+  height: 1px;
+  /* Высота псевдоэлемента 1px (линия) */
+  background-color: #1f1e1e;
+  /* Цвет фона черный */
+  pointer-events: none;
+  /* Игнорирует события указателя (например, клики) */
+}
+.article-card__link {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  /* Элемент не сжимается при уменьшении контейнера */
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  /* Выравнивание по верхнему краю */
+  display: block;
+  /* Блочный элемент */
+  width: 467px;
+  /* Фиксированная ширина ссылки */
+  margin-right: 60px;
+  /* Отступ справа */
+  font-size: 0;
+  /* Убираем размер шрифта (для скрытия текста) */
+  text-decoration: none;
+  /* Убираем подчеркивание */
+}
+.article-card__link:hover ~ .article-card__info .article-card__title-link {
+  color: #bc3324;
+  /* Изменяет цвет текста ссылки на красный при наведении */
+  text-decoration-color: #bc3324;
+  /* Устанавливает цвет подчеркивания на красный */
+}
+.article-card__picture {
+  display: block;
+  /* Блочный элемент */
+  position: relative;
+  /* Относительное позиционирование для вложенных элементов */
+  width: 100%;
+  /* Ширина 100% от родителя */
+  -webkit-transition: -webkit-box-shadow 0.2s;
+  transition: -webkit-box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
+  /* Плавный переход для тени */
+  overflow: hidden;
+  /* Скрываем переполнение содержимого */
+}
+.article-card__picture::after {
+  content: "";
+  /* Создает псевдоэлемент */
+  display: block;
+  /* Блочный элемент */
+  width: 100%;
+  /* Ширина 100% */
+  padding-top: 62.3126%;
+  /* Высота элемента пропорциональна ширине (для создания соотношения сторон) */
+}
+.article-card__img {
+  display: block;
+  /* Блочный элемент */
+  position: absolute;
+  /* Абсолютное позиционирование для полного покрытия */
+  left: 0;
+  /* Прикрепляем к левому краю */
+  top: 0;
+  /* Прикрепляем к верхнему краю */
+  width: 100%;
+  /* Ширина 100% от родителя */
+  height: 100%;
+  /* Высота 100% от родителя */
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* Заполнение контейнера без искажений */
+}
+.article-card__info {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* Учитывает границы и отступы в ширине/высоте элемента */
+  position: relative;
+  /* Относительное позиционирование для вложенных элементов */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* Используем flexbox для расположения дочерних элементов */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* Располагаем дочерние элементы по вертикали */
+  width: 100%;
+  /* Ширина 100% от родителя */
+  padding-top: 30px;
+  /* Отступ сверху */
+  padding-bottom: 30px;
+  /* Отступ снизу */
+  padding: 30px 0;
+  /* Вертикальные отступы 30px, горизонтальные 0 */
+  padding-right: 150px;
+  /* Отступ справа */
+}
+.article-card__time {
+  margin: 0 0 40px;
+  /* Отступы: 0 сверху и сбоку, 40px снизу */
+  font-weight: 300;
+  /* Легкий шрифт */
+  font-size: 16px;
+  /* Размер шрифта */
+  line-height: 22px;
+  /* Высота строки */
+}
+.article-card__title-link,
+.article-card__description {
+  max-width: 470px;
+  /* Максимальная ширина для ссылок и описания */
+}
+.article-card__title-link {
+  margin: auto 0 40px;
+  /* Центрирование по вертикали и 40px снизу */
+  color: #1f1e1e;
+  /* Цвет текста черный */
+  text-decoration-color: transparent;
+  /* Прозрачный цвет подчеркивания */
+  -webkit-transition: color 0.2s, text-decoration-color 0.2s;
+  transition: color 0.2s, text-decoration-color 0.2s;
+  /* Плавный переход для цвета и подчеркивания */
+}
+.article-card__title-link:hover {
+  color: #bc3324;
+  /* Изменяет цвет текста на красный при наведении */
+  text-decoration-color: #bc3324;
+  /* Устанавливает цвет подчеркивания на красный */
+}
+.article-card__title {
+  margin: 0;
+  /* Убираем отступы */
+  color: inherit;
+  /* Наследует цвет от родителя */
+  font-weight: 600;
+  /* Полужирный шрифт */
+  font-size: 24px;
+  /* Размер шрифта */
+  line-height: 33px;
+  /* Высота строки */
+}
+.article-card__description {
+  margin: 0;
+  /* Убираем отступы */
+  font-size: 16px;
+  /* Размер шрифта */
+  line-height: 22px;
+  /* Высота строки */
+}
+.article-card__arrow {
+  position: absolute;
+  /* Абсолютное позиционирование для размещения */
+  right: 0;
+  /* Прикрепляем к правому краю */
+  bottom: 30px;
+  /* Отступ снизу 30px */
+  color: inherit;
+  /* Наследует цвет от родителя */
+  -webkit-transition: none;
+  transition: none;
+  /* Без перехода для этого элемента */
+}
+.home {
+  padding: 100px 0;
+}
+.home__listing {
+  margin-bottom: 95px;
+}
+.article-card {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+.article-card:hover .article-card__picture {
+  -webkit-box-shadow: 0 0 30px rgba(31, 30, 30, 0.55);
+          box-shadow: 0 0 30px rgba(31, 30, 30, 0.55);
+}
+.article-card__link {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  display: block;
+  width: 467px;
+  margin-right: 60px;
+  font-size: 0;
+  text-decoration: none;
+}
+.article-card__picture {
+  display: block;
+  position: relative;
+  width: 100%;
+  -webkit-transition: -webkit-box-shadow 0.2s;
+  transition: -webkit-box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
+  overflow: hidden;
+}
+.article-card__picture::after {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: 62.3126%;
+}
+.article-card__img {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.article-card__info {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding: 30px 0;
+  padding-right: 150px;
+}
+.article-card__time {
+  margin: 0 0 40px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+}
+.article-card__title-link,
+.article-card__description {
+  max-width: 470px;
+}
+.article-card__title-link {
+  margin: auto 0 40px;
+  color: #1f1e1e;
+  text-decoration-color: transparent;
+  -webkit-transition: color 0.2s, text-decoration-color 0.2s;
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+.article-card__title-link:hover {
+  color: #bc3324;
+  text-decoration-color: #bc3324;
+}
+.article-card__title {
+  margin: 0;
+  color: inherit;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+}
+.article-card__description {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+}
+.article-card__arrow {
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+  color: inherit;
+  -webkit-transition: none;
+  transition: none;
+}
+.article-card__link {
+  /* прочие стили */
+}
+.article-card__link:hover ~ .article-card__info .article-card__title-link {
+  color: #bc3324;
+  text-decoration-color: #bc3324;
+}
+.events {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* Используем flex для размещения элементов в строку */
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  /* Перенос элементов на новую строку при нехватке места */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* Центрируем по горизонтали */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* Центрируем по вертикали */
+  width: 100%;
+  gap: 120px 60px;
 }
 .page-header {
   position: fixed;
