@@ -1,65 +1,163 @@
 .pp {
-  box-sizing: border-box;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 90px 95px 50px;
-  background-color: rgba(28, 27, 27, 0.4);
-  backdrop-filter: blur(50px);
-  overflow-y: auto;
-  z-index: 110;
-  display: none;
+  box-sizing: border-box; /* Учитывает padding и border в общей ширине/высоте элемента */
+  position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+  top: 0; /* Прикрепление к верхнему краю */
+  left: 0; /* Прикрепление к левому краю */
+  right: 0; /* Прикрепление к правому краю */
+  bottom: 0; /* Прикрепление к нижнему краю */
+  padding: 90px 95px 50px; /* Внутренние отступы */
+  background-color: rgba(28, 27, 27, 0.4); /* Полупрозрачный фон */
+  backdrop-filter: blur(50px); /* Размытие заднего фона */
+  overflow-y: auto; /* Прокрутка по вертикали при переполнении */
+  z-index: 110; /* Уровень наложения */
+  display: none; /* Скрытие элемента по умолчанию */
+
   &__wrapper {
+    box-sizing: border-box; /* Учитывает padding и border */
+    position: relative; /* Относительное позиционирование для вложенных элементов */
+    display: flex; /* Использование Flexbox для размещения элементов */
+    flex-direction: column; /* Вертикальное расположение элементов */
+    width: 100%; /* Ширина 100% от родителя */
+    max-width: 1210px; /* Максимальная ширина */
+    margin: auto; /* Центрирование */
+    background-color: @gray; /* Фоновый цвет */
+    background-image: url(../assets/images/noise.png); /* Фоновое изображение */
+    background-position: 0 0; /* Позиция фона */
+    background-size: auto; /* Размер фона */
+    background-repeat: repeat; /* Повтор фона */
+  }
+
+  &__container {
+    box-sizing: border-box; /* Учитывает padding и border */
+    width: 100%; /* Ширина 100% */
+    max-width: 950px; /* Максимальная ширина */
+    margin: 0 auto; /* Центрирование */
+    padding: 0 40px 40px; /* Внутренние отступы */
+  }
+
+  &__sticky-close {
+    position: sticky; /* Прилипание к верхней части при прокрутке */
+    top: 0; /* Прикрепление к верхнему краю */
+    align-self: flex-end; /* Выравнивание по правому краю */
+    width: 0; /* Ширина 0 (скрыто) */
+    height: 0; /* Высота 0 (скрыто) */
+  }
+
+  &__x-btn {
+    position: absolute; /* Абсолютное позиционирование */
+    top: -30px; /* Расположение выше родителя */
+    right: -30px; /* Расположение справа от родителя */
+  }
+
+  &__title {
+    box-sizing: border-box; /* Учитывает padding и border */
+    display: flex; /* Использование Flexbox */
+    align-items: center; /* Вертикальное выравнивание по центру */
+    margin: -40px 0 70px -85px; /* Отступы вокруг заголовка */
+    padding: 10px 85px; /* Внутренние отступы */
+    width: 595px; /* Ширина заголовка */
+    min-height: 80px; /* Минимальная высота */
+    background-color: @black; /* Фоновый цвет заголовка */
+    text-transform: uppercase; /* Преобразование текста в верхний регистр */
+    font-weight: 400; /* Нагрузка шрифта */
+    font-family: @font2; /* Шрифт */
+    font-size: 22px; /* Размер шрифта */
+    line-height: 1.36; /* Межстрочный интервал */
+    color: @white; /* Цвет текста */
+    letter-spacing: 0.02em; /* Расстояние между буквами */
+    z-index: 1; /* Уровень наложения */
+  }
+
+  &__radio-group {
+    display: flex; /* Включаем Flexbox */
+    flex-direction: column; /* Располагаем элементы в столбик */
+    font-family: @font1;
+    margin: 5px 0; /* Отступы между радио-кнопками */
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  &__block-title {
+    font-size: 30px;
+    line-height: 25px;
+  }
+
+}
+
+.field__container {
+  display: flex;
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+  gap: 57px; /* Отступ между колонками */
+  margin-bottom: 95px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 calc(50% - 57px); /* Каждое поле занимает 50% ширины минус отступ */
+  box-sizing: border-box; /* Учитываем отступы и границы в ширине */
+
+  &__input,
+  &__textarea {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: @white;
+    font-size: 16px;
+    line-height: 1.375;
+  }
+
+  &__title {
+    display: block;
+    margin: 0 0 10px;
+    color: @black;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 1.3;
+    color: @black;
+  }
+
+  &__input {
+    height: 55px;
+    padding: 0 20px;
+  }
+
+  &__textarea {
+    height: 150px;
+    padding: 20px;
+  }
+}
+
+.radio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__item {
     box-sizing: border-box;
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 1210px;
-    margin: auto;
-    background-color: @gray;
-    background-image: url(../assets/images/noise.png);
-    background-position: 0 0;
-    background-size: auto;
-    background-repeat: repeat;
-  }
-  &__container {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 950px;
-    margin: 0 auto;
-    padding: 0 40px 40px;
-  }
-  &__sticky-close {
-    position: sticky;
-    top: 0;
-    align-self: flex-end;
-    width: 0;
-    height: 0;
-  }
-  &__x-btn {
-    position: absolute;
-    top: -30px;
-    right: -30px;
-  }
-  &__title {
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    margin: -40px 0 70px -85px;
-    padding: 10px 85px;
-    width: 595px;
-    min-height: 80px;
-    background-color: @black;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-family: @font2;
-    font-size: 22px;
-    line-height: 1.36;
-    color: @white;
-    letter-spacing: 0.02em;
-    z-index: 1;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    min-height: 23px;
+    padding-left: 23px;
+    color: @black;
+    cursor: pointer;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
+
+
