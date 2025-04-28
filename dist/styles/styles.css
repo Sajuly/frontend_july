@@ -63,27 +63,6 @@ body {
   max-width: 1920px;
   /* Максимальная ширина 1920 пикселей */
 }
-.title-texts {
-  text-decoration: none;
-  /* Убирает подчеркивание текста */
-  border: 1px solid black;
-  /* Граница */
-  font-family: "Lora", serif;
-  font-size: 36px;
-  color: #ffffff;
-  /* Цвет текста для кнопок */
-  background-color: #1f1e1e;
-  text-transform: uppercase;
-  /* Преобразование текста в верхний регистр */
-  display: block;
-  /* Позволяет элементу занимать всю ширину родительского элемента */
-  text-align: center;
-  /* Центрирование текста внутри элемента */
-  margin: 150px auto 150px;
-  /* Центрирование самого элемента и отступ снизу на 150 пикселей */
-  max-width: 670px;
-  /* Максимальная ширина кнопки */
-}
 .main {
   margin-right: auto;
   /* Центрирование элемента справа */
@@ -108,6 +87,61 @@ a {
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
+}
+input,
+textarea,
+select {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+  color: #1f1e1e;
+  font-family: "Open Sans", sans-serif;
+}
+textarea {
+  resize: none;
+}
+input,
+textarea,
+select {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+  color: #1f1e1e;
+  font-family: "Open Sans", sans-serif;
+}
+textarea {
+  resize: none;
+}
+.radio__input {
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(100%) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+.radio__input:checked ~ .radio__mark {
+  background-color: #1f1e1e;
+}
+.check__input {
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(100%) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 .home-about {
   -webkit-box-sizing: border-box;
@@ -757,6 +791,85 @@ a {
   color: #bc3324;
   text-decoration-color: #bc3324;
 }
+.pp {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 90px 95px 50px;
+  background-color: rgba(28, 27, 27, 0.4);
+  backdrop-filter: blur(50px);
+  overflow-y: auto;
+  z-index: 110;
+  display: none;
+}
+.pp__wrapper {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  max-width: 1210px;
+  margin: auto;
+  background-color: #dedede;
+  background-image: url(../assets/images/noise.png);
+  background-position: 0 0;
+  background-size: auto;
+  background-repeat: repeat;
+}
+.pp__container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 40px 40px;
+}
+.pp__sticky-close {
+  position: sticky;
+  top: 0;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: 0;
+  height: 0;
+}
+.pp__x-btn {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+}
+.pp__title {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: -40px 0 70px -85px;
+  padding: 10px 85px;
+  width: 595px;
+  min-height: 80px;
+  background-color: #1f1e1e;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: "Lora", serif;
+  font-size: 22px;
+  line-height: 1.36;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  z-index: 1;
+}
 .events {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -897,9 +1010,52 @@ a {
   width: 202px;
   /* Устанавливает фиксированную ширину блока */
 }
+.title-texts {
+  text-decoration: none;
+  /* Убирает подчеркивание текста */
+  border: 1px solid black;
+  /* Граница */
+  font-family: "Lora", serif;
+  font-size: 36px;
+  color: #ffffff;
+  /* Цвет текста для кнопок */
+  background-color: #1f1e1e;
+  text-transform: uppercase;
+  /* Преобразование текста в верхний регистр */
+  display: block;
+  /* Позволяет элементу занимать всю ширину родительского элемента */
+  text-align: center;
+  /* Центрирование текста внутри элемента */
+  margin: 150px auto 150px;
+  /* Центрирование самого элемента и отступ снизу на 150 пикселей */
+  max-width: 670px;
+  /* Максимальная ширина кнопки */
+}
 .display-none {
   display: none;
 }
 .color-red {
   color: #bc3324;
+}
+.is-hidden {
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(100%) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+.show-event-popup body {
+  overflow: hidden;
+}
+.show-event-popup #eventPP {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }

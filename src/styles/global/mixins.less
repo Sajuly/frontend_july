@@ -7,6 +7,19 @@
   padding-left: 40px;
   padding-right: 40px;
 }
+.title-texts {
+  text-decoration: none; /* Убирает подчеркивание текста */
+  border: 1px solid black; /* Граница */
+  font-family: @font2;
+  font-size: 36px;
+  color: @white; /* Цвет текста для кнопок */
+  background-color: @black;
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  display: block; /* Позволяет элементу занимать всю ширину родительского элемента */
+  text-align: center; /* Центрирование текста внутри элемента */
+  margin: 150px auto 150px; /* Центрирование самого элемента и отступ снизу на 150 пикселей */
+  max-width: 670px; /* Максимальная ширина кнопки */
+}
 
 .display-none {
   display: none;
@@ -16,11 +29,26 @@
   color: @red;
 }
 
+.is-hidden {
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(100%) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
 
-
-
-// .mixin(@width: 100px, @height: 50px) {
-//   width: @width;
-//   height: @height;
-//   /* прочие свойства */
-// }
+.show-event-popup {
+  body {
+    overflow: hidden;
+  }
+  #eventPP {
+    display: flex;
+  }
+}

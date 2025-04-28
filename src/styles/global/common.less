@@ -30,20 +30,6 @@ html, body {
   max-width: 1920px; /* Максимальная ширина 1920 пикселей */
 }
 
-.title-texts {
-  text-decoration: none; /* Убирает подчеркивание текста */
-  border: 1px solid black; /* Граница */
-  font-family: @font2;
-  font-size: 36px;
-  color: @white; /* Цвет текста для кнопок */
-  background-color: @black;
-  text-transform: uppercase; /* Преобразование текста в верхний регистр */
-  display: block; /* Позволяет элементу занимать всю ширину родительского элемента */
-  text-align: center; /* Центрирование текста внутри элемента */
-  margin: 150px auto 150px; /* Центрирование самого элемента и отступ снизу на 150 пикселей */
-  max-width: 670px; /* Максимальная ширина кнопки */
-}
-
 .main {
   //flex устанавливает, что элемент может:
   // занимать доступное пространство (1)
@@ -68,4 +54,45 @@ a {
   max-width: 100%; // это свойство гарантирует, что элемент не выйдет за пределы своего родительского контейнера
   height: auto;
   object-fit: cover; // это свойство позволяет изображению заполнять контейнер, обрезая его при необходимости
+}
+
+input,
+textarea,
+select {
+  box-shadow: none;
+  outline: none;
+  color: @black;
+  font-family: @font1;
+}
+textarea {
+  resize: none;
+}
+
+input,
+textarea,
+select {
+  box-shadow: none;
+  outline: none;
+  color: @black;
+  font-family: @font1;
+}
+textarea {
+  resize: none;
+}
+
+.radio {
+  &__input {
+    .is-hidden();
+    &:checked {
+      &~.radio__mark {
+        background-color: @black;
+      }
+    }
+  }
+}
+
+.check {
+  &__input {
+    .is-hidden();
+  }
 }
