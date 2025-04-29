@@ -1,0 +1,33 @@
+.date-inputs {
+  display: flex; /* Выравнивание полей в одну строку */
+  flex-direction: row; /* Располагаем элементы в колонку */
+  gap: 10px; /* Расстояние между полями */
+}
+
+.form-block-date {
+    grid-area: date;
+}
+
+.field_date {
+
+    &__day,
+    &__month,
+    &__year {
+        width: 55px; /* Ширина поля ввода */
+        height: 55px; /* Высота поля ввода */
+        padding: 5px; /* Внутренний отступ */
+        font-size: 16px; /* Размер шрифта */
+        border: none; /* Убирает границу */
+        background-color: @white; /* Устанавливает белый фон */
+        border-radius: 5px; /* Закругленные углы */
+        line-height: 1.375; /* Высота строки */
+        margin-bottom: 65px;
+        &::placeholder {
+            text-align: center; /* Центрируем текст в placeholder */
+        }
+    }
+
+     &__year {
+        width: 110px; /* Ширина поля ввода */
+     }
+}

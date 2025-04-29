@@ -93,55 +93,130 @@ textarea,
 select {
   -webkit-box-shadow: none;
           box-shadow: none;
+  /* Убирает тень у элементов ввода */
   outline: none;
+  /* Убирает обводку при фокусе */
   color: #1f1e1e;
+  /* Устанавливает цвет текста на черный */
   font-family: "Open Sans", sans-serif;
+  /* Устанавливает шрифт для элементов */
 }
 textarea {
   resize: none;
-}
-input,
-textarea,
-select {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  outline: none;
-  color: #1f1e1e;
-  font-family: "Open Sans", sans-serif;
-}
-textarea {
-  resize: none;
+  /* Запрещает изменение размера текстовой области */
 }
 .radio__input {
   position: absolute !important;
+  /* Абсолютное позиционирование для скрытия элемента */
   width: 0 !important;
+  /* Ширина элемента равна 0 */
   height: 0 !important;
+  /* Высота элемента равна 0 */
   margin: 0 !important;
+  /* Убирает все отступы */
   padding: 0 !important;
+  /* Убирает все внутренние отступы */
   border: 0 !important;
+  /* Убирает границы элемента */
   clip: rect(0 0 0 0) !important;
+  /* Обрезает элемент до нуля */
   clip-path: inset(100%) !important;
+  /* Скрывает элемент с помощью clip-path */
   white-space: nowrap !important;
+  /* Убирает перенос строк */
   overflow: hidden !important;
+  /* Скрывает переполнение содержимого */
   visibility: hidden !important;
+  /* Делает элемент невидимым */
   pointer-events: none !important;
+  /* Игнорирует события указателя (клики и т.д.) */
+  /* Скрывает радиокнопку */
 }
 .radio__input:checked ~ .radio__mark {
   background-color: #1f1e1e;
+  /* Изменяет фон метки при выборе */
+}
+.fild__date {
+  position: absolute !important;
+  /* Абсолютное позиционирование для скрытия элемента */
+  width: 0 !important;
+  /* Ширина элемента равна 0 */
+  height: 0 !important;
+  /* Высота элемента равна 0 */
+  margin: 0 !important;
+  /* Убирает все отступы */
+  padding: 0 !important;
+  /* Убирает все внутренние отступы */
+  border: 0 !important;
+  /* Убирает границы элемента */
+  clip: rect(0 0 0 0) !important;
+  /* Обрезает элемент до нуля */
+  clip-path: inset(100%) !important;
+  /* Скрывает элемент с помощью clip-path */
+  white-space: nowrap !important;
+  /* Убирает перенос строк */
+  overflow: hidden !important;
+  /* Скрывает переполнение содержимого */
+  visibility: hidden !important;
+  /* Делает элемент невидимым */
+  pointer-events: none !important;
+  /* Игнорирует события указателя (клики и т.д.) */
 }
 .check__input {
   position: absolute !important;
+  /* Абсолютное позиционирование для скрытия элемента */
   width: 0 !important;
+  /* Ширина элемента равна 0 */
   height: 0 !important;
+  /* Высота элемента равна 0 */
   margin: 0 !important;
+  /* Убирает все отступы */
   padding: 0 !important;
+  /* Убирает все внутренние отступы */
   border: 0 !important;
+  /* Убирает границы элемента */
   clip: rect(0 0 0 0) !important;
+  /* Обрезает элемент до нуля */
   clip-path: inset(100%) !important;
+  /* Скрывает элемент с помощью clip-path */
   white-space: nowrap !important;
+  /* Убирает перенос строк */
   overflow: hidden !important;
+  /* Скрывает переполнение содержимого */
   visibility: hidden !important;
+  /* Делает элемент невидимым */
   pointer-events: none !important;
+  /* Игнорирует события указателя (клики и т.д.) */
+  /* Скрываем стандартный элемент <input> */
+}
+.check__input:checked ~ .check__mark {
+  background-color: #1f1e1e;
+  /* Устанавливает фоновый цвет элемента в черный (переменная @black) */
+}
+.check__input:checked ~ .check__mark::after {
+  /* Псевдоэлемент, который добавляется после содержимого элемента */
+  content: "";
+  /* Не отображает текст; используется для создания визуальных эффектов */
+  display: block;
+  /* Делает псевдоэлемент блочным, чтобы он занимал пространство */
+  position: absolute;
+  /* Позволяет позиционировать псевдоэлемент относительно ближайшего родителя с относительным позиционированием */
+  left: 7px;
+  /* Устанавливает расстояние от левого края родителя */
+  top: 2px;
+  /* Устанавливает расстояние от верхнего края родителя */
+  width: 6px;
+  /* Ширина псевдоэлемента */
+  height: 12px;
+  /* Высота псевдоэлемента */
+  border-bottom: 2px solid #ffffff;
+  /* Устанавливает нижнюю границу в 2px белого цвета (переменная @white) */
+  border-right: 2px solid #ffffff;
+  /* Устанавливает правую границу в 2px белого цвета */
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  /* Поворачивает псевдоэлемент на 45 градусов, создавая эффект стрелки или галочки */
 }
 .home-about {
   -webkit-box-sizing: border-box;
@@ -943,7 +1018,14 @@ textarea {
   font-size: 30px;
   line-height: 25px;
 }
-.field__container {
+.field__container1 {
+  display: grid;
+  /* Используем сетку */
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 66px;
+  grid-template-areas: "radio visitors" "radio date";
+}
+.field__container2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -952,93 +1034,7 @@ textarea {
   /* Позволяет элементам переноситься на новую строку */
   gap: 57px;
   /* Отступ между колонками */
-  margin-bottom: 95px;
-}
-.field {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 calc(50% - 57px);
-          flex: 1 1 calc(50% - 57px);
-  /* Каждое поле занимает 50% ширины минус отступ */
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  /* Учитываем отступы и границы в ширине */
-}
-.field__input,
-.field__textarea {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: block;
-  width: 100%;
-  border: none;
-  border-radius: 5px;
-  background-color: #ffffff;
-  font-size: 16px;
-  line-height: 1.375;
-}
-.field__title {
-  display: block;
-  margin: 0 0 10px;
-  color: #1f1e1e;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 25px;
-}
-.field__label {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 16px;
-  line-height: 1.3;
-  color: #1f1e1e;
-}
-.field__input {
-  height: 55px;
-  padding: 0 20px;
-}
-.field__textarea {
-  height: 150px;
-  padding: 20px;
-}
-.radio {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-.radio__item {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  margin-bottom: 15px;
-  min-height: 23px;
-  padding-left: 23px;
-  color: #1f1e1e;
-  cursor: pointer;
-}
-.radio__item:last-child {
-  margin-bottom: 0;
+  margin-bottom: 55px;
 }
 .events {
   display: -webkit-box;
@@ -1180,6 +1176,316 @@ textarea {
   width: 202px;
   /* Устанавливает фиксированную ширину блока */
 }
+.form-block-radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* Использует флексбокс для размещения элементов */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* Располагает элементы вертикально */
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  /* Выравнивание элементов по началу */
+  margin-bottom: 58px;
+  grid-area: radio;
+}
+.form-block-radio__mark {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* Учитывает границы и отступы в ширине и высоте элемента */
+  display: block;
+  /* Элемент отображается как блочный */
+  position: absolute;
+  /* Абсолютное позиционирование относительно ближайшего родителя с относительным позиционированием */
+  left: 0;
+  /* Привязывает элемент к левому краю родителя */
+  top: 0;
+  /* Привязывает элемент к верхнему краю родителя */
+  width: 23px;
+  /* Ширина элемента */
+  height: 23px;
+  /* Высота элемента */
+  border: 2px solid #1f1e1e;
+  /* Устанавливает черную границу толщиной 2px */
+  border-radius: 50%;
+  /* Скругляет углы, создавая круглый элемент */
+  padding: 3px;
+  /* Внутренний отступ вокруг содержимого */
+  background-clip: content-box;
+  /* Задает область фона, чтобы не перекрывать границы */
+  background-color: transparent;
+  /* Устанавливает прозрачный фон */
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  /* Плавный переход цвета фона за 0.2 секунды */
+}
+.form-block-radio__item {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* Учитывает границы и отступы */
+  position: relative;
+  /* Позволяет позиционировать вложенные элементы */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* Использует флексбокс для размещения элементов */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* Вертикальное расположение элементов */
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  /* Выравнивание по началу */
+  margin-bottom: 15px;
+  /* Отступ снизу */
+  min-height: 23px;
+  /* Минимальная высота элемента */
+  padding-left: 23px;
+  /* Внутренний отступ слева */
+  color: #1f1e1e;
+  /* Черный цвет текста */
+  cursor: pointer;
+  /* Указатель при наведении */
+}
+.form-block-radio__item:last-child {
+  margin-bottom: 0;
+  /* Убирает отступ у последнего элемента */
+}
+.form-block-radio__label {
+  margin-left: 20px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+.check {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* Учитывает границы и отступы в ширине и высоте элемента */
+  position: relative;
+  /* Позволяет позиционировать дочерние элементы относительно этого элемента */
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  /* Использует флексбокс для выравнивания дочерних элементов в строку */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* Устанавливает направление флекс-элементов вертикально */
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  /* Выравнивает дочерние элементы по началу контейнера */
+  min-height: 24px;
+  /* Устанавливает минимальную высоту элемента */
+  padding-top: 2px;
+  /* Отступ сверху */
+  padding-left: 24px;
+  /* Отступ слева */
+  color: #1f1e1e;
+  /* Устанавливает цвет текста (черный) */
+  margin-top: 15px;
+  /* Отступ сверху от соседних элементов */
+  margin-bottom: 40 px;
+  /* Отступ снизу от соседних элементов */
+  cursor: pointer;
+  /* Изменяет курсор на указатель при наведении */
+}
+.check__mark {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* Учитывает границы и отступы в ширине и высоте */
+  display: block;
+  /* Делает элемент блочным */
+  position: absolute;
+  /* Позволяет свободно позиционировать элемент */
+  left: 0;
+  /* Позиция слева */
+  top: 0;
+  /* Позиция сверху */
+  width: 24px;
+  /* Ширина элемента */
+  height: 24px;
+  /* Высота элемента */
+  border: 1px solid #1f1e1e;
+  /* Черная рамка вокруг элемента */
+}
+.check__label {
+  margin-left: 15px;
+  /* Отступ слева от метки */
+  font-weight: 300;
+  /* Устанавливает легкий шрифт */
+  font-size: 16px;
+  /* Размер шрифта */
+  line-height: 22px;
+  /* Высота строки */
+}
+.check__label--s {
+  font-size: 14px;
+  /* Размер шрифта для маленькой метки */
+  line-height: 19px;
+  /* Высота строки для маленькой метки */
+}
+.field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* Располагает элементы по вертикали */
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 calc(50% - 57px);
+          flex: 1 1 calc(50% - 57px);
+  /* Каждое поле занимает 50% ширины минус отступ */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* Учитываем отступы и границы в ширине */
+}
+.field__input,
+.field__textarea {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* Учитывает границы и отступы в ширине и высоте */
+  display: block;
+  /* Элементы отображаются как блочные */
+  width: 100%;
+  /* Ширина 100% от родительского элемента */
+  border: none;
+  /* Убирает границу */
+  border-radius: 5px;
+  /* Скругляет углы */
+  background-color: #ffffff;
+  /* Устанавливает белый фон */
+  font-size: 16px;
+  /* Размер шрифта */
+  line-height: 1.375;
+  /* Высота строки */
+}
+.field__title {
+  display: block;
+  /* Блочное отображение заголовка */
+  margin: 0 0 10px;
+  /* Отступы снизу */
+  color: #1f1e1e;
+  /* Черный цвет текста */
+  font-weight: 700;
+  /* Жирный шрифт */
+  font-size: 18px;
+  /* Размер шрифта заголовка */
+  line-height: 25px;
+  /* Высота строки заголовка */
+}
+.field__label {
+  display: block;
+  /* Блочное отображение метки */
+  margin-bottom: 5px;
+  /* Отступ снизу */
+  font-size: 16px;
+  /* Размер шрифта метки */
+  line-height: 1.3;
+  /* Высота строки метки */
+  color: #1f1e1e;
+  /* Черный цвет текста */
+}
+.field__input {
+  height: 55px;
+  /* Высота поля ввода */
+  padding: 0 20px;
+  /* Внутренние отступы по горизонтали */
+}
+.field__textarea {
+  height: 150px;
+  /* Высота текстовой области */
+  padding: 20px;
+  /* Внутренние отступы */
+}
+.field__select {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 55px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff;
+  font-size: 16px;
+  line-height: 1.375;
+}
+.visitors {
+  grid-area: visitors;
+}
+.date-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* Выравнивание полей в одну строку */
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  /* Располагаем элементы в колонку */
+  gap: 10px;
+  /* Расстояние между полями */
+}
+.form-block-date {
+  grid-area: date;
+}
+.field_date__day,
+.field_date__month,
+.field_date__year {
+  width: 55px;
+  /* Ширина поля ввода */
+  height: 55px;
+  /* Высота поля ввода */
+  padding: 5px;
+  /* Внутренний отступ */
+  font-size: 16px;
+  /* Размер шрифта */
+  border: none;
+  /* Убирает границу */
+  background-color: #ffffff;
+  /* Устанавливает белый фон */
+  border-radius: 5px;
+  /* Закругленные углы */
+  line-height: 1.375;
+  /* Высота строки */
+  margin-bottom: 65px;
+}
+.field_date__day::-webkit-input-placeholder, .field_date__month::-webkit-input-placeholder, .field_date__year::-webkit-input-placeholder {
+  text-align: center;
+  /* Центрируем текст в placeholder */
+}
+.field_date__day::-moz-placeholder, .field_date__month::-moz-placeholder, .field_date__year::-moz-placeholder {
+  text-align: center;
+  /* Центрируем текст в placeholder */
+}
+.field_date__day:-ms-input-placeholder, .field_date__month:-ms-input-placeholder, .field_date__year:-ms-input-placeholder {
+  text-align: center;
+  /* Центрируем текст в placeholder */
+}
+.field_date__day::-ms-input-placeholder, .field_date__month::-ms-input-placeholder, .field_date__year::-ms-input-placeholder {
+  text-align: center;
+  /* Центрируем текст в placeholder */
+}
+.field_date__day::placeholder,
+.field_date__month::placeholder,
+.field_date__year::placeholder {
+  text-align: center;
+  /* Центрируем текст в placeholder */
+}
+.field_date__year {
+  width: 110px;
+  /* Ширина поля ввода */
+}
 .title-texts {
   text-decoration: none;
   /* Убирает подчеркивание текста */
@@ -1209,23 +1515,37 @@ textarea {
 }
 .is-hidden {
   position: absolute !important;
+  /* Абсолютное позиционирование для скрытия элемента */
   width: 0 !important;
+  /* Ширина элемента равна 0 */
   height: 0 !important;
+  /* Высота элемента равна 0 */
   margin: 0 !important;
+  /* Убирает все отступы */
   padding: 0 !important;
+  /* Убирает все внутренние отступы */
   border: 0 !important;
+  /* Убирает границы элемента */
   clip: rect(0 0 0 0) !important;
+  /* Обрезает элемент до нуля */
   clip-path: inset(100%) !important;
+  /* Скрывает элемент с помощью clip-path */
   white-space: nowrap !important;
+  /* Убирает перенос строк */
   overflow: hidden !important;
+  /* Скрывает переполнение содержимого */
   visibility: hidden !important;
+  /* Делает элемент невидимым */
   pointer-events: none !important;
+  /* Игнорирует события указателя (клики и т.д.) */
 }
 .show-event-popup body {
   overflow: hidden;
+  /* Отключает прокрутку страницы при открытом попапе */
 }
 .show-event-popup #eventPP {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  /* Показывает попап с использованием flexbox */
 }

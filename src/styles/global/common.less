@@ -59,40 +59,54 @@ a {
 input,
 textarea,
 select {
-  box-shadow: none;
-  outline: none;
-  color: @black;
-  font-family: @font1;
+  box-shadow: none; /* Убирает тень у элементов ввода */
+  outline: none;    /* Убирает обводку при фокусе */
+  color: @black;    /* Устанавливает цвет текста на черный */
+  font-family: @font1; /* Устанавливает шрифт для элементов */
 }
 textarea {
-  resize: none;
-}
-
-input,
-textarea,
-select {
-  box-shadow: none;
-  outline: none;
-  color: @black;
-  font-family: @font1;
-}
-textarea {
-  resize: none;
+  resize: none; /* Запрещает изменение размера текстовой области */
 }
 
 .radio {
   &__input {
-    .is-hidden();
+    .is-hidden(); /* Скрывает радиокнопку */
     &:checked {
       &~.radio__mark {
-        background-color: @black;
+        background-color: @black; /* Изменяет фон метки при выборе */
       }
     }
   }
 }
 
+.fild {
+    &__date {
+      .is-hidden();
+    }
+}
+
+
+
 .check {
   &__input {
-    .is-hidden();
+    .is-hidden();  /* Скрываем стандартный элемент <input> */
+
+    &:checked {
+      & ~ .check__mark {
+        background-color: @black; /* Устанавливает фоновый цвет элемента в черный (переменная @black) */
+        &::after { /* Псевдоэлемент, который добавляется после содержимого элемента */
+          content: ""; /* Не отображает текст; используется для создания визуальных эффектов */
+          display: block; /* Делает псевдоэлемент блочным, чтобы он занимал пространство */
+          position: absolute; /* Позволяет позиционировать псевдоэлемент относительно ближайшего родителя с относительным позиционированием */
+          left: 7px; /* Устанавливает расстояние от левого края родителя */
+          top: 2px; /* Устанавливает расстояние от верхнего края родителя */
+          width: 6px; /* Ширина псевдоэлемента */
+          height: 12px; /* Высота псевдоэлемента */
+          border-bottom: 2px solid @white; /* Устанавливает нижнюю границу в 2px белого цвета (переменная @white) */
+          border-right: 2px solid @white; /* Устанавливает правую границу в 2px белого цвета */
+          transform: rotate(45deg); /* Поворачивает псевдоэлемент на 45 градусов, создавая эффект стрелки или галочки */
+        }
+      }
+    }
   }
 }

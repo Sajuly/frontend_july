@@ -30,25 +30,25 @@
 }
 
 .is-hidden {
-  position: absolute !important;
-  width: 0 !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  clip: rect(0 0 0 0) !important;
-  clip-path: inset(100%) !important;
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
+  position: absolute !important; /* Абсолютное позиционирование для скрытия элемента */
+  width: 0 !important; /* Ширина элемента равна 0 */
+  height: 0 !important; /* Высота элемента равна 0 */
+  margin: 0 !important; /* Убирает все отступы */
+  padding: 0 !important; /* Убирает все внутренние отступы */
+  border: 0 !important; /* Убирает границы элемента */
+  clip: rect(0 0 0 0) !important; /* Обрезает элемент до нуля */
+  clip-path: inset(100%) !important; /* Скрывает элемент с помощью clip-path */
+  white-space: nowrap !important; /* Убирает перенос строк */
+  overflow: hidden !important; /* Скрывает переполнение содержимого */
+  visibility: hidden !important; /* Делает элемент невидимым */
+  pointer-events: none !important; /* Игнорирует события указателя (клики и т.д.) */
 }
 
 .show-event-popup {
   body {
-    overflow: hidden;
+    overflow: hidden; /* Отключает прокрутку страницы при открытом попапе */
   }
   #eventPP {
-    display: flex;
+    display: flex; /* Показывает попап с использованием flexbox */
   }
 }

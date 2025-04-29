@@ -83,81 +83,27 @@
   }
 
 }
+.field__container1 {
+  display: grid; /* Используем сетку */;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 66px;
+   grid-template-areas:
+        "radio visitors"
+        "radio date"
 
-.field__container {
+}
+
+.field__container2 {  // контакты
   display: flex;
   flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
   gap: 57px; /* Отступ между колонками */
-  margin-bottom: 95px;
+  margin-bottom: 55px;
 }
 
-.field {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 calc(50% - 57px); /* Каждое поле занимает 50% ширины минус отступ */
-  box-sizing: border-box; /* Учитываем отступы и границы в ширине */
 
-  &__input,
-  &__textarea {
-    box-sizing: border-box;
-    display: block;
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    background-color: @white;
-    font-size: 16px;
-    line-height: 1.375;
-  }
 
-  &__title {
-    display: block;
-    margin: 0 0 10px;
-    color: @black;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 25px;
-  }
 
-  &__label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 16px;
-    line-height: 1.3;
-    color: @black;
-  }
 
-  &__input {
-    height: 55px;
-    padding: 0 20px;
-  }
 
-  &__textarea {
-    height: 150px;
-    padding: 20px;
-  }
-}
-
-.radio {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  &__item {
-    box-sizing: border-box;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 15px;
-    min-height: 23px;
-    padding-left: 23px;
-    color: @black;
-    cursor: pointer;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
 
 
