@@ -1,0 +1,24 @@
+.form_buttons {
+    display: flex;
+    justify-content: center; /* Центрирует элементы по горизонтали */
+    gap: 57px; /* Отступ между колонками */
+    margin: 40px auto; /* верх и низ по 40px, право и лево автоматически */
+
+    &__submit,
+    &__close {
+        padding: 15px 156px; /* Внутренние отступы */
+        font-size: 16px;
+        line-height: 22px;
+
+    }
+    &__submit {
+        border: 1px solid black; /* Граница */
+        font-family: @font1;
+        background-color: transparent; /* Полностью прозрачный фон */
+    }
+    &__close {
+        text-decoration: underline; /* Подчеркивание текста */
+        text-decoration-thickness: 1px; /* Установка толщины подчеркивания */
+        text-decoration-color: rgb(129, 129, 129); /* цвет подчеркивания */
+    }
+}

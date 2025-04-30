@@ -8,11 +8,18 @@
     grid-area: date;
 }
 
+.fild {
+    &__date {
+      .is-hidden();
+    }
+}
+
 .field_date {
 
     &__day,
     &__month,
     &__year {
+        box-sizing: border-box; /* Учитывает padding и border */
         width: 55px; /* Ширина поля ввода */
         height: 55px; /* Высота поля ввода */
         padding: 5px; /* Внутренний отступ */
@@ -21,13 +28,10 @@
         background-color: @white; /* Устанавливает белый фон */
         border-radius: 5px; /* Закругленные углы */
         line-height: 1.375; /* Высота строки */
-        margin-bottom: 65px;
-        &::placeholder {
-            text-align: center; /* Центрируем текст в placeholder */
-        }
+        text-align: center; /* Центрируем текст в placeholder */
     }
 
-     &__year {
-        width: 110px; /* Ширина поля ввода */
-     }
+    &__year {
+       width: 110px; /* Ширина поля ввода */
+    }
 }

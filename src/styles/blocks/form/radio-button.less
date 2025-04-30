@@ -5,6 +5,15 @@
   margin-bottom: 58px;
   grid-area: radio;
 
+  &__input {
+    .is-hidden(); /* Скрывает радиокнопку */
+    &:checked {
+      &~.form-block-radio__mark {
+        background-color: @black; /* Изменяет фон метки при выборе */
+      }
+    }
+  }
+
   &__mark {
     box-sizing: border-box; /* Учитывает границы и отступы в ширине и высоте элемента */
     display: block; /* Элемент отображается как блочный */
@@ -43,4 +52,6 @@
     font-size: 16px;
     line-height: 22px;
   }
+
 }
+
