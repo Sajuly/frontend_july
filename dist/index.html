@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <!--class="show-event-popup"-->
 <html lang="ru">
 
@@ -11,7 +12,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <!--    Атрибут name указывает браузеру, какую именно информацию о странице мы ему сообщаем. В данном случае это viewport.-->
+  <!--    Далее идет набор параметров в атрибуте content:-->
+  <!--   - параметр (width=device-width) отвечает за то, чтобы ширина видимой области веб-страницы соответствовала CSS-ширине-->
+  <!--    устройства (dip);-->
+  <!--   - параметр (initial-scale=1) устанавливает первоначальный масштаб веб-страницы. Значение 1 означает, что масштаб равен-->
+  <!--    100%;-->
+  <!--   - три последующих параметра запрещают пользователю самостоятельно изменять масштаб странички. Наш дизайн полностью-->
+  <!--    адаптивен, а случайное или намеренное масштабирование даст в итоге плохой пользовательский опыт, чего нам хотелось-->
+  <!--    бы избежать.-->
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
   <title>Lenni Art</title>
+
 </head>
 
 
@@ -32,10 +45,26 @@
         <a href="#" class="page-header__nav-link">Контакты</a>
       </nav>
 
-      <div class="page-header__right-block">
-        <a href="#" class="btn page-header__user-btn">
-          Войти
+      <div class="page-header__nav-user">
+        <a href="#" class="page-header__nav-user-link">
+          Александр С.
         </a>
+        <a href="#" class="page-header__nav-logout">
+          <svg class="page-header__nav-logout-icon" width="24" height="24">
+            <use xlink:href="assets/icons/symbols.svg#door"></use>
+          </svg>
+        </a>
+      </div>
+
+      <div class="page-header__right-block">
+        <a href="#" class="page-header__user-btn">
+          Войти
+          <svg class="page-header__user-icon" width="21" height="18">
+            <use xlink:href="assets/icons/symbols.svg#user"></use>
+          </svg>
+        </a>
+
+        <button type="button" class="page-header__nav-toggle"></button>
       </div>
 
     </div>
@@ -279,123 +308,9 @@
 
     </main>
 
-    <form class="reserve">
-
-      <div class="reserve__container">
-        <div class="reserve__checks">
-          <h4 class="reserve__section-title">Забронировать столик</h4>
-
-          <div class="reserve__check-container">
-            <label class="reserve__check check check--red">
-              <input type="checkbox" name="table_1" class="check__input" />
-              <span class="check__mark"></span>
-              <span class="check__label">1 стол</span>
-            </label>
-
-            <label class="reserve__check check">
-              <input type="checkbox" name="table_2" class="check__input" />
-              <span class="check__mark"></span>
-              <span class="check__label">2 стол</span>
-            </label>
-
-            <label class="reserve__check check">
-              <input type="checkbox" name="table_3" class="check__input" />
-              <span class="check__mark"></span>
-              <span class="check__label">3 стол</span>
-            </label>
 
 
-            <label class="reserve__check check check--red">
-              <input type="checkbox" name="table_4" class="check__input" />
-              <span class="check__mark"></span>
-              <span class="check__label">4 стол</span>
-            </label>
 
-            <!-- Еще чекбоксы -->
-            <label class="reserve__check check check--disabled">
-              <input type="checkbox" name="table_5" class="check__input" disabled />
-              <span class="check__mark"></span>
-              <span class="check__label">5 стол </span>
-            </label>
-
-            <label class="reserve__check check">
-              <input type="checkbox" name="table_6" class="check__input" />
-              <span class="check__mark"></span>
-              <span class="check__label">6 стол</span>
-            </label>
-
-            <label class="reserve__check check check--red">
-              <input type="checkbox" name="table_7" class="check__input" />
-              <span class="check__mark"></span>
-              <span class="check__label">7 стол</span>
-            </label>
-
-            <label class="reserve__check check check--red">
-              <input type="checkbox" name="table_8" class="check__input" />
-              <span class="check__mark"></span>
-              <span class="check__label">8 стол</span>
-            </label>
-
-            <label class="reserve__check check check--red">
-              <input type="checkbox" name="table_9" class="check__input" />
-              <span class="check__mark"></span>
-              <span class="check__label">9 стол</span>
-            </label>
-
-            <label class="reserve__check check">
-              <input type="checkbox" name="table_10" class="check__input" />
-              <span class="check__mark"></span>
-              <span class="check__label">10 стол</span>
-            </label>
-
-            <label class="reserve__check check">
-              <input type="checkbox" name="table_11" class="check__input" />
-              <span class="check__mark"></span>
-              <span class="check__label">11 стол</span>
-            </label>
-          </div>
-
-        </div>
-
-        <div class="reserve__scheme">
-
-          <div class="reserve__scheme-container">
-            <h4 class="reserve__scheme-title">Сцена</h4>
-
-            <div class="reserve__scheme-wrapper">
-              <svg class="reserve__scene scene" width="780" height="399" viewBox="0 0 780 399" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="assets/icons/symbols.svg#map"></use>
-              </svg>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="reserve__order">
-
-        <h4 class="reserve__section-title">Ваши пригласительные билеты</h4>
-
-        <div class="reserve__tickets-list">
-          <div class="reserve__tickets">
-            <div class="reserve__qty" data-caption="шт." data-price="1400">0</div>
-            <div class="reserve__sum" data-currency="₽">0</div>
-          </div>
-          <div class="reserve__tickets">
-            <div class="reserve__qty" data-caption="шт." data-price="1250">0</div>
-            <div class="reserve__sum" data-currency="₽">0</div>
-          </div>
-        </div>
-
-        <div class="reserve__total" data-caption="Сумма" data-currency="₽">0</div>
-
-        <button type="submit" class="btn btn--red reserve__submit">
-          Купить билеты
-        </button>
-
-      </div>
-
-    </form>
 
   </div>
 

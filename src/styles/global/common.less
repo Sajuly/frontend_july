@@ -22,6 +22,13 @@ html, body {
   line-height: 1.375; /* Высота строки */
   overflow-x: hidden;
   padding-top: 147px; /* Отступ сверху, чтобы учесть фиксированный заголовок */
+
+  @media @bw1660 {
+    padding-top: 111px;
+  }
+  @media @bw768 {
+    padding-top: 70px;
+  }
 }
 
 .centre-card {
