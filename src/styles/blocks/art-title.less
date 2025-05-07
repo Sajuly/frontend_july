@@ -1,24 +1,22 @@
 .art-title {
-//   .width_624();
+  padding-top: 100px;
   @media @bw1660 {
-    margin-bottom: 130px;
+    margin-bottom: 100px;
   }
   @media @bw1340 {
     min-height: 52px;
-    margin-bottom: 100px;
-    padding: 11px 40px;
+    margin-bottom: 60px;
     font-size: 24px;
   }
-
   @media @bw768 {
     min-height: 42px;
-    margin-bottom: 80px;
-    padding: 11px 20px;
+    margin-bottom: 50px;
     font-size: 20px;
   }
-
   @media @bw600 {
-    font-size: 16px;
+    min-height: 17px;
+    margin-bottom: 30px;
+
   }
   &__text {
     vertical-align: middle; /* Вертикальное выравнивание по центру */
@@ -28,11 +26,38 @@
     line-height: 58px; /* Высота строки 58 пикселей */
     text-align: center; /* Центрирование текста */
     text-transform: uppercase; /* Преобразование текста в верхний регистр */
+    @media @bw1340 {
+        padding: 11px 40px;
+        font-size: 35px;
+        line-height: 45px;
+    }
+    @media @bw768 {
+        padding: 11px 20px;
+        font-size: 30px;
+        line-height: 38px;
+    }
+    @media @bw600 {
+        padding: 11px 10px;
+        font-size: 25px;
+        line-height: 17px;
+    }
   }
 
   &__lenni-picture {
     display: flex; /* Включаем Flexbox для картинки */
     justify-content: center; /* Центрируем содержимое по горизонтали */
     width: 100%; /* Задаем ширину контейнера */
+    padding-top: 16.927%;
+    position: relative;
+    margin: 0;
+  }
+
+  &__images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }

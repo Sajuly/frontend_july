@@ -469,6 +469,9 @@ textarea {
   background-color: #bc3324;
   color: white;
 }
+.art-title {
+  padding-top: 100px;
+}
 .art-title__text {
   vertical-align: middle;
   /* Вертикальное выравнивание по центру */
@@ -496,23 +499,35 @@ textarea {
   /* Центрируем содержимое по горизонтали */
   width: 100%;
   /* Задаем ширину контейнера */
+  padding-top: 16.927%;
+  position: relative;
+  margin: 0;
+}
+.art-title__images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .i-want {
+  max-width: 624px;
+  margin: 0 auto;
+  /* Центрируем контейнер */
   display: grid;
   /* Используем Grid Layout */
-  grid-template-areas: "text" "btns" "about";
-  /* Определяем области для элементов */
-  grid-template-columns: 1fr;
+  grid-template-areas: "text text" "btn1 btn2";
+  grid-template-columns: 1fr 1fr;
   /* Одна колонка */
-  grid-template-rows: auto 80px;
-  /* Высота строк: автоматическая для текста, 100px для кнопок, автоматическая для ссылки "О нас" */
   justify-items: center;
   /* Центрируем элементы по горизонтали */
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   /* Центрируем элементы по вертикали */
-  gap: 20px;
+  gap: 40px;
   /* Промежутки между элементами */
 }
 .i-want__text {
@@ -524,44 +539,39 @@ textarea {
   /* Нормальный вес шрифта */
   font-size: 22px;
   /* Размер шрифта 22 пикселя */
-  line-height: 30px;
+  max-height: 33.333%;
   /* Высота строки 30 пикселей */
   letter-spacing: 2%;
-  /* Межбуквенный интервал 2% */
+  /* Меж буквенный интервал 2% */
   text-transform: uppercase;
   /* Преобразование текста в верхний регистр */
 }
-.i-want__btns {
-  grid-area: btns;
-  /* Назначаем область для кнопок */
-  display: grid;
-  /* Используем Grid для кнопок */
-  grid-template-columns: 1fr 1fr;
-  /* Две колонки */
-  justify-items: center;
-  /* Центрируем кнопки по горизонтали */
-  gap: 150px;
-  /* Промежутки между кнопками */
-}
-.i-want__btns__btn1,
-.i-want__btns__btn2 {
+.i-want__btn1,
+.i-want__btn2 {
   text-decoration: none;
   /* Убирает подчеркивание текста */
   border: 1px solid black;
   /* Граница */
-  padding: 15px 25px;
+  padding: 15px 40px;
   /* Отступы для кнопок */
   text-align: center;
   line-height: 1.5;
   /* Высота строки для текста кнопок */
-  width: 100%;
+  justify-self: center;
 }
-.i-want__btns__btn1 {
+.i-want__btn1 {
+  grid-area: btn1;
   color: #ffffff;
   /* Цвет текста для кнопок */
   background-color: #bc3324;
-  border: 1px solid #bc3324;
-  /* Убираем границу только у btn1 */
+  border: none;
+  justify-self: start;
+  /* Выравниваем btn1 по левому краю */
+}
+.i-want__btn2 {
+  grid-area: btn2;
+  justify-self: end;
+  /* Выравниваем btn2 по правому краю */
 }
 .event-card {
   display: -webkit-box;
@@ -2033,6 +2043,12 @@ body {
   text-decoration-color: #818181;
   /* цвет подчеркивания */
 }
+.width_624 {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  max-width: 624px;
+}
 .title-texts {
   text-decoration: none;
   /* Убирает подчеркивание текста */
@@ -2051,8 +2067,9 @@ body {
   /* Центрирование текста внутри элемента */
   margin: 150px auto 150px;
   /* Центрирование самого элемента и отступ снизу на 150 пикселей */
-  max-width: 670px;
+  width: 624px;
   /* Максимальная ширина кнопки */
+  max-height: 10.264%;
 }
 .display-none {
   display: none;
@@ -2105,7 +2122,7 @@ body {
     gap: 100px 40px;
   }
   .art-title {
-    margin-bottom: 130px;
+    margin-bottom: 100px;
   }
   .page-header {
     height: 111px;
@@ -2133,6 +2150,9 @@ body {
   .page-header__right-block {
     width: 152px;
   }
+  .width_624 {
+    max-width: 604px;
+  }
 }
 @media (max-width: 1339px) {
   .centre-card {
@@ -2151,9 +2171,22 @@ body {
   }
   .art-title {
     min-height: 52px;
-    margin-bottom: 100px;
-    padding: 11px 40px;
+    margin-bottom: 60px;
     font-size: 24px;
+  }
+  .art-title__text {
+    padding: 11px 40px;
+    font-size: 35px;
+    line-height: 45px;
+  }
+  .i-want {
+    max-width: 604px;
+  }
+  .width_624 {
+    max-width: 566px;
+  }
+  .title-texts {
+    max-width: 604px;
   }
 }
 @media (max-width: 1019px) {
@@ -2283,9 +2316,20 @@ body {
   }
   .art-title {
     min-height: 42px;
-    margin-bottom: 80px;
-    padding: 11px 20px;
+    margin-bottom: 50px;
     font-size: 20px;
+  }
+  .art-title__text {
+    padding: 11px 20px;
+    font-size: 30px;
+    line-height: 38px;
+  }
+  .i-want {
+    max-width: 566px;
+  }
+  .i-want__text {
+    min-height: 32px;
+    font-size: 16px;
   }
   .page-header {
     height: 70px;
@@ -2300,6 +2344,9 @@ body {
   .page-header {
     margin-left: 5px;
   }
+  .title-texts {
+    max-width: 566px;
+  }
 }
 @media (max-width: 599px) {
   .home-about {
@@ -2308,11 +2355,45 @@ body {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: columns;
-            flex-direction: columns;
+        -ms-flex-direction: column;
+            flex-direction: column;
     gap: 30px;
   }
   .art-title {
-    font-size: 16px;
+    min-height: 17px;
+    margin-bottom: 30px;
+  }
+  .art-title__text {
+    padding: 11px 10px;
+    font-size: 25px;
+    line-height: 17px;
+  }
+  .i-want {
+    grid-template-areas: "text" "btn1" "btn2";
+    grid-template-columns: 1fr;
+  }
+  .i-want__text {
+    min-height: 22px;
+  }
+  .i-want__btn1,
+  .i-want__btn2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* Используем Flexbox для кнопок */
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /* Центрируем текст по горизонтали */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /* Центрируем текст по вертикали */
+    padding: 0px;
+    width: 100%;
+    height: 49px;
+  }
+  .title-texts {
+    max-width: 100%;
   }
 }

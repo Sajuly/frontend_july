@@ -17,7 +17,7 @@
   }
 }
 
-.width_624() {
+.width_624 {
   box-sizing: border-box;
   width: 100%;
   max-width: 624px;
@@ -40,7 +40,17 @@
   display: block; /* Позволяет элементу занимать всю ширину родительского элемента */
   text-align: center; /* Центрирование текста внутри элемента */
   margin: 150px auto 150px; /* Центрирование самого элемента и отступ снизу на 150 пикселей */
-  max-width: 670px; /* Максимальная ширина кнопки */
+  width: 624px; /* Максимальная ширина кнопки */
+  max-height: 10.264%;
+  @media @bw1340 {
+    max-width: 604px;
+  }
+  @media @bw768 {
+    max-width: 566px;
+  }
+  @media @bw600 {
+    max-width: 100%;
+  }
 }
 
 .display-none {
