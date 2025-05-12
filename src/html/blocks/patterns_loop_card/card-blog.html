@@ -1,27 +1,38 @@
-<article class="article-card @@class">
+<article class="article-blog @@class">
 
-    <a href="#" class="article-card__link">
-        <picture class="article-card__picture">
-            <img src="@@img" alt="@@alt" class="article-card__img"/>
+    <a href="#" class="article-blog__link">
+        <picture class="article-blog__picture">
+            <!-- Источник для изображений WebP на устройствах с шириной до 450px -->
+            <source media="(max-width: 450px)" type="image/webp" srcset="@@img_webp"/>
+            <!-- Альтернативный источник для изображений на устройствах с шириной до 450px -->
+            <source media="(max-width: 450px)" srcset="@@img"/>
+            <!-- Источник для изображений WebP на устройствах с шириной до 1169px -->
+            <source media="(max-width: 1169px)" type="image/webp" srcset="@@img_tablet_webp"/>
+            <!-- Альтернативный источник для изображений на устройствах с шириной до 1169px -->
+            <source media="(max-width: 1169px)" srcset="@@img_tablet"/>
+            <!-- Источник по умолчанию для изображений WebP -->
+            <source type="image/webp" srcset="@@img_webp"/>
+
+            <img src="@@img" alt="@@alt" class="article-blog__img"/>
         </picture>
     </a>
 
-    <div class="article-card__info">
+    <div class="article-blog__info">
 
-        <time datetime="@@datetime" class="article-card__time">@@time</time>
+        <time datetime="@@datetime" class="article-blog__time">@@time</time>
 
-        <a href="#" class="article-card__title-link">
-            <h4 class="article-card__title">@@title</h4>
+        <a href="#" class="article-blog__title-link">
+            <h4 class="article-blog__title">@@title</h4>
 
-            <div class="article-card__arrow arrow">
+            <button type="button" class="article-blog__arrow arrow-svg">
                 <svg class="arrow__icon" width="92" height="62">
                     <use xlink:href="assets/icons/symbols.svg#arrow"></use>
                 </svg>
-            </div>
+            </button>
 
         </a>
 
-        <p class="article-card__description">@@description</p>
+        <p class="article-blog__description">@@description</p>
 
     </div>
 

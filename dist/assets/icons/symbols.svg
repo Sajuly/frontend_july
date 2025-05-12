@@ -1,16 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
         <clipPath id="a">
-            <rect rx="0" width="69" height="23" transform="translate(.5 19.524)" fill="#fff" fill-opacity="0"/>
-        </clipPath>
-    
-        <clipPath id="a">
             <rect rx="0" width="23" height="23" transform="translate(.5 .5)" fill="#fff" fill-opacity="0"/>
         </clipPath>
-    </defs><symbol id="arrow"><g fill="none">
-    
-    <path d="M40.7 51.53c4.13 4.14 9.06 6.79 14.79 7.93 5.72 1.15 11.28.6 16.68-1.65 5.39-2.24 9.71-5.8 12.96-10.68C88.37 42.26 90 36.88 90 31.02c0-5.87-1.63-11.24-4.87-16.11-3.25-4.88-7.57-8.44-12.96-10.68-5.4-2.25-10.96-2.8-16.68-1.65-5.73 1.14-10.66 3.78-14.79 7.93L39.29 9.1C43.7 4.67 48.97 1.84 55.1.61c6.12-1.22 12.07-.63 17.84 1.77s10.38 6.2 13.85 11.42C90.26 19.01 92 24.75 92 31.02s-1.74 12.01-5.21 17.22c-3.47 5.21-8.08 9.02-13.85 11.42-5.77 2.4-11.72 2.99-17.84 1.76-6.13-1.22-11.4-4.05-15.81-8.48l1.41-1.41Zm-1.39 1.41h-.02a.99.99 0 0 1 0-1.42.987.987 0 0 1 1.41.01v.02l-1.39 1.39Zm1.39-42.46v.03c-.39.4-1.01.4-1.41 0a.978.978 0 0 1 0-1.41h.02l1.39 1.38Z" fill="#1F1E1E" fill-rule="evenodd"/>
-    <g clip-path="url(#a)" stroke="#1F1E1E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
-        <path d="M5 31.02h60M58 24.02l7 7-7 7"/>
+    </defs><symbol id="arrow" viewBox="0 0 92 62"><g fill="none">
+    <g stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M40 52.213a29.836 29.836 0 0 0 15.297 8.21 29.76 29.76 0 0 0 17.26-1.707 29.902 29.902 0 0 0 13.408-11.049A30.089 30.089 0 0 0 91 31a30.089 30.089 0 0 0-5.035-16.667 29.902 29.902 0 0 0-13.407-11.05 29.76 29.76 0 0 0-17.262-1.707A29.837 29.837 0 0 0 40 9.786M5 31h60"/>
+        <path d="m58 24 7 7-7 7"/>
     </g>
 </g></symbol><symbol id="door"><g fill="none">
     

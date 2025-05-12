@@ -573,7 +573,26 @@ textarea {
   justify-self: end;
   /* Выравниваем btn2 по правому краю */
 }
-.event-card {
+.events {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* Используем flex для размещения элементов в строку */
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  /* Перенос элементов на новую строку при нехватке места */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* Центрируем по горизонтали */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* Центрируем по вертикали */
+  width: 100%;
+  gap: 120px 60px;
+}
+.article-event {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -585,7 +604,12 @@ textarea {
   min-width: 280px;
   /* Минимальная ширина 280px */
 }
-.event-card__link {
+.article-event:hover .article-event__picture {
+  -webkit-box-shadow: 0 0 30px rgba(31, 30, 30, 0.55);
+          box-shadow: 0 0 30px rgba(31, 30, 30, 0.55);
+  /* Добавляет теневой эффект при наведении */
+}
+.article-event__link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -602,7 +626,15 @@ textarea {
   text-decoration: none;
   /* Без подчеркивания */
 }
-.event-card__img {
+.article-event__link:hover .article-event__title-link {
+  color: #bc3324;
+  /* Изменяет цвет текста ссылки на красный при наведении */
+  text-decoration: underline;
+  /* Добавляет подчеркивание при наведении */
+  text-decoration-color: #bc3324;
+  /* Устанавливает цвет подчеркивания на красный */
+}
+.article-event__img {
   display: block;
   /* Блочный элемент */
   position: absolute;
@@ -619,7 +651,7 @@ textarea {
      object-fit: cover;
   /* Заполнение контейнера без искажений */
 }
-.event-card__title {
+.article-event__title {
   margin: 0 0 15px;
   /* Отступы: 0 сверху, 15px снизу */
   min-height: 64px;
@@ -640,7 +672,7 @@ textarea {
   transition: color 0.2s, text-decoration-color 0.2s;
   /* Плавный переход цвета */
 }
-.event-card__description {
+.article-event__description {
   margin: 0 0 auto;
   /* Автоматический отступ снизу */
   font-family: "Open Sans", sans-serif;
@@ -650,7 +682,7 @@ textarea {
   line-height: 22px;
   /* Высота строки */
 }
-.event-card__time {
+.article-event__time {
   margin: 15px 0 0;
   /* Отступ сверху 15px */
   font-weight: 300;
@@ -660,7 +692,7 @@ textarea {
   line-height: 19px;
   /* Высота строки */
 }
-.event-card__picture {
+.article-event__picture {
   display: block;
   /* Блочный элемент */
   position: relative;
@@ -676,7 +708,7 @@ textarea {
   overflow: hidden;
   /* Скрываем переполнение */
 }
-.event-card__picture::after {
+.article-event__picture::after {
   content: "";
   /* Создаем псевдоэлемент */
   display: block;
@@ -686,8 +718,32 @@ textarea {
   padding-top: 107.16%;
   /* Высота элемента пропорциональна ширине */
 }
-.article-card {
+.arrow-svg {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   position: relative;
+  display: inline-block;
+  width: 92px;
+  height: 60px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #1f1e1e;
+  font-size: 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+.arrow-svg:hover {
+  color: #bc3324;
+}
+.arrow-svg__icon {
+  width: 100%;
+  height: 100%;
+}
+.article-blog {
+  position: relative;
+  /* Позволяет смещать элемент относительно его обычного положения. */
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   /* Учитывает границы и отступы в ширине/высоте элемента */
@@ -698,18 +754,18 @@ textarea {
   width: 100%;
   /* Ширина карточки 100% от родителя */
 }
-.article-card:hover .article-card__picture {
+.article-blog:hover .article-blog__picture {
   -webkit-box-shadow: 0 0 30px rgba(31, 30, 30, 0.55);
           box-shadow: 0 0 30px rgba(31, 30, 30, 0.55);
   /* Добавляет теневой эффект при наведении */
 }
-.article-card + .article-card {
-  /* Селектор для следующего элемента .article-card после текущего */
+.article-blog + .article-blog {
+  /* Селектор для следующего элемента .article-blog после текущего */
   margin-top: 120px;
   /* Отступ сверху 120px для разделения элементов */
 }
-.article-card + .article-card::before {
-  /* Псевдоэлемент перед .article-card */
+.article-blog + .article-blog::before {
+  /* Псевдоэлемент перед .article-blog */
   content: "";
   /* Создает пустое содержимое для псевдоэлемента */
   display: block;
@@ -735,193 +791,24 @@ textarea {
   pointer-events: none;
   /* Игнорирует события указателя (например, клики) */
 }
-.article-card__link {
+.article-blog__link {
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  /* Элемент не сжимается при уменьшении контейнера */
   -ms-flex-item-align: start;
       align-self: flex-start;
-  /* Выравнивание по верхнему краю */
   display: block;
-  /* Блочный элемент */
   width: 467px;
-  /* Фиксированная ширина ссылки */
   margin-right: 60px;
-  /* Отступ справа */
   font-size: 0;
-  /* Убираем размер шрифта (для скрытия текста) */
   text-decoration: none;
-  /* Убираем подчеркивание */
 }
-.article-card__link:hover ~ .article-card__info .article-card__title-link {
+.article-blog__link:hover ~ .article-blog__info .article-blog__title-link {
   color: #bc3324;
   /* Изменяет цвет текста ссылки на красный при наведении */
   text-decoration-color: #bc3324;
   /* Устанавливает цвет подчеркивания на красный */
 }
-.article-card__picture {
-  display: block;
-  /* Блочный элемент */
-  position: relative;
-  /* Относительное позиционирование для вложенных элементов */
-  width: 100%;
-  /* Ширина 100% от родителя */
-  -webkit-transition: -webkit-box-shadow 0.2s;
-  transition: -webkit-box-shadow 0.2s;
-  transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
-  /* Плавный переход для тени */
-  overflow: hidden;
-  /* Скрываем переполнение содержимого */
-}
-.article-card__picture::after {
-  content: "";
-  /* Создает псевдоэлемент */
-  display: block;
-  /* Блочный элемент */
-  width: 100%;
-  /* Ширина 100% */
-  padding-top: 62.3126%;
-  /* Высота элемента пропорциональна ширине (для создания соотношения сторон) */
-}
-.article-card__img {
-  display: block;
-  /* Блочный элемент */
-  position: absolute;
-  /* Абсолютное позиционирование для полного покрытия */
-  left: 0;
-  /* Прикрепляем к левому краю */
-  top: 0;
-  /* Прикрепляем к верхнему краю */
-  width: 100%;
-  /* Ширина 100% от родителя */
-  height: 100%;
-  /* Высота 100% от родителя */
-  -o-object-fit: cover;
-     object-fit: cover;
-  /* Заполнение контейнера без искажений */
-}
-.article-card__info {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  /* Учитывает границы и отступы в ширине/высоте элемента */
-  position: relative;
-  /* Относительное позиционирование для вложенных элементов */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  /* Используем flexbox для расположения дочерних элементов */
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  /* Располагаем дочерние элементы по вертикали */
-  width: 100%;
-  /* Ширина 100% от родителя */
-  padding-top: 30px;
-  /* Отступ сверху */
-  padding-bottom: 30px;
-  /* Отступ снизу */
-  padding: 30px 0;
-  /* Вертикальные отступы 30px, горизонтальные 0 */
-  padding-right: 150px;
-  /* Отступ справа */
-}
-.article-card__time {
-  margin: 0 0 40px;
-  /* Отступы: 0 сверху и сбоку, 40px снизу */
-  font-weight: 300;
-  /* Легкий шрифт */
-  font-size: 16px;
-  /* Размер шрифта */
-  line-height: 22px;
-  /* Высота строки */
-}
-.article-card__title-link,
-.article-card__description {
-  max-width: 470px;
-  /* Максимальная ширина для ссылок и описания */
-}
-.article-card__title-link {
-  margin: auto 0 40px;
-  /* Центрирование по вертикали и 40px снизу */
-  color: #1f1e1e;
-  /* Цвет текста черный */
-  text-decoration-color: transparent;
-  /* Прозрачный цвет подчеркивания */
-  -webkit-transition: color 0.2s, text-decoration-color 0.2s;
-  transition: color 0.2s, text-decoration-color 0.2s;
-  /* Плавный переход для цвета и подчеркивания */
-}
-.article-card__title-link:hover {
-  color: #bc3324;
-  /* Изменяет цвет текста на красный при наведении */
-  text-decoration-color: #bc3324;
-  /* Устанавливает цвет подчеркивания на красный */
-}
-.article-card__title {
-  margin: 0;
-  /* Убираем отступы */
-  color: inherit;
-  /* Наследует цвет от родителя */
-  font-weight: 600;
-  /* Полужирный шрифт */
-  font-size: 24px;
-  /* Размер шрифта */
-  line-height: 33px;
-  /* Высота строки */
-}
-.article-card__description {
-  margin: 0;
-  /* Убираем отступы */
-  font-size: 16px;
-  /* Размер шрифта */
-  line-height: 22px;
-  /* Высота строки */
-}
-.article-card__arrow {
-  position: absolute;
-  /* Абсолютное позиционирование для размещения */
-  right: 0;
-  /* Прикрепляем к правому краю */
-  bottom: 30px;
-  /* Отступ снизу 30px */
-  color: inherit;
-  /* Наследует цвет от родителя */
-  -webkit-transition: none;
-  transition: none;
-  /* Без перехода для этого элемента */
-}
-.home {
-  padding: 100px 0;
-}
-.home__listing {
-  margin-bottom: 95px;
-}
-.article-card {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-}
-.article-card:hover .article-card__picture {
-  -webkit-box-shadow: 0 0 30px rgba(31, 30, 30, 0.55);
-          box-shadow: 0 0 30px rgba(31, 30, 30, 0.55);
-}
-.article-card__link {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  display: block;
-  width: 467px;
-  margin-right: 60px;
-  font-size: 0;
-  text-decoration: none;
-}
-.article-card__picture {
+.article-blog__picture {
   display: block;
   position: relative;
   width: 100%;
@@ -931,13 +818,13 @@ textarea {
   transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
   overflow: hidden;
 }
-.article-card__picture::after {
+.article-blog__picture::after {
   content: "";
   display: block;
   width: 100%;
   padding-top: 62.3126%;
 }
-.article-card__img {
+.article-blog__img {
   display: block;
   position: absolute;
   left: 0;
@@ -947,7 +834,7 @@ textarea {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.article-card__info {
+.article-blog__info {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: relative;
@@ -959,45 +846,43 @@ textarea {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  padding-top: 30px;
-  padding-bottom: 30px;
   padding: 30px 0;
   padding-right: 150px;
 }
-.article-card__time {
+.article-blog__time {
   margin: 0 0 40px;
   font-weight: 300;
   font-size: 16px;
   line-height: 22px;
 }
-.article-card__title-link,
-.article-card__description {
+.article-blog__title-link,
+.article-blog__description {
   max-width: 470px;
 }
-.article-card__title-link {
+.article-blog__title-link {
   margin: auto 0 40px;
   color: #1f1e1e;
   text-decoration-color: transparent;
   -webkit-transition: color 0.2s, text-decoration-color 0.2s;
   transition: color 0.2s, text-decoration-color 0.2s;
 }
-.article-card__title-link:hover {
+.article-blog__title-link:hover {
   color: #bc3324;
   text-decoration-color: #bc3324;
 }
-.article-card__title {
+.article-blog__title {
   margin: 0;
   color: inherit;
   font-weight: 600;
   font-size: 24px;
   line-height: 33px;
 }
-.article-card__description {
+.article-blog__description {
   margin: 0;
   font-size: 16px;
   line-height: 22px;
 }
-.article-card__arrow {
+.article-blog__arrow {
   position: absolute;
   right: 0;
   bottom: 30px;
@@ -1005,10 +890,7 @@ textarea {
   -webkit-transition: none;
   transition: none;
 }
-.article-card__link {
-  /* прочие стили */
-}
-.article-card__link:hover ~ .article-card__info .article-card__title-link {
+.article-blog__link:hover ~ .article-blog__info .article-blog__title-link {
   color: #bc3324;
   text-decoration-color: #bc3324;
 }
@@ -1293,25 +1175,6 @@ textarea {
   gap: 57px;
   /* Отступ между колонками */
   margin-bottom: 55px;
-}
-.events {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  /* Используем flex для размещения элементов в строку */
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  /* Перенос элементов на новую строку при нехватке места */
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  /* Центрируем по горизонтали */
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  /* Центрируем по вертикали */
-  width: 100%;
-  gap: 120px 60px;
 }
 body {
   padding: 0;
@@ -2182,6 +2045,10 @@ body {
   .i-want {
     max-width: 604px;
   }
+  .arrow-svg {
+    width: 67px;
+    height: 40px;
+  }
   .width_624 {
     max-width: 566px;
   }
@@ -2365,7 +2232,7 @@ body {
   }
   .art-title__text {
     padding: 11px 10px;
-    font-size: 25px;
+    font-size: 13px;
     line-height: 17px;
   }
   .i-want {
