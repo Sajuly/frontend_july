@@ -347,7 +347,7 @@ textarea {
   /* Используем сетку */
   grid-template-columns: 1fr 404px;
   /* Первая колонка - оставшееся пространство, вторая - 404px */
-  grid-template-areas: "title-millennials title-millennials" /* Заголовок занимает обе колонки */ "text-millennials text-millennials" /* Текст занимает обе колонки */ "men gallery" /* Мужчины и галерея в одной строке */ "titleS gallery" /* Заголовок и галерея в одной строке */ "text text" /* Текст занимает обе колонки */ "cafe text-cafe";
+  grid-template-areas: "title-millennials title-millennials" /* Заголовок занимает обе колонки */ "text-millennials text-millennials" /* Текст занимает обе колонки */ "men gallery" /* Мужчины и галерея в одной строке */ "titleS gallery" /* Заголовок и галерея в одной строке */ "text text" /* Текст занимает обе колонки */ "cafe text-cafe" "cafe arrow";
   gap: 100px 50px;
   /* 100px между строками, 50px между колонками */
 }
@@ -420,6 +420,40 @@ textarea {
   display: block;
   width: 100%;
   padding-top: 40.86%;
+}
+.home-about__arrow {
+  grid-area: arrow;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  position: relative;
+  display: inline-block;
+  width: 92px;
+  height: 60px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #1f1e1e;
+  font-size: 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+.home-about__arrow:hover {
+  color: #bc3324;
+}
+.home-about__arrow__icon {
+  width: 100%;
+  height: 100%;
+}
+.home-about__button-text {
+  margin-right: 8px;
+  /* Отступ между текстом и стрелкой */
+  font-size: 16px;
+  /* Размер шрифта */
+  line-height: 22px;
+  /* Высота строки */
+  color: black;
+  /* Цвет текста */
 }
 .btn {
   display: inline-block;
@@ -759,6 +793,15 @@ textarea {
           box-shadow: 0 0 30px rgba(31, 30, 30, 0.55);
   /* Добавляет теневой эффект при наведении */
 }
+.article-blog:hover .arrow-svg {
+  color: #bc3324;
+}
+.article-blog:hover .article-blog__title-link {
+  color: #bc3324;
+  /* Изменяет цвет текста ссылки на красный при наведении */
+  text-decoration-color: #bc3324;
+  /* Устанавливает цвет подчеркивания на красный */
+}
 .article-blog + .article-blog {
   /* Селектор для следующего элемента .article-blog после текущего */
   margin-top: 120px;
@@ -801,12 +844,6 @@ textarea {
   margin-right: 60px;
   font-size: 0;
   text-decoration: none;
-}
-.article-blog__link:hover ~ .article-blog__info .article-blog__title-link {
-  color: #bc3324;
-  /* Изменяет цвет текста ссылки на красный при наведении */
-  text-decoration-color: #bc3324;
-  /* Устанавливает цвет подчеркивания на красный */
 }
 .article-blog__picture {
   display: block;
@@ -866,10 +903,6 @@ textarea {
   -webkit-transition: color 0.2s, text-decoration-color 0.2s;
   transition: color 0.2s, text-decoration-color 0.2s;
 }
-.article-blog__title-link:hover {
-  color: #bc3324;
-  text-decoration-color: #bc3324;
-}
 .article-blog__title {
   margin: 0;
   color: inherit;
@@ -889,10 +922,6 @@ textarea {
   color: inherit;
   -webkit-transition: none;
   transition: none;
-}
-.article-blog__link:hover ~ .article-blog__info .article-blog__title-link {
-  color: #bc3324;
-  text-decoration-color: #bc3324;
 }
 .reserve {
   margin-top: 80px;
@@ -2031,6 +2060,10 @@ body {
     -ms-flex-item-align: start;
         align-self: flex-start;
     font-size: 32px;
+  }
+  .home-about__arrow {
+    width: 67px;
+    height: 40px;
   }
   .art-title {
     min-height: 52px;
