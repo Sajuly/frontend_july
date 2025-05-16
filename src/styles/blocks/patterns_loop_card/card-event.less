@@ -1,10 +1,23 @@
 .events {
-  display: flex; /* Используем flex для размещения элементов в строку */
-  flex-wrap: wrap; /* Перенос элементов на новую строку при нехватке места */
-  justify-content: center; /* Центрируем по горизонтали */
-  align-items: center; /* Центрируем по вертикали */
-  width: 100%;
-  gap: 120px 60px;
+    .container();
+    display: flex; /* Используем flex для размещения элементов в строку */
+    flex-wrap: wrap; /* Перенос элементов на новую строку при нехватке места */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    width: 100%;
+    gap: 120px 60px;
+
+    &__link {
+        margin-top: 73px;
+        display: flex; /* Включаем Flexbox */
+        justify-content: flex-end; /* Выравниваем содержимое по правому краю */
+        font-size: 16px; // Размер шрифта
+        line-height: 22px; // Высота строки
+    }
+
+    &__button_arrow {
+        .for_arrows ();
+    }
 }
 
 //-----------------------------//

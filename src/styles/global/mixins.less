@@ -2,8 +2,7 @@
   box-sizing: border-box;
   width: 100%;
   max-width: 1414px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto; /* Центрирование блока */
   padding-left: 40px;
   padding-right: 40px;
 
@@ -85,3 +84,23 @@
   }
 }
 
+.text-hover(@color) {
+  color: @color; // Меняет цвет текста
+  text-decoration: underline; // Добавляет подчеркивание
+  text-decoration-color: @color; // Устанавливает цвет подчеркивания
+}
+
+.for_arrows () {
+    flex-shrink: 0; // Запрещает сжимать элемент при недостатке места
+    position: relative; // Позволяет позиционировать дочерние элементы относительно этого элемента
+    display: inline-block; // Позволяет элементу иметь размеры и располагаться в строке
+    width: 92px; // Задает ширину элемента
+    height: 60px; // Задает высоту элемента
+    padding: 0; // Убирает внутренние отступы
+    border: none; // Убирает рамку
+    background: none; // Убирает фон
+    color: @black; // Устанавливает цвет текста в черный
+    font-size: 0; // Скрывает текст (если он есть)
+    text-decoration: none; // Убирает подчеркивание
+    transition: color 0.2s; // Плавный переход цвета при изменении
+}
