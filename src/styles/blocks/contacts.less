@@ -1,0 +1,41 @@
+.contacts {
+    .container();
+    display: grid; /* Включаем Grid */
+    grid-template-columns: 1fr 1fr; /* Два равных столбца */
+    gap: 67px
+
+    &__squares {
+        position: relative;
+        display: flex;
+        flex-direction: column; /* Расположение элементов в столбик */
+        justify-content: space-between; /* Распределение пространства между элементами */
+        height: 100vh; /* Задаем высоту контейнера для вертикального распределения */
+    }
+
+    .squares__bl {
+        &__title {
+            font-size: 20px; // Пример стиля
+            font-family: @font1; // Пример стиля
+            line-height: 27px;
+        }
+       &__description {
+            font-size: 16px; // Пример стиля
+            font-family: @font1; // Пример стиля
+            line-height: 22px;
+       }
+
+    &__squares::before {
+        content: ""; /* Создаем пустой контент для псевдоэлемента */
+        position: absolute; /* Абсолютное позиционирование */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        width: 110px; /* Ширина квадрата */
+        height: 110px; /* Высота квадрата */
+        background-color: @black; /* Цвет квадрата */
+        transform: translate(-50%, -50%); /* Центрируем квадрат */
+    }
+
+    &__images {
+         background-size: 752px 491px;
+    }
+}
