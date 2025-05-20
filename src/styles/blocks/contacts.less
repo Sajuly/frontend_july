@@ -2,40 +2,51 @@
     .container();
     display: grid; /* Включаем Grid */
     grid-template-columns: 1fr 1fr; /* Два равных столбца */
-    gap: 67px
-
-    &__squares {
-        position: relative;
-        display: flex;
-        flex-direction: column; /* Расположение элементов в столбик */
-        justify-content: space-between; /* Распределение пространства между элементами */
-        height: 100vh; /* Задаем высоту контейнера для вертикального распределения */
-    }
-
-    .squares__bl {
-        &__title {
-            font-size: 20px; // Пример стиля
-            font-family: @font1; // Пример стиля
-            line-height: 27px;
-        }
-       &__description {
-            font-size: 16px; // Пример стиля
-            font-family: @font1; // Пример стиля
-            line-height: 22px;
-       }
-
-    &__squares::before {
-        content: ""; /* Создаем пустой контент для псевдоэлемента */
-        position: absolute; /* Абсолютное позиционирование */
-        top: 50%; /* Центрируем по вертикали */
-        left: 50%; /* Центрируем по горизонтали */
-        width: 110px; /* Ширина квадрата */
-        height: 110px; /* Высота квадрата */
-        background-color: @black; /* Цвет квадрата */
-        transform: translate(-50%, -50%); /* Центрируем квадрат */
-    }
+    gap: 67px;
 
     &__images {
          background-size: 752px 491px;
+    }
+    &__first {
+        width: 470px;
+        height: 464px;
+    }
+
+    .first__bl {
+        display: grid; /* Включаем Grid */
+        grid-template-columns: 110px 1fr;
+        gap: 67px 54px;
+        align-items: center; /* Центрирование элементов внутри ячеек вертикаль */
+        margin-top: 14px;
+
+        h4 {
+            margin-block-start: 0px;
+            margin-block-end: 10px;
+        }
+        &__sq {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 110px;
+            height: 110px;
+        }
+        &__info {
+            height: 110px;
+            display: flex; /* Используем flex для центрирования */
+            justify-content: center;
+            align-items: center;
+            &__title {
+                font-size: 20px; // Пример стиля
+                font-family: @font1; // Пример стиля
+                line-height: 27px;
+            }
+            &__description {
+                margin: 0; /* Убираем отступы */
+                font-size: 16px; // Пример стиля
+                font-family: @font1; // Пример стиля
+                line-height: 22px;
+           }
+        }
+
     }
 }
