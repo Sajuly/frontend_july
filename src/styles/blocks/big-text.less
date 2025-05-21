@@ -1,0 +1,26 @@
+.big-text {
+    weight: 100%;
+    overflow: hidden; /* Скрываем часть текста, выходящую за пределы */
+    font-size: 128px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0%;
+    margin-top: 150px;
+    font-family: @my_font;  // не смогла шрифт Мак подключить, выбрала сама стиль
+
+    p {
+        margin-block-start: 0px;
+        margin-block-end: 75px;
+    }
+    &__first {
+        text-align: left;
+        margin-left: -52px;
+        letter-spacing: 10px; /* Установите расстояние между буквами */
+        white-space: nowrap; /* Запретить перенос текста */
+    }
+    &__second {
+        text-align: right;
+        margin-right: -110px;
+        letter-spacing: 10px; /* Установите расстояние между буквами */
+    }
+}

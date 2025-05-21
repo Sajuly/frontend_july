@@ -1,0 +1,104 @@
+.page-footer {
+    .container();
+    position: relative;
+    margin-top: 140px;
+
+    &__line-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 98px;
+        margin-bottom: 60px;
+    }
+    &__line1,
+    &__line2 {
+        position: relative; /* Позиционирование для псевдоэлемента */
+    }
+    &__line1::after {
+        content: ""; /* Псевдоэлемент требует контент */
+        background: linear-gradient(270.00deg, rgb(28, 27, 27), rgba(255, 255, 255, 0) 82.857%);
+        width: 618px; /* Ширина линии */
+        height: 2px; /* Высота линии */
+        position: absolute; /* Абсолютное позиционирование */
+        left: 0; /* Позиция относительно родителя */
+        top: 0; /* Позиция относительно родителя */
+    }
+    &__line2::after {
+        content: ""; /* Псевдоэлемент требует контент */
+        background: linear-gradient(135.00deg, rgb(28, 27, 27) 0%,rgba(255, 255, 255, 0) 100%);
+        width: 618px; /* Ширина линии */
+        height: 2px; /* Высота линии */
+        position: absolute; /* Абсолютное позиционирование */
+        left: 0; /* Позиция относительно родителя */
+        top: 0; /* Позиция относительно родителя */
+    }
+
+    &__info {
+        display: grid;
+        grid-template-columns: 323px 1fr 430px;
+        height: 320px;
+
+    }
+    &__red-list {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+        align-items: flex-start;
+        li {
+            font-size: 16px;
+            font-family: @font1;
+            color: @black;
+        }
+        a {
+            font-weight: bold;
+        }
+    }
+    &__red-list-link1 {
+        position: relative;
+        align-items: flex-start;
+        margin-bottom: auto;
+        list-style-type: none; /* Убирает маркеры списка */
+        height: 198px;
+        padding-left: 26px;
+        li {
+            margin-bottom: 22px; // Задает вертикальное расстояние между элементами
+        }
+    }
+    &__red-list-link1::before {
+        content: ""; /* Создаем пустое содержимое для псевдоэлемента */
+        position: absolute; /* Абсолютное позиционирование */
+        left: 0; /* Позиция слева */
+        top: 0; /* Позиция сверху */
+        width: 4px; /* Ширина полосы */
+        height: 100%; /* Высота на всю высоту родителя */
+        background-color: @red; /* Цвет полосы */
+    }
+
+    &__red-list-link2 {
+        list-style-type: none; /* Убирает маркеры списка */
+        margin-bottom: 0px;
+        align-items: flex-end;
+        padding: 0px;
+    }
+    &__logo {
+        margin-bottom: 22px;
+    }
+
+
+    &__icons {
+        display: flex;
+        align-items: flex-end;
+    }
+    &__cooky {
+        margin-right: 203px;
+    }
+    &__svg {
+        margin-right: 44px;
+    }
+
+    &__email {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}

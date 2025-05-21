@@ -50,14 +50,15 @@
     padding-top: 16.927%;
     position: relative;
     margin: 0;
+
   }
 
   &__images {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%; /* Ограничьте максимальную ширину */
+    height: 100%; /* Ограничьте максимальную высоту */
+    object-fit: cover; /* Позволяет изображению занимать все пространство */
   }
 }
