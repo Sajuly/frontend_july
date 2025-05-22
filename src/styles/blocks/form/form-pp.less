@@ -43,10 +43,12 @@
     height: 0; /* Высота 0 (скрыто) */
   }
 
-  &__x-btn {
+  &__close {
     position: absolute; /* Абсолютное позиционирование */
     top: -30px; /* Расположение выше родителя */
     right: -30px; /* Расположение справа от родителя */
+    background: none; /* Убирает фон */
+    border: none; /* Убирает рамку */
   }
 
   &__title {
@@ -81,29 +83,14 @@
     font-size: 30px;
     line-height: 25px;
   }
-
 }
+
 .field__container1 {
   display: grid; /* Используем сетку */;
   grid-template-columns: 1fr 1fr;
   gap: 30px 60px; /* 30px между строками и 66px между колонками */
-   grid-template-areas:
+  grid-template-areas:
         "radio visitors"
-        "radio date"
-
+        "radio date";
+  margin-bottom: 30px;
 }
-
-.field__container2 {  // контакты
-  display: flex;
-  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
-  gap: 57px; /* Отступ между колонками */
-  margin-bottom: 55px;
-}
-
-
-
-
-
-
-
-

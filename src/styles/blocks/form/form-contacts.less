@@ -1,0 +1,51 @@
+.contacts {
+  display: flex;
+  flex-direction: column; /* Располагает элементы по вертикали */
+  padding: 0px;
+
+  &__box {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+    gap: 57px; /* Отступ между колонками */
+  }
+  &__field {
+    display: flex;
+    flex-direction: column; /* Располагает элементы по вертикали */
+    flex: 1 1 calc(50% - 57px); /* Каждое поле занимает 50% ширины минус отступ */
+    box-sizing: border-box; /* Учитываем отступы и границы в ширине */
+  }
+  &__input,
+  &__textarea {
+    box-sizing: border-box; /* Учитывает границы и отступы в ширине и высоте */
+    display: block; /* Элементы отображаются как блочные */
+    width: 100%; /* Ширина 100% от родительского элемента */
+    border: none; /* Убирает границу */
+    border-radius: 5px; /* Скругляет углы */
+    background-color: @white; /* Устанавливает белый фон */
+    font-size: 16px; /* Размер шрифта */
+    line-height: 1.375; /* Высота строки */
+  }
+  &__textarea {
+    height: 150px; /* Высота текстовой области */
+    padding: 20px; /* Внутренние отступы */
+  }
+  &__input {
+    height: 55px; /* Высота поля ввода */
+    padding: 0 20px; /* Внутренние отступы по горизонтали */
+  }
+  &__title {
+    margin: 0 0 10px; /* Отступы снизу */
+    color: @black; /* Черный цвет текста */
+    font-weight: 700; /* Жирный шрифт */
+    font-size: 18px; /* Размер шрифта заголовка */
+    line-height: 25px; /* Высота строки заголовка */
+
+  }
+  &__label {
+    display: block; /* Блочное отображение метки */
+    margin-bottom: 5px; /* Отступ снизу */
+    font-size: 16px; /* Размер шрифта метки */
+    line-height: 1.3; /* Высота строки метки */
+    color: @black; /* Черный цвет текста */
+  }
+}
