@@ -1,74 +1,77 @@
 .bg_event {
-    padding-top: 55px;
-    background-image: url(../../assets/images/events/bg_event.png);
-    background-position: center top;
-    background-size: cover; /* Изображение будет покрывать весь контейнер */
-    background-repeat: no-repeat; /* Избегаем повторения изображения */
-    min-height: 1236px;
+  padding-top: 55px;
+  background-image: url(../../assets/images/events/bg_event.png);
+  background-position: center top;
+  background-size: contain; /* масштабирует изображение так, чтобы оно полностью помещалось в элемент */
+  background-repeat: no-repeat; /* Избегаем повторения изображения */
+  height: 1236px;
 
-    @media @bw1340 {
-        background-size: 1340px 1170px;
-    }
-    @media @bw768 {
-        background-size: 768px 928px;
-    }
-    @media @bw600 {
-        background-size: 320px 859px;
-    }
-
+  @media @bw1340 {
+    background-size: 1340px 1170px;
+  }
+  @media @bw768 {
+    background-size: 768px 928px;
+  }
+  @media @bw600 {
+    background-size: 320px 859px;
+  }
 }
 
 .events {
+  .container();
+  display: flex; /* Используем flex для размещения элементов в строку */
+  flex-wrap: wrap; /* Перенос элементов на новую строку при нехватке места */
+  justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; /* Центрируем по вертикали */
+  width: 100%;
+  gap: 120px 60px;
+
+  &__button-container {
     .container();
     display: flex; /* Используем flex для размещения элементов в строку */
     flex-wrap: wrap; /* Перенос элементов на новую строку при нехватке места */
     justify-content: center; /* Центрируем по горизонтали */
     align-items: center; /* Центрируем по вертикали */
-    width: 100%;
-    gap: 15px 60px;
+    margin-top: 55px;
+  }
 
+  &__button_arrow {
+    .for_arrows ();
 
-    &__button-container {
-        .container();
-        display: flex; /* Используем flex для размещения элементов в строку */
-        flex-wrap: wrap; /* Перенос элементов на новую строку при нехватке места */
-        justify-content: center; /* Центрируем по горизонтали */
-        align-items: center; /* Центрируем по вертикали */
-        margin-top: 55px;
+    &:hover {
+      color: @red;
     }
 
-    &__button_arrow {
-        .for_arrows ();
+  }
+
+  &__dotted-line {
+    width: 99px; /* Ширина линии */
+    height: 2px; /* Высота линии */
+
+    background: repeating-linear-gradient(/* Пунктирная линия */
+      to right, /* Направление градиента: слева направо */
+      @gray_dark, /* Цвет первой части (пунктир) */
+      @gray_dark 15px, /* Конец первой части: черная линия до 10px */
+      transparent 15px, /* Начало второй части: прозрачность начинается с 10px */
+      transparent 21px /* Конец второй части: прозрачность продолжается до 20px */
+    );
+    margin: 0 120px; /* Отступы по бокам */
+    border-radius: 5px; /* Закругление краев */
+  }
+
+  &__link {
+    .container();
+    display: flex;
+    justify-content: flex-end;
+    font-size: 16px; // Размер шрифта
+    line-height: 22px; // Высота строки
+    text-decoration-color: transparent; // Прозрачное подчеркивание
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: @black;
     }
-
-    &__dotted-line {
-        width: 99px; /* Ширина линии */
-        height: 2px; /* Высота линии */
-
-        background: repeating-linear-gradient(/* Пунктирная линия */
-            to right, /* Направление градиента: слева направо */
-            @gray_dark, /* Цвет первой части (пунктир) */
-            @gray_dark 15px, /* Конец первой части: черная линия до 10px */
-            transparent 15px, /* Начало второй части: прозрачность начинается с 10px */
-            transparent 21px /* Конец второй части: прозрачность продолжается до 20px */
-        );
-        margin: 0 120px; /* Отступы по бокам */
-        border-radius: 5px; /* Закругление краев */
-    }
-
-    &__link {
-        .container();
-        display: flex;
-        justify-content: flex-end;
-
-        font-size: 16px; // Размер шрифта
-        line-height: 22px; // Высота строки
-        text-decoration-color: transparent; // Прозрачное подчеркивание
-
-        &:hover {
-            text-decoration-color: @black; // Прозрачное подчеркивание
-        }
-    }
+  }
 }
 
 //-----------------------------//
@@ -91,11 +94,11 @@
     color: @black; /* Цвет текста */
     text-decoration: none; /* Без подчеркивания */
     &:hover {
-       .article-event__title-link {
-          color: @red; /* Изменяет цвет текста ссылки на красный при наведении */
-          text-decoration: underline; /* Добавляет подчеркивание при наведении */
-          text-decoration-color: @red; /* Устанавливает цвет подчеркивания на красный */
-      }
+     .article-event__title-link {
+        color: @red; /* Изменяет цвет текста ссылки на красный при наведении */
+        text-decoration: underline; /* Добавляет подчеркивание при наведении */
+        text-decoration-color: @red; /* Устанавливает цвет подчеркивания на красный */
+    }
     }
     // весь текст, а не только титульный
     //     &:hover {

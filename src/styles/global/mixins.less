@@ -91,31 +91,45 @@
 }
 
 .for_arrows () {
-    flex-shrink: 0; // Запрещает сжимать элемент при недостатке места
-    position: relative; // Позволяет позиционировать дочерние элементы относительно этого элемента
-    display: inline-block; // Позволяет элементу иметь размеры и располагаться в строке
-    width: 92px; // Задает ширину элемента
-    height: 60px; // Задает высоту элемента
-    padding: 0; // Убирает внутренние отступы
-    border: none; // Убирает рамку
-    background: none; // Убирает фон
-    color: @black; // Устанавливает цвет текста в черный
-    font-size: 0; // Скрывает текст (если он есть)
-    text-decoration: none; // Убирает подчеркивание
-    transition: color 0.2s; // Плавный переход цвета при изменении
+  flex-shrink: 0; // Запрещает сжимать элемент при недостатке места
+  position: relative; // Позволяет позиционировать дочерние элементы относительно этого элемента
+  display: inline-block; // Позволяет элементу иметь размеры и располагаться в строке
+  width: 92px; // Задает ширину элемента
+  height: 60px; // Задает высоту элемента
+  padding: 0; // Убирает внутренние отступы
+  border: none; // Убирает рамку
+  background: none; // Убирает фон
+  color: @black; // Устанавливает цвет текста в черный
+  font-size: 0; // Скрывает текст (если он есть)
+  text-decoration: none; // Убирает подчеркивание
+  transition: color 0.2s; // Плавный переход цвета при изменении
+}
+
+.breadcrumb {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin-top: 40px;
+  margin-bottom: 138px;
+  &__item + &__item::before {
+      content: " / "; /* Разделитель между элементами */
+      padding: 0 5px;
+  }
+  &__item.active {
+      color: @gray; /* Цвет текущей страницы */
+  }
 }
 
 .show-nav {
-    body {
-        @media @bw1020 {
-
-        }
-    }
+  body {
+      @media @bw1020 {
+      }
+  }
 }
 
 .show-event-popup {
-    body {
-        overflow:hidden;
-    }
+  body {
+    overflow:hidden;
+  }
 }
 
