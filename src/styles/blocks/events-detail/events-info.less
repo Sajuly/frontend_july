@@ -1,0 +1,26 @@
+.events-info {
+  .container();
+  display: grid;
+  grid-template-columns: repeat(3, 401px);
+  grid-template-rows: 253px;
+  grid-column-gap: 65px; /* Расстояние между колонками */
+  margin-bottom: 10px;
+
+  &__box {
+    justify-items: center; /* Центрирует элементы по горизонтали */
+  }
+
+  &__title {
+    font-family: @font1;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 0px;
+  }
+  &__text {
+    font-family: @font1;
+    font-size: 16px;
+    text-align: center;
+  }
+
+}

@@ -1,0 +1,90 @@
+.title-pic {
+  .container();
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Вертикальное центрирование */
+  gap: 59px;
+
+
+  &__name {
+    font-family: @font2;
+    font-size: 70px;
+    font-weight: 500;
+    line-height: 90px;
+    text-align: center;
+    margin-top: 38px;
+    margin-bottom: 80px;
+  }
+  &__woman {
+    width: 497px;    /* Ширина */
+    height: auto;  /* Высота автоматически подстраивается */
+  }
+
+  &__left1,
+  &__right1 {
+    color: @black;
+    font-family: Mak;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 36px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+  }
+
+  &__left2,
+  &__right2 {
+    color: @black;
+    font-family: Mak;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+  }
+
+  &__left-text {
+    position: relative; /* Позволяет псевдоэлементам позиционироваться относительно этого элемента */
+    text-align: right;
+
+    &::before,
+    &::after {
+      content: ""; /* Псевдоэлемент должен иметь содержимое */
+      display: block; // Делаем элемент блочным
+      background: linear-gradient(270.00deg, rgb(28, 27, 27),rgba(255, 255, 255, 0) 82.857%);
+      width: 139px; /* Ширина линии */
+      height: 1px; /* Высота линии */
+      position: absolute; /* Абсолютное позиционирование */
+      left: 50%; /* Центрирование по горизонтали */
+      transform: translateX(-50%); /* Сдвиг на половину ширины влево */
+    }
+    &::before {
+        margin-bottom: 12px; // Отступ между полоской и текстом
+    }
+    &::after {
+        margin-top: 12px; // Отступ между текстом и нижней полоской
+    }
+  }
+
+  &__right-text {
+    position: relative;
+    text-align: left;
+
+    &::before,
+    &::after {
+      content: ""; /* Псевдоэлемент должен иметь содержимое */
+      display: block; // Делаем элемент блочным
+      background: linear-gradient(270.00deg, rgb(28, 27, 27),rgba(255, 255, 255, 0) 82.857%);
+      width: 139px; /* Ширина линии */
+      height: 1px; /* Высота линии */
+      position: absolute; /* Абсолютное позиционирование */
+
+      transform: rotate(180.00deg)
+    }
+    &::before {
+        margin-bottom: 12px; // Отступ между полоской и текстом
+    }
+    &::after {
+        margin-top: 12px; // Отступ между текстом и нижней полоской
+    }
+  }
+}
