@@ -5,6 +5,10 @@
   align-items: center; /* Вертикальное центрирование */
   gap: 59px;
 
+  p {
+    margin-block-start: 12px;
+    margin-block-end: 11px;
+  }
 
   &__name {
     font-family: @font2;
@@ -28,18 +32,19 @@
     font-weight: 300;
     line-height: 36px;
     letter-spacing: 0%;
-    text-transform: uppercase;
+    text-transform: uppercase; // Верхний регистр
   }
 
   &__left2,
   &__right2 {
     color: @black;
     font-family: @font3;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 700;
     line-height: 19px;
     letter-spacing: 0%;
-    text-transform: uppercase;
+    text-align: center;
+    text-transform: uppercase; // Верхний регистр
   }
 
   &__left-text {
@@ -57,12 +62,6 @@
       left: 50%; /* Центрирование по горизонтали */
       transform: translateX(-50%); /* Сдвиг на половину ширины влево */
     }
-    &::before {
-        margin-bottom: 12px; // Отступ между полоской и текстом
-    }
-    &::after {
-        margin-top: 12px; // Отступ между текстом и нижней полоской
-    }
   }
 
   &__right-text {
@@ -79,12 +78,6 @@
       position: absolute; /* Абсолютное позиционирование */
 
       transform: rotate(180.00deg)
-    }
-    &::before {
-        margin-bottom: 12px; // Отступ между полоской и текстом
-    }
-    &::after {
-        margin-top: 12px; // Отступ между текстом и нижней полоской
     }
   }
 }

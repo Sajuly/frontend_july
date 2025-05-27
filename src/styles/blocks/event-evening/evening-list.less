@@ -1,0 +1,54 @@
+.evening-list {
+  .container();
+  margin-top: 61px;
+  margin-bottom: 80px;
+
+  &__program {
+    margin-bottom: 75px;
+  }
+  &__title {
+    font-family: @font1;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: 0%;
+  }
+  &__list1 {
+    list-style: none; /* Убираем стандартные точки */
+    padding: 0; /* Убираем паддинг */
+    margin: 0; /* Убираем маржин */
+    font-family: @font1;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0%;
+
+    li {
+      position: relative; /* Добавляем позиционирование для li */
+      padding-left: 10px; /* Отступ для текста */
+
+      &::before {
+        content: ''; /* Псевдоэлемент для точки */
+        position: absolute; /* Абсолютное позиционирование */
+        left: 0; /* Сдвиг влево */
+        top: 50%; /* Центрирование по вертикали */
+        transform: translateY(-50%); /* Центрируем по вертикали */
+        width: 4px; /* Ширина точки */
+        height: 4px; /* Высота точки */
+        background-color: @red; /* Цвет точки */
+        border-radius: 50%; /* Делаем точку круглой */
+      }
+    }
+  }
+
+  &__the-best {
+    width: 845px;
+  }
+  &__text {
+    margin-bottom: 50px;
+  }
+  &__list2 {
+    padding-left: 17px;
+    height: 278px;
+  }
+}
