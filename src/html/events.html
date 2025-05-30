@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  @@include('blocks/head.html')
+  <title>Events</title>
+</head>
+
+<body class="body">
+@@include('blocks/page-header.html')
+
+<nav aria-label="Breadcrumb">
+  <ol class="breadcrumb"> <!-- mixin -->
+    <li class="breadcrumb__item"><a href="index.html">Главная</a></li>
+    <li class="breadcrumb__item breadcrumb__item--inactive">Мероприятия</li>
+  </ol>
+</nav>
+
+<main>
+  @@include('blocks/events/events6.html')
+
+  @@include('blocks/events/additional_services.html')
+
+  @@include('blocks/home/title/i-want.html')
+
+  @@include('blocks/events/events-info.html')
+</main>
+
+@@include('blocks/page-footer.html')
+
+</body>
+</html>

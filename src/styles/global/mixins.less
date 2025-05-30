@@ -103,29 +103,35 @@
   font-size: 0; // Скрывает текст (если он есть)
   text-decoration: none; // Убирает подчеркивание
   transition: color 0.2s; // Плавный переход цвета при изменении
+  cursor: pointer;
 }
 
 .breadcrumb {
   .container();
-
   list-style: none;
   padding-left: 40px;
   display: flex;
   margin-top: 40px;
-
-  &__item + &__item::before {
-      content: " / "; /* Разделитель между элементами */
-      padding: 0 5px;
+  &__item {
+    &:hover {
+      text-decoration: underline; /* Подчеркивание при наведении */
+    }
+    &--inactive {
+      pointer-events: none; /* Отключает кликабельность */
+      text-decoration: none; /* Убирает подчеркивание */
+      opacity: 0.6; /* Уменьшает непрозрачность для визуального эффекта */
+    }
   }
-  &__item.active {
-      color: @gray; /* Цвет текущей страницы */
+  &__item + &__item::before {
+    content: " / "; /* Разделитель между элементами */
+    padding: 0 5px;
   }
 }
 
 .show-nav {
   body {
-      @media @bw1020 {
-      }
+    @media @bw1020 {
+    }
   }
 }
 

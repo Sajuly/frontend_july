@@ -126,9 +126,15 @@
     height: 100%;
     background-color: @black;
     color: @white;
-    border: none; /* Убирает рамки */
     font-family: @font1;
     font-size: 16px;
+    cursor: pointer; /* Указывает, что элемент кликабельный */
+
+    &:hover {
+      border-color: @red; /* Цвет границы */
+      background-color: @red;
+      color: @white;
+    }
   }
 
   &__check-label {

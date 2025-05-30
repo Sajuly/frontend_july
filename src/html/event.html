@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  @@include('blocks/head.html')
+  <title>Event</title>
+</head>
+
+<body class="body">
+@@include('blocks/page-header.html')
+<nav aria-label="Breadcrumb">
+  <ol class="breadcrumb"> <!-- mixin -->
+    <li class="breadcrumb__item"><a href="index.html">Главная</a></li>
+    <li class="breadcrumb__item"><a href="events.html">Мероприятия</a></li>
+    <li class="breadcrumb__item breadcrumb__item--inactive ">Вечер | The Best of Sade</li>
+  </ol>
+</nav>
+
+<main>
+  <h1 class="title-pic__name">Вечер | The Best of Sade</h1>
+
+  @@include('blocks/event/title-pic.html')
+  @@include('blocks/event/evening-list.html')
+  @@include('blocks/event/reserve/reserve.html')
+
+</main>
+
+@@include('blocks/page-footer.html')
+
+</body>
+</html>

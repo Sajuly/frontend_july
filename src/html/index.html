@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="ru">
-@@include('blocks/head.html')
+<head>
+    @@include('blocks/head.html')
+    <title>Lenni Art</title>
+</head>
 
 <body class="body"> <!-- class="body show-event-popup" -->
-    @@include('blocks/page-header.html')
+@@include('blocks/page-header.html')
 
-    <!-- ГЛАВНАЯ ----------------------------------->
-    @@include('blocks/art-title.html')
-    @@include('blocks/i-want.html')
-    @@include('blocks/home-about.html')
-    @@include('blocks/patterns_loop_card/events3.html')
-    @@include('blocks/patterns_loop_card/blog.html')
-    @@include('blocks/contacts.html')
-    @@include('blocks/big-text.html')
+<main>
+    @@include('blocks/home/title/art-title.html')
+    @@include('blocks/home/home-about.html')
+    @@include('blocks/home/events3.html')
+    @@include('blocks/home/blog.html')
+    @@include('blocks/home/contacts.html')
+    @@include('blocks/home/big-text.html')
+</main>
 
-    <!-- МЕРОПРИЯТИЯ ------------------------------ -->
-    <!--@@include('blocks/pages/events-detail.html')-->
+@@include('blocks/page-footer.html')
 
-    <!-- МЕРОПРИЯТИЕ "ВЕЧЕР"----------------------- -->
-    <!--@@include('blocks/pages/event-evening.html')-->
-
-    <!-- Форма-->
-    @@include('blocks/form-pp.html')
-
-    @@include('blocks/page-footer.html')
-    <script src="scripts/jquery-3.7.1.js"></script>
-    <script src="scripts/main.min.js"></script>
+<!-- Форма-->
+@@include('blocks/home/form-pp.html')
+<script src="scripts/jquery-3.7.1.js"></script>
+<script src="scripts/main.min.js"></script>
 
 </body>
 </html>
