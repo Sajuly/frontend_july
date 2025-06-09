@@ -29,5 +29,8 @@
     "build": "gulp build",
     "serve": "gulp serve",
     "start": "gulp start"
+  },
+  "dependencies": {
+    "swiper": "^11.2.8"
   }
 }

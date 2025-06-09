@@ -1,24 +1,39 @@
 .form_buttons {
-    display: flex;
-    justify-content: center; /* Центрирует элементы по горизонтали */
-    gap: 57px; /* Отступ между колонками */
-    margin: 40px auto; /* верх и низ по 40px, право и лево автоматически */
+  display: flex;
+  justify-content: center; /* Центрирует элементы по горизонтали */
+  gap: 57px; /* Отступ между колонками */
+  margin: 40px auto; /* верх и низ по 40px, право и лево автоматически */
+  @media @bw768 {
+    gap: 0px;
+  }
 
-    &__submit,
-    &__close {
-        padding: 15px 156px; /* Внутренние отступы */
-        font-size: 16px;
-        line-height: 22px;
-
+  &__submit,
+  &__close {
+    padding: 15px 156px; /* Внутренние отступы */
+    font-size: 16px;
+    line-height: 22px;
+    @media @bw768 {
+      padding: 15px 100px; /* Внутренние отступы */
     }
-    &__submit {
-        border: 1px solid black; /* Граница */
-        font-family: @font1;
-        background-color: transparent; /* Полностью прозрачный фон */
+    @media @bw600 {
+      padding: 15px 81px; /* Внутренние отступы */
     }
-    &__close {
-        text-decoration: underline; /* Подчеркивание текста */
-        text-decoration-thickness: 1px; /* Установка толщины подчеркивания */
-        text-decoration-color: rgb(129, 129, 129); /* цвет подчеркивания */
+  }
+  &__submit {
+    border: 1px solid black; /* Граница */
+    cursor: pointer; /* Меняем курсор на указатель */
+    font-family: @font1;
+    background-color: transparent; /* Полностью прозрачный фон */
+    margin-left: 40px;
+  }
+  &__close {
+    border: none; /* Убираем рамку */
+    background: transparent; /* Делаем фон прозрачным */
+    cursor: pointer; /* Меняем курсор на указатель */
+    text-decoration-thickness: 1px; /* Установка толщины подчеркивания */
+    text-decoration-color: rgb(129, 129, 129); /* цвет подчеркивания */
+    &:hover {
+      text-decoration: underline; /* Подчеркивание текста */
     }
+  }
 }
