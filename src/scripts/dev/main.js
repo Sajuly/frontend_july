@@ -1,33 +1,6 @@
-  // import Swiper JS
-  import Swiper from 'swiper';
-  // import Swiper styles
-  import 'swiper/css';
-  // core version + navigation, pagination modules:
-  import Swiper from 'swiper';
-  import { Navigation, Pagination } from 'swiper/modules';
-  // import Swiper and modules styles
-  import 'swiper/css';
-  import 'swiper/css/navigation';
-  import 'swiper/css/pagination';
 
 (function() {
   "use strict";
-
-  // ---------------- Swiper -----------------------
-  // const swiper = new Swiper('.swiper-container', {
-  // // Настройки Swiper
-  // loop: true,
-  // pagination: {
-  //   el: '.swiper-pagination',
-  //   clickable: true,
-  // },
-  // navigation: {
-  //   nextEl: '.swiper-button-next',
-  //   prevEl: '.swiper-button-prev',
-  // },
-  // });
-
-  //-------------------------------------------------
 
   const root = document.documentElement;  // Получаем корневой элемент документа (обычно это <html>)
 
@@ -92,5 +65,26 @@
 
   // --------------- Слайдер мероприятий -----------------------------------------
 
+  const swipers = document.querySelectorAll(".js-swiper");
+  
+  swipers.forEach(function (swpr) {
+    new Swiper(swpr, {
+      updateOnWindowResize: true, // обновление при изменении размера окна
+      slidesPerView: "auto", // количество слайдов, отображаемых одновременно
+      freeMode: true,  // свободный режим прокрутки
+      spaceBetween: 0, // расстояние между слайдами
+      speed: 500, // скорость перехода между слайдами
+      grabCursor: true, // курсор "рука" при наведении
+      pagination: {
+        el: ".swiper-pagination", // элемент пагинации
+        clickable: true // возможность клика по пагинации
+      },
+      navigation: {
+        nextEl: ".swiper-arrow-next", // элемент для кнопки "Следующий"
+        prevEl: ".swiper-arrow-prev", // элемент для кнопки "Предыдущий"
+        disabledClass: "arrow--disabled" // класс для отключенных кнопок
+      }
+    });
+  });
 
 })();

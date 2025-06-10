@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    @@include('blocks/head.html')
-    <title>Lenni Art</title>
+  @@include('blocks/head.html')
+  <title>Lenni Art</title>
 </head>
 
 <body class="body"> <!-- class="body show-event-popup" -->
 @@include('blocks/page-header.html')
-    <script>
-        console.log("HELLO");
-    </script>
+
 <main>
-    @@include('blocks/home/title/art-title.html')
-    @@include('blocks/home/home-about.html')
-    @@include('blocks/home/events3.html')
-    @@include('blocks/home/blog.html')
-    @@include('blocks/home/contacts.html')
-    @@include('blocks/home/big-text.html')
+  @@include('blocks/home/title/art-title.html')
+  @@include('blocks/home/home-about.html')
+  @@include('blocks/home/events_swiper.html')
+  @@include('blocks/home/blog.html')
+  @@include('blocks/home/contacts.html')
+  @@include('blocks/home/big-text.html')
 </main>
 
 @@include('blocks/page-footer.html')
@@ -24,8 +22,9 @@
 <!-- Форма-->
 @@include('blocks/home/form-pp.html')
 
-<script src="scripts/swiper.min.js"></script>
 <script src="scripts/jquery-3.7.1.js"></script>
-<script src="scripts/main.min.js"></script>
+<script type="module" src="scripts/main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </body>
 </html>
