@@ -318,9 +318,11 @@
     });
   }
 
-   // --------------- jQuery  --------------------------------------------
+   // --------------- jQuery для popup visitors --------------------------------------------
 
   const jsSelectric = $(".js-selectric");  // Инициализацию для плагина
+  console.log(jsSelectric);
+
   if (jsSelectric.length) {
     jsSelectric.selectric({
       nativeOnMobile: false
