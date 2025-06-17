@@ -1,0 +1,49 @@
+.home_events-swiper {
+  .container();
+  .events_flex();
+
+  &__button-container {
+    .container();
+    display: flex; /* Используем flex для размещения элементов в строку */
+    flex-wrap: wrap; /* Перенос элементов на новую строку при нехватке места */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    margin-top: -50px;
+  }
+
+  &__button_arrow {
+    .for_arrows ();
+    &:hover {
+      color: @red;
+    }
+  }
+
+  &__dotted-line {
+    width: 99px; /* Ширина линии */
+    height: 2px; /* Высота линии */
+
+    background: repeating-linear-gradient(/* Пунктирная линия */
+      to right, /* Направление градиента: слева направо */
+      @gray_dark, /* Цвет первой части (пунктир) */
+      @gray_dark 15px, /* Конец первой части: черная линия до 10px */
+      transparent 15px, /* Начало второй части: прозрачность начинается с 10px */
+      transparent 21px /* Конец второй части: прозрачность продолжается до 20px */
+    );
+    margin: 0 120px; /* Отступы по бокам */
+    border-radius: 5px; /* Закругление краев */
+  }
+
+  &__link {
+    .container();
+    display: flex;
+    justify-content: flex-end;
+    font-size: 16px; // Размер шрифта
+    line-height: 22px; // Высота строки
+    text-decoration-color: transparent; // Прозрачное подчеркивание
+    margin-top: -200px;
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: @black;
+    }
+  }
+}

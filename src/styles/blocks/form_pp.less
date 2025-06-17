@@ -1,0 +1,96 @@
+.form_pp {
+  box-sizing: border-box; /* Учитывает padding и border в общей ширине/высоте элемента */
+  position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+  top: 0; /* Прикрепление к верхнему краю */
+  left: 0; /* Прикрепление к левому краю */
+  right: 0; /* Прикрепление к правому краю */
+  bottom: 0; /* Прикрепление к нижнему краю */
+  padding: 90px 95px 50px; /* Внутренние отступы */
+  background-color: rgba(28, 27, 27, 0.4); /* Полупрозрачный фон */
+  backdrop-filter: blur(50px); /* Размытие заднего фона */
+  overflow-y: auto; /* Прокрутка по вертикали при переполнении */
+  z-index: 110; /* Уровень наложения */
+  display: none; /* Скрытие элемента по умолчанию */
+
+  &__wrapper {
+    box-sizing: border-box; /* Учитывает padding и border */
+    position: relative; /* Относительное позиционирование для вложенных элементов */
+    display: flex; /* Использование Flexbox для размещения элементов */
+    flex-direction: column; /* Вертикальное расположение элементов */
+    width: 100%; /* Ширина 100% от родителя */
+    max-width: 1210px; /* Максимальная ширина */
+    margin: auto; /* Центрирование */
+    background-color: @gray; /* Фоновый цвет */
+    background-image: url(../assets/images/noise.png); /* Фоновое изображение */
+    background-position: 0 0; /* Позиция фона */
+    background-size: auto; /* Размер фона */
+    background-repeat: repeat; /* Повтор фона */
+  }
+
+  &__container {
+    box-sizing: border-box; /* Учитывает padding и border */
+    width: 100%; /* Ширина 100% */
+    max-width: 950px; /* Максимальная ширина */
+    margin: 0 auto; /* Центрирование */
+    padding: 0 40px 40px; /* Внутренние отступы */
+  }
+
+  &__sticky-close {
+    position: sticky; /* Прилипание к верхней части при прокрутке */
+    top: 0; /* Прикрепление к верхнему краю */
+    align-self: flex-end; /* Выравнивание по правому краю */
+    width: 0; /* Ширина 0 (скрыто) */
+    height: 0; /* Высота 0 (скрыто) */
+  }
+
+  &__close {
+    position: absolute; /* Абсолютное позиционирование */
+    cursor: pointer; /* Меняем курсор на указатель */
+    top: -30px; /* Расположение выше родителя */
+    right: -30px; /* Расположение справа от родителя */
+    background: none; /* Убирает фон */
+    border: none; /* Убирает рамку */
+  }
+
+  &__title {
+    box-sizing: border-box; /* Учитывает padding и border */
+    display: flex; /* Использование Flexbox */
+    align-items: center; /* Вертикальное выравнивание по центру */
+    margin: -40px 0 70px -85px; /* Отступы вокруг заголовка */
+    padding: 10px 85px; /* Внутренние отступы */
+    width: 595px; /* Ширина заголовка */
+    min-height: 80px; /* Минимальная высота */
+    background-color: @black; /* Фоновый цвет заголовка */
+    text-transform: uppercase; /* Преобразование текста в верхний регистр */
+    font-weight: 400; /* Нагрузка шрифта */
+    font-family: @font2; /* Шрифт */
+    font-size: 22px; /* Размер шрифта */
+    line-height: 1.36; /* Межстрочный интервал */
+    color: @white; /* Цвет текста */
+    letter-spacing: 0.02em; /* Расстояние между буквами */
+    z-index: 1; /* Уровень наложения */
+  }
+
+  &__radio-group {
+    display: flex; /* Включаем Flexbox */
+    flex-direction: column; /* Располагаем элементы в столбик */
+    font-family: @font1;
+    margin: 5px 0; /* Отступы между радио-кнопками */
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  &__block-title {
+    font-size: 30px;
+    line-height: 25px;
+  }
+
+  &__container1 {
+  display: grid; /* Используем сетку */;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 60px; /* 30px между строками и 66px между колонками */
+  grid-template-areas:
+        "radio visitors"
+        "radio date";
+}
+}

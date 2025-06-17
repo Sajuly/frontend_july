@@ -1,0 +1,35 @@
+<div class="form_pp" id="js-eventPP">
+
+    <div class="form_pp__wrapper">
+
+        <div class="form_pp__sticky-close">
+            <button type="button" class="form_pp__close js-ppCloseBtn">
+                <svg class="form_pp__icon" width="60" height="60">
+                    <use xlink:href="assets/icons/symbols.svg#close"></use>
+                </svg>
+            </button>
+        </div>
+
+        <div class="form_pp__container">
+
+            <h2 class="form_pp__title">Заполните форму<br/>и мы подберем площадку</h2>
+
+            <form class="form_pp__form form">
+
+                <div class="form_pp__container1">
+                    @@include('blocks/form_radio-button.html')
+                    @@include('blocks/form_visitors.html')
+                    @@include('blocks/form_calendar.html')
+                </div>
+
+                <!-- .field__container2 -->
+                @@include('blocks/form_contacts.html')
+                @@include('blocks/form_check.html')
+                @@include('blocks/form_buttons.html')
+
+            </form>
+
+        </div>
+    </div>
+
+</div>

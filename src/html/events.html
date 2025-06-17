@@ -8,19 +8,19 @@
 <body class="body">
 @@include('blocks/page-header.html')
 
-<nav aria-label="Breadcrumb">
+<div aria-label="Breadcrumb">
   <ol class="breadcrumb"> <!-- mixin -->
     <li class="breadcrumb__item"><a href="index.html">Главная</a></li>
     <li class="breadcrumb__item breadcrumb__item--inactive">Мероприятия</li>
   </ol>
-</nav>
+</div>
 
 <main>
-  @@include('blocks/events/events6.html')
+  @@include('blocks/events6.html')
 
   @@include('blocks/events/additional_services.html')
 
-  @@include('blocks/home/title/i-want.html')
+  @@include('blocks/home_i-want.html')
 
   @@include('blocks/events/events-info.html')
 </main>

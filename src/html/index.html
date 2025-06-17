@@ -9,24 +9,27 @@
 @@include('blocks/page-header.html')
 
 <main>
-  @@include('blocks/home/title/art-title.html')
-  @@include('blocks/home/home-about.html')
-  @@include('blocks/home/events_swiper.html')
-  @@include('blocks/home/blog.html')
-  @@include('blocks/home/contacts-map.html')
-  @@include('blocks/home/big-text.html')
+  @@include('blocks/home_art-title.html')
+  @@include('blocks/home_i-want.html')
+  @@include('blocks/home_about.html')
+  @@include('blocks/home_events-swiper.html')
+  @@include('blocks/home_blog.html')
+  @@include('blocks/home_contacts-map.html')
+  @@include('blocks/home_big-text.html')
 </main>
 
 @@include('blocks/page-footer.html')
 
 <!-- Форма-->
-@@include('blocks/home/form-pp.html')
+@@include('form_pp.html')
 
 <script src="scripts/jquery-3.7.1.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="scripts/jquery.selectric.min.js"></script>
+<script src="scripts/jquery.selectric.min.js"></script> <!-- Выпадающее выбор в кол-ва посетителей-->
+<script src="scripts/jquery.mask.min.js"></script>   <!-- Маска для номера телефона -->
+<script src="scripts/air-datepicker.js"></script>  <!-- Для выпадающего календаря-->
 
-<script src="https://maps.googleapis.com/maps/api/js?key="></script>
+<script src="https://maps.googleapis.com/maps/api/js?key="></script>  <!-- google карта -->
 <script type="module" src="scripts/main.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
