@@ -1,6 +1,29 @@
 .home_events-swiper {
-  .container();
-  .events_flex();
+  padding-top: 55px;
+  background-image: url(../../assets/images/events/bg_event.png);
+  background-position: center top;
+  background-size: contain; /* масштабирует изображение так, чтобы оно полностью помещалось в элемент */
+  background-repeat: no-repeat; /* Избегаем повторения изображения */
+  height: 1236px;
+
+  @media @bw1340 {
+    background-size: 1340px 1170px;
+  }
+  @media @bw768 {
+    background-size: 768px 928px;
+  }
+  @media @bw600 {
+    background-size: 320px 859px;
+  }
+
+  &__box {
+    .container();
+    .events_flex();
+  }
+
+  &__title {
+    .title-texts();
+  }
 
   &__button-container {
     .container();
@@ -9,13 +32,6 @@
     justify-content: center; /* Центрируем по горизонтали */
     align-items: center; /* Центрируем по вертикали */
     margin-top: -50px;
-  }
-
-  &__button_arrow {
-    .for_arrows ();
-    &:hover {
-      color: @red;
-    }
   }
 
   &__dotted-line {

@@ -1,0 +1,22 @@
+.home_blog {
+  .container();
+  margin-bottom: 28px;
+
+  &__title {
+    .title-texts();
+  }
+
+  &__link {
+    margin-top: 73px;
+    display: flex; /* Включаем Flexbox */
+    justify-content: flex-end; /* Выравниваем содержимое по правому краю */
+    font-size: 16px; // Размер шрифта
+    line-height: 22px; // Высота строки
+    text-decoration-color: transparent; // Прозрачное подчеркивание
+
+    &:hover {
+     text-decoration: underline;
+     text-decoration-color: @black; // Прозрачное подчеркивание
+    }
+  }
+}

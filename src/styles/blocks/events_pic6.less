@@ -1,9 +1,14 @@
-.events6 {
+.events_pic6 {
   .container();
+
+  &__title {
+    .title-texts();
+  }
 
   &__box {
     .events_flex();
   }
+
   &__arrow {
     display: flex; /* Используем flex для размещения элементов в строку */
     flex-direction: column;
@@ -22,18 +27,19 @@
       }
     }
   }
+  &__btn-flex {
+    flex-direction: column;
 
-  &__link {
+  }
+  &__text {
     font-size: 16px; // Размер шрифта
     line-height: 22px; // Высота строки
-    text-decoration: none;
     margin-top: 71px;
     margin-bottom: 18px;
   }
 
   &__button_arrow {
     .for_arrows ();
-    transform: rotate(90deg);
     margin-bottom: 55px;
   }
 }

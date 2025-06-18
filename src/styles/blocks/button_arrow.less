@@ -1,0 +1,54 @@
+.button_arrow {
+  display: flex;
+  justify-content: space-between; /* Распределяем элементы по краям */
+  align-items: center; /* Выравниваем элементы по вертикали */
+  border: none; // Убирает рамку
+  background: none; // Убирает фон
+  color: @black; // Устанавливает цвет текста в черный
+  font-size: 0; // Скрывает текст (если он есть)
+  transition: color 0.2s; // Плавный переход цвета при изменении
+  padding: 0; // Убирает внутренние отступы
+
+  @media @bw1340 { // Медиа-запрос для адаптивности
+    width: 67px; // Новая ширина для экранов меньше 1340px
+    height: 40px; // Новая высота для экранов меньше 1340px
+  }
+
+  &:hover { // Эффект при наведении
+    .button_arrow__arrow {
+      cursor: pointer;
+      color: @red; // Меняет цвет текста на красный при наведении
+    }
+    .button_arrow__button-text {
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-color: @black;
+    }
+  }
+
+  &__arrow {
+    flex-shrink: 0; // Запрещает сжимать элемент при недостатке места
+    position: relative; // Позволяет позиционировать дочерние элементы относительно этого элемента
+    display: inline-block; // Позволяет элементу иметь размеры и располагаться в строке
+    width: 92px; // Задает ширину элемента
+    height: 60px; // Задает высоту элемента
+  }
+
+  &__icon { // Стили для иконки внутри элемента
+    width: 100%; // Задает ширину 100% от родительского элемента
+    height: 100%; // Задает высоту 100% от родительского элемента
+  }
+
+  &__button-text {
+    margin-right: 8px; /* Отступ между текстом и стрелкой */
+    font-size: 16px; /* Размер шрифта */
+    line-height: 22px; /* Высота строки */
+    color: black; /* Цвет текста */
+    text-decoration-color: transparent; // Прозрачное подчеркивание
+ }
+
+}
+
+.rotate-down {
+    transform: rotate(90deg); /* Поворачивает иконку на 90 градусов */
+}

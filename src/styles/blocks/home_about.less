@@ -1,42 +1,49 @@
 .home_about {
   .container();
-  display: grid; /* Используем сетку */
-  grid-template-columns: 1fr 404px; /* Первая колонка - оставшееся пространство, вторая - 404px */
-  grid-template-areas:
-    "title-millennials title-millennials" /* Заголовок занимает обе колонки */
-    "text-millennials text-millennials" /* Текст занимает обе колонки */
-    "men gallery" /* Мужчины и галерея в одной строке */
-    "titleS gallery" /* Заголовок и галерея в одной строке */
-    "text text" /* Текст занимает обе колонки */
-    "cafe text-cafe"
-    "cafe arrow";
-  gap: 100px 50px; /* 100px между строками, 50px между колонками */
-  margin-bottom: 90px;
 
-  @media @bw1660 {
-    grid-template-columns: 1fr 395px;
-    gap: 100px 40px;
-  }
-  @media @bw1340 {
-    grid-template-columns: 2fr 1fr;
-    gap: 50px 30px;
-  }
-  @media @bw960 {
+  &__box {
+    display: grid; /* Используем сетку */
+    grid-template-columns: 1fr 404px; /* Первая колонка - оставшееся пространство, вторая - 404px */
     grid-template-areas:
-      "title-millennials title-millennials"
-      "text-millennials text-millennials"
-      "men men"
-      "titleS gallery"
-      "text gallery"
-      "text gallery"
-      "cafe cafe"
-      "text-cafe text-cafe";
-    gap: 40px 30px;
+      "title-millennials title-millennials" /* Заголовок занимает обе колонки */
+      "text-millennials text-millennials" /* Текст занимает обе колонки */
+      "men gallery" /* Мужчины и галерея в одной строке */
+      "titleS gallery" /* Заголовок и галерея в одной строке */
+      "text text" /* Текст занимает обе колонки */
+      "cafe text-cafe"
+      "cafe arrow";
+    gap: 100px 50px; /* 100px между строками, 50px между колонками */
+    margin-bottom: 90px;
+
+    @media @bw1660 {
+      grid-template-columns: 1fr 395px;
+      gap: 100px 40px;
+    }
+    @media @bw1340 {
+      grid-template-columns: 2fr 1fr;
+      gap: 50px 30px;
+    }
+    @media @bw960 {
+      grid-template-areas:
+        "title-millennials title-millennials"
+        "text-millennials text-millennials"
+        "men men"
+        "titleS gallery"
+        "text gallery"
+        "text gallery"
+        "cafe cafe"
+        "text-cafe arrow";
+      gap: 40px 30px;
+    }
+    @media @bw600 {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
   }
-  @media @bw600 {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+
+  &__title {
+    .title-texts();
   }
 
   &__title-millennials,  // Заголовки
@@ -57,7 +64,12 @@
   &__titleS {
     grid-area: titleS; /* используется для задания области сетки, в которой будет размещён элемент*/
   }
-
+  &__rectangle {
+    max-width: 867px;
+    max-height: 231px;
+    min-width: 867px;
+    min-height: 231px;
+  }
   &__text-millennials,
   &__text-title,
   &__text-cafe   {
@@ -87,6 +99,7 @@
   }
   &__text-cafe {
     grid-area: text-cafe;
+    margin-left: 40px;
   }
 
   &__images {
@@ -124,5 +137,23 @@
     display: block;
     width: 100%;
     padding-top: 40.86%;
+
+    &::after {
+      content: ""; /* Создаем пустой контент для псевдоэлемента */
+      position: absolute; /* Абсолютное позиционирование */
+      top: -18px; /* Смещение вниз на 18px */
+      left: -3.98%; /* Выступает слева на 3.98% */
+      right: -0.86%; /* Выступает справа на 0.86% */
+      height: calc(67.48%); /* Высота псевдоэлемента, чтобы он соответствовал высоте изображения + смещение сверху */
+      background-color: @red; /* Красный цвет фона */
+      z-index: -1; /* Убираем псевдоэлемент под изображение */
+    }
+  }
+
+  &__arrow {
+    grid-area: arrow;
+    margin-left: 47.9px;
+    @media @bw960 {
+    }
   }
 }

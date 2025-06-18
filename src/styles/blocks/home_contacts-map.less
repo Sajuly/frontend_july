@@ -1,8 +1,15 @@
 .home_contacts-map {
   .container();
-  display: grid; /* Включаем Grid */
-  grid-template-columns: 1fr 1fr;
-  gap: 67px;
+
+  &__box {
+    display: grid; /* Включаем Grid */
+    grid-template-columns: 1fr 1fr;
+    gap: 67px;
+  }
+
+  &__title {
+    .title-texts();
+  }
 
   &__first-block {
     display: grid; /* Включаем Grid */

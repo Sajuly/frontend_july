@@ -1,8 +1,8 @@
-<section class="about-section">
+<section class="home_about">
 
-  <h2 class="title-texts">О нас</h2>
+  <h2 class="home_about__title">О нас</h2>
 
-  <div class="home_about">
+  <div class="home_about__box">
 
     <h3 class="home_about__title-millennials">Проект «Millennials» </h3>
 
@@ -34,8 +34,8 @@
     </picture>
 
     <picture class="home_about__pic-cafe">
-      <img src="assets/images/about/cafe.jpg"
-           class="home_about__images"
+      <img src="assets/images/about/cafe.jpeg"
+           class="home_about__images home_about__red_rectangle"
            alt="cafe">
     </picture>
 
@@ -43,13 +43,9 @@
       Мы уже успешно организовали и провели более 100 проектов. Посмотрите, как это было классно.
     </p>
 
-    <button type="button" class="button_arrow">
+    <button type="button" class="button_arrow home_about__arrow">
       <span class="button_arrow__button-text">Смотреть</span>
-      <span class="button_arrow__arrow ">
-        <svg class="button_arrow__icon" width="92" height="62">
-          <use xlink:href="assets/icons/symbols.svg#arrow"></use>
-        </svg>
-      </span>
+      @@include('../arrows/right_arrow.html')
     </button>
   </div>
 
