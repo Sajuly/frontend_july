@@ -74,6 +74,12 @@
     background-color: @red; /* Цвет полосы */
   }
 
+  &__input-field {
+    height: 100%; /* Высота поля ввода */
+    width: 275px;
+    padding: 0 28px; /* Внутренние отступы по горизонтали */
+    box-sizing: border-box;
+  }
   &__red-list-link2 {
     list-style-type: none; /* Убирает маркеры списка */
     margin-bottom: 0px;
@@ -84,18 +90,18 @@
     margin-bottom: 22px;
   }
 
-
   &__icons {
     display: flex;
     align-items: flex-end;
   }
+
   &__cooky {
     margin-right: 203px;
   }
+
   &__svg {
     margin-right: 44px;
   }
-
 
   &__email-input {
     display: flex;
@@ -115,10 +121,15 @@
     height: 49px;
   }
   &__input {
-    height: 100%; /* Высота поля ввода */
-    width: 275px;
-    padding: 0 28px; /* Внутренние отступы по горизонтали */
-    box-sizing: border-box;
+    .check_view();
+  }
+  &__mark {
+    box-sizing: border-box; /* Учитывает границы и отступы в ширине и высоте */
+    display: block; /* Делает элемент блочным */
+    position: absolute; /* Позволяет свободно позиционировать элемент */
+    width: 24px; /* Ширина элемента */
+    height: 24px; /* Высота элемента */
+    border: 1px solid @black; /* Черная рамка вокруг элемента */
   }
   &__submit {
     box-sizing: border-box;
@@ -138,18 +149,20 @@
   }
 
   &__check-label {
-    margin-left: 15px;
+    margin-left: 39px;
   }
 
   &__logo {
     margin-top: auto;
     margin-left: auto;
   }
+
   &__logo-text {
     font-size: 16px;
     font-family: @font1;
     font-weight: bold;
   }
+
   &__icon {
     margin-left: 9px;
   }

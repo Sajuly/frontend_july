@@ -153,7 +153,15 @@
   &__arrow {
     grid-area: arrow;
     margin-left: 47.9px;
-    @media @bw960 {
-    }
+    justify-content: space-between; /* Распределяем элементы по краям */
+    align-items: center; /* Выравниваем элементы по вертикали */
   }
+
+  &__button-text {
+    margin-right: 8px; /* Отступ между текстом и стрелкой */
+    font-size: 16px; /* Размер шрифта */
+    line-height: 22px; /* Высота строки */
+    color: black; /* Цвет текста */
+    text-decoration-color: transparent; // Прозрачное подчеркивание
+ }
 }

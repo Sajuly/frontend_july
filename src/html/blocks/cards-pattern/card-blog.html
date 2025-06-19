@@ -1,7 +1,7 @@
-<article class="article-blog @@class">
+<article class="card-blog @@class">
 
-    <a href="#" class="article-blog__link">
-        <picture class="article-blog__picture">
+    <a href="#" class="card-blog__link">
+        <picture class="card-blog__picture">
             <!-- Источник для изображений WebP на устройствах с шириной до 450px -->
             <source media="(max-width: 450px)" type="image/webp" srcset="@@img_webp"/>
             <!-- Альтернативный источник для изображений на устройствах с шириной до 450px -->
@@ -13,22 +13,22 @@
             <!-- Источник по умолчанию для изображений WebP -->
             <source type="image/webp" srcset="@@img_webp"/>
 
-            <img src="@@img" alt="@@alt" class="article-blog__img"/>
+            <img src="@@img" alt="@@alt" class="card-blog__img"/>
         </picture>
     </a>
 
-    <div class="article-blog__info">
+    <div class="card-blog__info">
 
-        <time datetime="@@datetime" class="article-blog__time">@@time</time>
+        <time datetime="@@datetime" class="card-blog__time">@@time</time>
 
-        <a href="#" class="article-blog__title-link">
-            <h4 class="article-blog__title">@@title</h4>
+        <a href="#" class="card-blog__title-link">
+            <h4 class="card-blog__title">@@title</h4>
         </a>
-        <button type="button" class="article-blog__arrow">
-            @@include('../../arrows/right_arrow.html')
+        <button type="button" class="card-blog__arrow">
+            @@include('../support/right_arrow.html')
         </button>
 
-        <p class="article-blog__description">@@description</p>
+        <p class="card-blog__description">@@description</p>
 
     </div>
 

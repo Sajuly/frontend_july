@@ -1,10 +1,10 @@
-.article-event {
+.card-event {
   display: flex; /* Используем flex для размещения элементов */
   width: calc(33.3333333% - 40px); /* Ширина карточки 405px */
   max-width: 100%; /* Максимальная ширина 100% от родителя */
   min-width: 280px; /* Минимальная ширина 280px */
     &:hover {
-    .article-event__picture {
+    .card-event__picture {
       box-shadow: 0 0 30px fade(@black, 55%); /* Добавляет теневой эффект при наведении */
     }
   }
@@ -16,7 +16,7 @@
     color: @black; /* Цвет текста */
     text-decoration: none; /* Без подчеркивания */
     &:hover {
-     .article-event__title-link {
+     .card-event__title-link {
         color: @red; /* Изменяет цвет текста ссылки на красный при наведении */
         text-decoration: underline; /* Добавляет подчеркивание при наведении */
         text-decoration-color: @red; /* Устанавливает цвет подчеркивания на красный */
