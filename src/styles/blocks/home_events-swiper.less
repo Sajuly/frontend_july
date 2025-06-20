@@ -25,17 +25,22 @@
     .title-texts();
   }
 
-  &__link {
+  &__link-box {
     .container();
     display: flex;
+    height: 22px;
+    weight: 109px;
     justify-content: flex-end;
+    margin-top: 15px;
+  }
+
+  &__link {
     font-size: 16px; // Размер шрифта
     line-height: 22px; // Высота строки
     text-decoration-color: transparent; // Прозрачное подчеркивание
-    margin-top: -200px;
     &:hover {
-      text-decoration: underline;
-      text-decoration-color: @black;
+      .text-hover(@black);
     }
   }
+
 }

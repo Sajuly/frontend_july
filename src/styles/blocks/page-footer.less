@@ -10,10 +10,12 @@
     gap: 98px;
     margin-bottom: 60px;
   }
+
   &__line1,
   &__line2 {
     position: relative; /* Позиционирование для псевдоэлемента */
   }
+
   &__line1::after {
     content: "";
     background: linear-gradient(270.00deg, rgb(28, 27, 27), rgba(255, 255, 255, 0) 82.857%);
@@ -23,6 +25,7 @@
     left: 0; /* Позиция относительно родителя */
     top: 0; /* Позиция относительно родителя */
   }
+
   &__line2::after {
     content: ""; /* Псевдоэлемент требует контент */
     background: linear-gradient(135.00deg, rgb(28, 27, 27) 0%,rgba(255, 255, 255, 0) 100%);
@@ -38,6 +41,7 @@
     grid-template-columns: 323px 1fr 430px;
     height: 320px;
   }
+
   &__red-list {
     display: flex;
     flex-direction: column;
@@ -53,17 +57,25 @@
       font-weight: bold;
     }
   }
+
   &__red-list-link1 {
+    display: flex;
     position: relative;
+    flex-direction: column;
     align-items: flex-start;
     margin-bottom: auto;
     list-style-type: none; /* Убирает маркеры списка */
     height: 198px;
     padding-left: 26px;
-    li {
-      margin-bottom: 22px; /* Задает вертикальное расстояние между элементами */
+    gap: 22px;
+  }
+
+  &__link {
+    &:hover {
+      .text-hover(@black);
     }
   }
+
   &__red-list-link1::before { // Красная полоса слева
     content: "";
     position: absolute; /* Абсолютное позиционирование */
@@ -80,12 +92,14 @@
     padding: 0 28px; /* Внутренние отступы по горизонтали */
     box-sizing: border-box;
   }
+
   &__red-list-link2 {
     list-style-type: none; /* Убирает маркеры списка */
     margin-bottom: 0px;
     align-items: flex-end;
     padding: 0px;
   }
+
   &__logo-mill {
     margin-bottom: 22px;
   }
@@ -97,6 +111,9 @@
 
   &__cooky {
     margin-right: 203px;
+    &:hover {
+      .text-hover(@black);
+    }
   }
 
   &__svg {
@@ -107,12 +124,14 @@
     display: flex;
     flex-direction: column;
   }
+
   &__label {
     font-size: 16px;
     font-family: @font1;
     font-weight: bold;
     margin-bottom: 14px;
   }
+
   &__email {
     display:flex;
     flex-direction: row;
@@ -120,9 +139,11 @@
     margin-bottom: 15px;
     height: 49px;
   }
+
   &__input {
-    .check_view();
+    .check_input();
   }
+
   &__mark {
     box-sizing: border-box; /* Учитывает границы и отступы в ширине и высоте */
     display: block; /* Делает элемент блочным */
@@ -131,6 +152,7 @@
     height: 24px; /* Высота элемента */
     border: 1px solid @black; /* Черная рамка вокруг элемента */
   }
+
   &__submit {
     box-sizing: border-box;
     width: 135px;

@@ -84,34 +84,6 @@
   }
 }
 
-.text-hover(@color) {
-  color: @color; // Меняет цвет текста
-  text-decoration: underline; // Добавляет подчеркивание
-  text-decoration-color: @color; // Устанавливает цвет подчеркивания
-}
-
-.breadcrumb {
-  .container();
-  list-style: none;
-  padding-left: 40px;
-  display: flex;
-  margin-top: 40px;
-  &__item {
-    &:hover {
-      text-decoration: underline; /* Подчеркивание при наведении */
-    }
-    &--inactive {
-      pointer-events: none; /* Отключает кликабельность */
-      text-decoration: none; /* Убирает подчеркивание */
-      opacity: 0.6; /* Уменьшает непрозрачность для визуального эффекта */
-    }
-  }
-  &__item + &__item::before {
-    content: " / "; /* Разделитель между элементами */
-    padding: 0 5px;
-  }
-}
-
 .show-nav {
   body {
     @media @bw1020 {
@@ -180,17 +152,19 @@
   gap: 120px 60px;
 }
 
-.button-text() {
+.text-hover(@color) {
   cursor: pointer;
-  text-decoration: underline;
-  text-decoration-color: @black;
+  color: @color; // Меняет цвет текста
+  text-decoration: underline; // Добавляет подчеркивание
+  text-decoration-color: @color; // Устанавливает цвет подчеркивания
 }
 
-.check_view() {
+.check_input() {
   .is-hidden();  /* Скрываем стандартный элемент <input> */
   &:checked {
     & ~ .form_check__mark,
-    & ~ .page-footer__mark{
+    & ~ .page-footer__mark,
+    & ~ .event_check-table__mark {
       background-color: @black; /* Устанавливает фоновый цвет элемента в черный (переменная @black) */
       &::after { /* Псевдоэлемент, который добавляется после содержимого элемента */
         content: ""; /* Не отображает текст; используется для создания визуальных эффектов */

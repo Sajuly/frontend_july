@@ -1,14 +1,18 @@
-.title-pic {
+.event_title-pic {
   .container();
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Вертикальное центрирование */
-  gap: 59px;
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Вертикальное центрирование */
+    gap: 59px;
+  }
 
   p {
     margin-block-start: 12px;
     margin-block-end: 11px;
   }
+
 
   &__name {
     font-family: @font2;
@@ -62,6 +66,9 @@
       left: 50%; /* Центрирование по горизонтали */
       transform: translateX(-50%); /* Сдвиг на половину ширины влево */
     }
+    &::before {
+      top: -12px; /* Сдвиг на 12 пикселей выше текста */
+    }
   }
 
   &__right-text {
@@ -76,7 +83,6 @@
       width: 139px; /* Ширина линии */
       height: 1px; /* Высота линии */
       position: absolute; /* Абсолютное позиционирование */
-
       transform: rotate(180.00deg)
     }
   }
