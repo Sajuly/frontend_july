@@ -87,6 +87,7 @@
   }
 
   &__input-field {
+    flex: 1;
     height: 100%; /* Высота поля ввода */
     width: 275px;
     padding: 0 28px; /* Внутренние отступы по горизонтали */
@@ -131,12 +132,13 @@
     font-weight: bold;
     margin-bottom: 14px;
   }
-
+  &__email-enter {
+    margin-bottom: 15px;
+  }
   &__email {
     display:flex;
     flex-direction: row;
     margin-top: 14px;
-    margin-bottom: 15px;
     height: 49px;
   }
 
@@ -148,6 +150,7 @@
     box-sizing: border-box; /* Учитывает границы и отступы в ширине и высоте */
     display: block; /* Делает элемент блочным */
     position: absolute; /* Позволяет свободно позиционировать элемент */
+    //top: 157px; /* Позиция сверху */
     width: 24px; /* Ширина элемента */
     height: 24px; /* Высота элемента */
     border: 1px solid @black; /* Черная рамка вокруг элемента */
@@ -189,4 +192,10 @@
     margin-left: 9px;
   }
 
+  .check-error-message {
+    label.error,
+    span.error {
+      margin-left: 45px; /* Отступ слева от метки */
+    }
+  }
 }

@@ -27,7 +27,7 @@ const resources = {
   static: [
     "src/assets/icons/**/*.*",
     "src/assets/favicons/**/*.*",
-    "src/assets/fonts/**/*.{woff,woff2,otf}",
+    "src/assets/fonts/**/*.{woff,woff2}",
     "src/assets/video/**/*.{mp4,webm}",
     "src/assets/audio/**/*.{mp3,ogg,wav,aac}",
     "src/json/**/*.json",
@@ -97,7 +97,7 @@ function jsCopy() {
 function copy() {
   return gulp
     .src(resources.static, {
-      base: "src"
+      base: "src", encoding: false
     })
     .pipe(gulp.dest("dist/"));
 }

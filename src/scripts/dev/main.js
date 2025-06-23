@@ -370,18 +370,25 @@
   // --------------- jQuery валидатор----------------------
 
   const eventForm = $('#js-eventForm');
-
   if (eventForm.length) {
   eventForm.validate({
     errorElement: "span"
     });
   }
 
-  const eventForm = $('#js-eventForm1');
-
-  if (eventForm.length) {
-  eventForm.validate({
-    errorElement: "span"
+  const footer_email = $('#js-footer_email');
+  if (footer_email.length) {
+    footer_email.validate({
+      errorElement: "span",
+        errorPlacement: function(error, element) {
+            if (element.attr("name") === "email") {
+                // Добавляем сообщение об ошибке под полем email
+                error.appendTo('.email-error-message');
+            } else if (element.attr("name") === "agree") {
+                // Добавляем сообщение об ошибке под чекбоксом
+                error.appendTo('.check-error-message');
+            }
+        }
     });
   }
 
