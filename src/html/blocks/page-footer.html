@@ -39,22 +39,24 @@
     </div>
 
     <div class="page-footer__email-input">
-      <form>
+
+      <form class="error_style" id="js-eventPP1">
         <label for="email" class="page-footer__label">
           Подпишись и будь в курсе происходящего
         </label>
         <div class="page-footer__email">
-          <input id="email" class="page-footer__input-field" type="email" placeholder="Email" name="email" required>
+          <input id="email" class="page-footer__input-field" type="email" placeholder="Email"
+                 name="email" required>
           <button type="submit" class="page-footer__submit"> Подписаться</button>
         </div>
 
-        <label class="page-footer__check">
+        <label class="page-footer__check" >
           <input
               type="checkbox"
               name="agree"
               class="page-footer__input"
-              required
               checked
+              required
           />
           <span class="page-footer__mark"></span>
           <span class="page-footer__check-label">Согласен на обработку персональных данных</span>

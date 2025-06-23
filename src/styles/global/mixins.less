@@ -128,13 +128,6 @@
   }
 }
 
-.field_for_pp() {
-  display: flex;
-  flex-direction: column; /* Располагает элементы по вертикали */
-  flex: 1 1 calc(50% - 57px); /* Каждое поле занимает 50% ширины минус отступ */
-  box-sizing: border-box; /* Учитываем отступы и границы в ширине */
-}
-
 .pp_title() {
   display: block; /* Блочное отображение заголовка */
   color: @black; /* Черный цвет текста */
@@ -179,5 +172,14 @@
         transform: rotate(45deg); /* Поворачивает псевдоэлемент на 45 градусов, создавая эффект стрелки или галочки */
       }
     }
+  }
+}
+
+.error_style {
+  label.error,
+  span.error {
+    display: block;
+    margin: 5px 0 0;
+    color: @red; /* Устанавливаем красный цвет шрифта */
   }
 }

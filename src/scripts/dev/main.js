@@ -32,7 +32,7 @@
         // Удаляем класс, чтобы скрыть всплывающее окно
         root.classList.remove("show-event-popup");
       }
-
+      console.log(event.type);
       // Обработка различных типов событий
       switch (event.type) {
         case "keyup":
@@ -88,6 +88,7 @@
   });
 
   // --------------- Googl карта -------------------------------------------------
+
   const contactsMap = document.querySelector("#js-contactsMap");
   
   if (contactsMap) {
@@ -363,6 +364,24 @@
     };
     $.each(dateField, function (i) {
       pickerInit($(this));
+    });
+  }
+
+  // --------------- jQuery валидатор----------------------
+
+  const eventForm = $('#js-eventForm');
+
+  if (eventForm.length) {
+  eventForm.validate({
+    errorElement: "span"
+    });
+  }
+
+  const eventForm = $('#js-eventForm1');
+
+  if (eventForm.length) {
+  eventForm.validate({
+    errorElement: "span"
     });
   }
 

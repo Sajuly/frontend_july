@@ -1,8 +1,8 @@
 .form_buttons {
   display: flex;
-  justify-content: center; /* Центрирует элементы по горизонтали */
+  justify-content: space-between;
   gap: 57px; /* Отступ между колонками */
-  margin: 40px auto; /* верх и низ по 40px, право и лево автоматически */
+
   @media @bw768 {
     gap: 0px;
   }
@@ -25,7 +25,6 @@
     cursor: pointer; /* Меняем курсор на указатель */
     font-family: @font1;
     background-color: transparent; /* Полностью прозрачный фон */
-    margin-left: 40px;
   }
 
   &__close {

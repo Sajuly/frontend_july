@@ -35,6 +35,18 @@
     padding: 0 40px 40px; /* Внутренние отступы */
   }
 
+  &__container1 {
+    display: grid; /* Используем сетку */;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 60px; /* 30px между строками и 66px между колонками */
+    margin-bottom: 30px;
+    grid-template-areas:
+          "radio visitors"
+          "radio date";
+
+  }
+
+
   &__sticky-close {
     position: sticky; /* Прилипание к верхней части при прокрутке */
     top: 0; /* Прикрепление к верхнему краю */
@@ -85,12 +97,4 @@
     line-height: 25px;
   }
 
-  &__container1 {
-  display: grid; /* Используем сетку */;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px 60px; /* 30px между строками и 66px между колонками */
-  grid-template-areas:
-        "radio visitors"
-        "radio date";
-}
 }
