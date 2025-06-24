@@ -40,16 +40,23 @@
 
     <div class="page-footer__email-input">
 
-      <form class="error_style" id="js-footer_email">
+      <form class="page-footer__subscribe-form subscribe-form error_style"
+            action="https://jsonplaceholder.typicode.com/posts"
+            id="js-footer_email">
 
-        <label for="email" class="page-footer__label">
+        <label for="js-subscribeEmail" class="page-footer__label">
           Подпишись и будь в курсе происходящего
         </label>
 
         <div class="page-footer__email-enter">
           <div class="page-footer__email">
-            <input id="email" class="page-footer__input-field" type="email" placeholder="Email"
-                   name="email" required>
+
+            <input id="js-subscribeEmail"
+                   name="email"
+                   class="page-footer__input-field"
+                   type="email"
+                   placeholder="Email"
+                   required>
             <button type="submit" class="page-footer__submit"> Подписаться</button>
           </div>
           <span class="email-error-message"></span>

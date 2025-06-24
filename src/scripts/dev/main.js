@@ -1,4 +1,3 @@
-
 (function() {
   "use strict";
 
@@ -392,4 +391,52 @@
     });
   }
 
+  // --------------- jQuery AJAX-запрос форма подписки (footer)----------------------
+
+  const subscribeForm = $("#js-footer_email");
+
+  if (subscribeForm.length) {
+    const subscribeAction = subscribeForm.attr("action");
+    const subscribeEmail = subscribeForm.find("#js-subscribeEmail");
+    subscribeForm.validate({
+      errorElement: "span",
+      submitHandler: function (form, event) {
+        event.preventDefault();
+        $.ajax({
+          url: subscribeAction,
+          method: "POST",
+          data: {
+            email: subscribeEmail.val()
+          },
+          success: function () {
+            subscribeEmail.val("");
+            subscribeEmail.blur();
+            alert("Вы успешно подписались на рассылку новостей");
+          },
+          error: function () {
+            alert("Что-то пошло не так, попробуйте еще раз");
+          }
+        });
+      }
+    });
+  }
+
 })();
+
+// toastr.options = {
+//   "closeButton": true,
+//   "debug": false,
+//   "newestOnTop": false,
+//   "progressBar": false,
+//   "positionClass": "toast-top-full-width",
+//   "preventDuplicates": false,
+//   "onclick": null,
+//   "showDuration": "3000",
+//   "hideDuration": "1000",
+//   "timeOut": "5000",
+//   "extendedTimeOut": "1000",
+//   "showEasing": "swing",
+//   "hideEasing": "linear",
+//   "showMethod": "fadeIn",
+//   "hideMethod": "fadeOut"
+// }
