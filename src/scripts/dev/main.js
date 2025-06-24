@@ -377,9 +377,11 @@
 
   const footer_email = $('#js-footer_email');
   if (footer_email.length) {
+    const subscribeAction = footer_email.attr("action");
+    const subscribeEmail = footer_email.find("#js-subscribeEmail");
     footer_email.validate({
       errorElement: "span",
-        errorPlacement: function(error, element) {
+      errorPlacement: function(error, element) {
             if (element.attr("name") === "email") {
                 // Добавляем сообщение об ошибке под полем email
                 error.appendTo('.email-error-message');
@@ -387,19 +389,8 @@
                 // Добавляем сообщение об ошибке под чекбоксом
                 error.appendTo('.check-error-message');
             }
-        }
-    });
-  }
-
-  // --------------- jQuery AJAX-запрос форма подписки (footer)----------------------
-
-  const subscribeForm = $("#js-footer_email");
-
-  if (subscribeForm.length) {
-    const subscribeAction = subscribeForm.attr("action");
-    const subscribeEmail = subscribeForm.find("#js-subscribeEmail");
-    subscribeForm.validate({
-      errorElement: "span",
+        },
+       // --------------- jQuery AJAX-запрос форма подписки (footer)
       submitHandler: function (form, event) {
         event.preventDefault();
         $.ajax({
@@ -420,6 +411,10 @@
       }
     });
   }
+
+  // --------------- jQuery AJAX-запрос форма подписки (footer)----------------------
+
+
 
 })();
 
