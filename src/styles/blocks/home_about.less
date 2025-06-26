@@ -99,7 +99,13 @@
   }
   &__text-cafe {
     grid-area: text-cafe;
-    margin-left: 40px;
+    margin-left: 70px;
+    width: 344px;
+
+    @media @bw768 {
+      width: 280px;
+      margin-left: 0px;
+    }
   }
 
   &__images {
@@ -137,16 +143,32 @@
     display: block;
     width: 100%;
     padding-top: 40.86%;
-
     &::after {
       content: ""; /* Создаем пустой контент для псевдоэлемента */
       position: absolute; /* Абсолютное позиционирование */
-      top: -18px; /* Смещение вниз на 18px */
-      left: -3.98%; /* Выступает слева на 3.98% */
-      right: -0.86%; /* Выступает справа на 0.86% */
-      height: calc(67.48%); /* Высота псевдоэлемента, чтобы он соответствовал высоте изображения + смещение сверху */
+      width: 100%;
+      height: 246px;
+      top: 0;
       background-color: @red; /* Красный цвет фона */
       z-index: -1; /* Убираем псевдоэлемент под изображение */
+    }
+    &--red_rectangle {
+      width: calc(100% - 6.237%);
+      max-height: 362px - 14px;
+      margin-top: 14px;
+      margin-left: 48px;
+    }
+    @media @bw1340 {
+      &--red_rectangle {
+        max-height: 342px;
+        margin-left: 40px;
+      }
+    }
+    @media @bw768 {
+      &--red_rectangle {
+        max-height: 290px;
+        margin-left: 37px;
+      }
     }
   }
 
@@ -155,6 +177,10 @@
     margin-left: 47.9px;
     justify-content: space-between; /* Распределяем элементы по краям */
     align-items: center; /* Выравниваем элементы по вертикали */
+    margin-left: 70px;
+    @media @bw768 {
+      width: 262px;
+    }
   }
 
   &__button-text {

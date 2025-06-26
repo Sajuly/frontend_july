@@ -1,67 +1,56 @@
 <form class="event_reserve">
 
-  <div class="event_reserve__container">
+  <div class="event_reserve__grid-box">
+
     <div class="event_reserve__checks">
-      <h4 class="event_reserve__checks-title">Забронировать столик</h4>
-      <div class="event_reserve__check-container">
+      <h4 class="event_reserve__checks--title">Забронировать столик</h4>
+      <div class="event_reserve__checks--container">
         @@include('event_check-table.html')
       </div>
     </div>
 
     <div class="event_reserve__scheme">
+      <h4 class="event_reserve__scheme--title">Сцена</h4>
 
-      <div class="event_reserve__scheme-container">
-        <h4 class="event_reserve__scheme-title">Сцена</h4>
-
-        <div class="event_reserve__scheme-wrapper">
-
-          <svg class="event_reserve__scene scene"
-               width="780"
-               height="399"
-               viewBox="0 0 780 399"
-               fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="assets/icons/symbols.svg#reserve"></use>
-          </svg>
-        </div>
+      <div class="event_reserve__scheme--wrapper">
+        <svg class="event_reserve__scheme--scene scene"
+             width="780"
+             height="399"
+             viewBox="0 0 780 399"
+             fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="assets/icons/symbols.svg#reserve"></use>
+        </svg>
       </div>
     </div>
-  </div>
 
-  <div class="event_reserve__order-box">
-    <div class="event_reserve__order-box--order">
-      <h4 class="event_reserve__order-title">Ваши пригласительные билеты</h4>
+    <div class="event_reserve__order">
+      <h4 class="event_reserve__order--title">Ваши пригласительные билеты</h4>
 
-      <div class="event_reserve__tickets-list">
-        <div class="event_reserve__tickets">
-          <div class="event_reserve__qty" data-caption="шт." data-price="1400 ₽">9</div>
-          <div class="event_reserve__sum" data-currency="₽">12 600</div>
+      <div class="event_reserve__order--tickets-list">
+        <div class="event_reserve__order--tickets">
+          <div class="event_reserve__order--qty" data-caption="шт." data-price="1400 ₽">9</div>
+          <div class="event_reserve__order--sum" data-currency="₽">12 600</div>
         </div>
-        <div class="event_reserve__tickets">
-          <div class="event_reserve__qty" data-caption="шт." data-price="1250 ₽">4</div>
-          <div class="event_reserve__sum" data-currency="₽">5000</div>
+        <div class="event_reserve__order--tickets">
+          <div class="event_reserve__order--qty" data-caption="шт." data-price="1250 ₽">4</div>
+          <div class="event_reserve__order--sum" data-currency="₽">5000</div>
         </div>
       </div>
-
-      <div class="event_reserve__total" data-caption="Сумма" data-currency="₽">17 000</div>
-
-      <button type="submit" class="btn btn--red event_reserve__submit">
+      <div class="event_reserve__order--total" data-caption="Сумма" data-currency="₽">17 000</div>
+      <button type="submit" class="btn btn--red event_reserve__order--submit">
         Купить билеты
       </button>
     </div>
 
-    <div class="event_reserve__order-box--price">
-      <h4 class="reserve__order-title">Стоимость пригласительного билета</h4>
+    <div class="event_reserve__price">
+      <h4 class="reserve__price--title">Стоимость пригласительного билета</h4>
+      <p class="event_reserve__price--price1">1400 ₽ | 1 персона</p>
+      <p class="event_reserve__price--price2">1250 ₽ | 1 персона</p>
 
-      <div class="event_reserve__price-box">
-        <p class="event_reserve__price1">1400 ₽ | 1 персона</p>
-        <p class="event_reserve__price2">1250 ₽ | 1 персона</p>
-      </div>
-      <h4 class="event_reserve__order-title">Примечания</h4>
-      <div class="event_reserve__price-box">
-        <p class="event_reserve__price3">доступные места</p>
-        <p class="event_reserve__price4">забронировано</p>
-      </div>
+      <h4 class="event_reserve__price--title">Примечания</h4>
+      <p class="event_reserve__price--price3">доступные места</p>
+      <p class="event_reserve__price--price4">забронировано</p>
 
     </div>
   </div>
