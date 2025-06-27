@@ -2,19 +2,20 @@
   padding-top: 55px;
   background-image: url(../../assets/images/events/bg_event.png);
   background-position: center top;
-  background-size: contain; /* масштабирует изображение так, чтобы оно полностью помещалось в элемент */
+  background-size: auto; /* масштабирует изображение так, чтобы оно полностью помещалось в элемент */
   background-repeat: no-repeat; /* Избегаем повторения изображения */
-  height: 1236px;
-
-  @media @bw1340 {
-    background-size: 1340px 1170px;
-  }
-  @media @bw768 {
-    background-size: 768px 928px;
-  }
-  @media @bw600 {
-    background-size: 320px 859px;
-  }
+  padding-bottom: 132px;
+  margin-bottom: 31px;
+//
+//   @media @bw1340 {
+//     background-size: 1340px 1170px;
+//   }
+//   @media @bw768 {
+//     background-size: 768px 928px;
+//   }
+//   @media @bw600 {
+//     background-size: 320px 859px;
+//   }
 
   &__box {
     .container();
@@ -23,6 +24,7 @@
 
   &__title {
     .title-texts();
+    margin-top: 80px;
   }
 
   &__link-box {
@@ -38,6 +40,7 @@
     font-size: 16px; // Размер шрифта
     line-height: 22px; // Высота строки
     text-decoration-color: transparent; // Прозрачное подчеркивание
+
     &:hover {
       .text-hover(@black);
     }

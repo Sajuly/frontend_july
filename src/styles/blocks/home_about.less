@@ -53,9 +53,12 @@
     line-height: 1.3;
     width: 100%;
     max-width: 900px;
-    @media @bw1340 {
-      align-self: flex-start;
-      font-size: 32px;
+    align-self: flex-start;
+    @media @bw768 {
+      font-size: 29px;
+    }
+    @media @bw600 {
+      font-size: 18px;
     }
   }
   &__title-millennials {
@@ -89,6 +92,9 @@
       max-width: none;
       width: auto;
       align-self: flex-start;
+    }
+    @media @bw600 {
+      margin-left: 0px;
     }
   }
   &__text-millennials {
@@ -142,33 +148,21 @@
     position: relative;
     display: block;
     width: 100%;
-    padding-top: 40.86%;
     &::after {
       content: ""; /* Создаем пустой контент для псевдоэлемента */
       position: absolute; /* Абсолютное позиционирование */
       width: 100%;
-      height: 246px;
+      height: 67.769%;
       top: 0;
+      left: 0;
       background-color: @red; /* Красный цвет фона */
       z-index: -1; /* Убираем псевдоэлемент под изображение */
     }
     &--red_rectangle {
       width: calc(100% - 6.237%);
-      max-height: 362px - 14px;
-      margin-top: 14px;
-      margin-left: 48px;
-    }
-    @media @bw1340 {
-      &--red_rectangle {
-        max-height: 342px;
-        margin-left: 40px;
-      }
-    }
-    @media @bw768 {
-      &--red_rectangle {
-        max-height: 290px;
-        margin-left: 37px;
-      }
+      max-height: 96.325%;
+      margin-top: 3.62%;
+      margin-left: 5.455%;
     }
   }
 
@@ -180,6 +174,9 @@
     margin-left: 70px;
     @media @bw768 {
       width: 262px;
+    }
+    @media @bw600 {
+      margin-left: 0px;
     }
   }
 

@@ -2,7 +2,7 @@
   width: 624px;
   margin: 0 auto; /* Центрируем контейнер */
   display: grid; /* Используем Grid Layout */
-  margin-bottom: 135px;
+  margin-bottom: 200px;
   grid-template-areas:
     "text text"
     "btn1 btn2";
@@ -17,6 +17,7 @@
   }
   @media @bw768 {
     max-width: 566px;
+    margin-bottom: 130px;
   }
   @media @bw600 {
     grid-template-areas:
@@ -24,6 +25,16 @@
     "btn1"
     "btn2";
     grid-template-columns: 1fr;
+  }
+  @media @bw400 {
+    max-width: 280px;
+    margin-bottom: 100px;
+    grid-template-areas:
+    "text"
+    "btn1"
+    "btn2";
+    grid-template-columns: 1fr;
+    gap: 25px;
   }
 
   &__text {
@@ -35,17 +46,17 @@
     letter-spacing: 2%; /* Меж буквенный интервал 2% */
     text-transform: uppercase; /* Преобразование текста в верхний регистр */
     @media @bw768 {
-      min-height: 32px;
+      min-height: 20px;
       font-size: 16px;
     }
-    @media @bw600 {
-      min-height: 22px;
+    @media @bw400 {
+      font-size: 13px;
+      min-height: 17px;
     }
   }
 
   &__btn1,
   &__btn2 {
-    text-decoration: none; /* Убирает подчеркивание текста */
     border: 1px solid black; /* Граница */
     padding: 15px 40px; /* Отступы для кнопок */
     text-align: center;

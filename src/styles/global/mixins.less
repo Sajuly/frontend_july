@@ -29,26 +29,36 @@
 }
 
 .title-texts() {
-  text-decoration: none; /* Убирает подчеркивание текста */
+  display: flex; /* Включаем Flexbox */
+  justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; /* Центрируем по вертикали */
+
   border: 1px solid black; /* Граница */
   font-family: @font2;
   font-size: 36px;
   color: @white; /* Цвет текста для кнопок */
   background-color: @black;
   text-transform: uppercase; /* Преобразование текста в верхний регистр */
-  display: block; /* Позволяет элементу занимать всю ширину родительского элемента */
-  text-align: center; /* Центрирование текста внутри элемента */
-  margin: 65px auto 150px; /* Центрирование самого элемента и отступ снизу на 150 пикселей */
+  margin: 0 auto 150px; /* Центрирование самого элемента и отступ снизу на 150 пикселей */
   width: 624px; /* ширина кнопки */
-  max-height: 10.264%;
+  height: 62px;
+
   @media @bw1340 {
     max-width: 604px;
+    margin: 0 auto 130px;
+    width: 604px;
   }
   @media @bw768 {
     max-width: 566px;
+    margin: 0 auto 100px;
+    font-size: 24px;
+    height: 52px;
   }
-  @media @bw600 {
+  @media @bw400 {
     max-width: 100%;
+    margin: 0 auto 80px;
+    font-size: 16px;
+    width: 280px;
   }
 }
 
