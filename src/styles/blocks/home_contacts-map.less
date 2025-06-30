@@ -4,10 +4,15 @@
   &__box {
     display: grid; /* Включаем Grid */
     grid-template-columns: 1fr 1fr;
-    gap: 67px;
-//     @media @bw768 {
-//
-//     }
+    gap: 108px;
+     @media @bw768 {
+        display: flex;
+        flex-direction: column;
+        gap: 99px;
+     }
+     @media @bw400 {
+        gap: 60px;
+     }
   }
 
   &__title {
@@ -16,21 +21,52 @@
 
   &__map {
     max-width: 752px;
-
+    @media @bw768 {
+      max-width: 708px;
+      height: 464px;
+      order: 1;
+    }
+    @media @bw400 {
+      max-width: 280px;
+      height: 186px;
+      order: 1;
+    }
   }
 
   &__first-block {
-    display: grid; /* Включаем Grid */
-    grid-template-columns: 110px 1fr;
-    gap: 67px 54px;
-    align-items: center; /* Центрирование элементов внутри ячеек вертикаль */
+    display: flex;
+    flex-direction: column;
     width: 470px;
     height: 464px;
     margin-top: 14px;
-//     @media @bw768 {
-//       grid-row: 2; /* Блок информации занимает вторую строку */
-//       width: 100%; /* Ширина блока 100% на маленьких экранах */
-//     }
+    gap: 67px;
+    @media @bw768 {
+      order: 2;
+      flex-direction: row;
+      margin-top: 0px;
+      align-items: center;
+      gap: 60px;
+      width: 100%;
+      height: 224px;
+    }
+    @media @bw400 {
+      flex-direction: column;
+      align-items: start;
+      height: 287px;
+      gap: 0px;
+    }
+  }
+  &__objects {
+    display: flex;
+    @media @bw768 {
+      order: 2;
+      flex-direction: column;
+      align-items: center;
+    }
+    @media @bw400 {
+      flex-direction: row;
+      text-align: left;
+    }
   }
 
   h4 {
@@ -38,10 +74,12 @@
     margin-block-end: 10px;
   }
 
-  &__sq {
+  &__images{
     width: 110px;
     height: 110px;
-    @media @bw768 {
+    @media @bw400 {
+      max-width: 65px;
+      max-height: 65px;
     }
   }
 
@@ -50,18 +88,42 @@
     display: flex; /* Используем flex для центрирования */
     flex-direction: column;
     justify-content: center;
+    margin-left: 54px;
+    @media @bw768 {
+      margin-left: 0px;
+      align-items: center;
+    }
+    @media @bw400 {
+      margin-left: 10px;
+      align-items: start;
+    }
     &--title {
       font-size: 20px; // Пример стиля
       font-family: @font1; // Пример стиля
       line-height: 27px;
+      white-space: nowrap;
+      @media @bw768 {
+        font-size: 18px; // Пример стиля
+      }
+      @media @bw400 {
+        font-size: 14px; // Пример стиля
+        line-height: 19px;
+        text-align: left;
+      }
     }
     &--description {
       margin: 0; /* Убираем отступы */
       font-size: 16px; // Пример стиля
       font-family: @font1; // Пример стиля
       line-height: 22px;
-   }
-
+      @media @bw768 {
+        text-align: center;
+      }
+      @media @bw400 {
+        font-size: 14px; // Пример стиля
+        text-align: left;
+      }
+    }
   }
 
   &__images {
