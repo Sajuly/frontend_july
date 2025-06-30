@@ -61,17 +61,20 @@
 
 .swiper-footer {
   display: flex;
-  justify-content: space-between; // Распределяет элементы по горизонтали с равными промежутками
   align-items: center; // Выравнивает элементы по вертикали по центру
   width: 530px; // Задает фиксированную ширину
-  max-width: 100%; // Ограничивает максимальную ширину 100% от родителя
   margin: 70px auto 0; // Устанавливает верхний отступ 70px, центрирует по горизонтали
 
   @media @bw1340 {
-    width: 300px;
+    width: 474px;
   }
   @media @bw768 {
-    margin: 60px auto 0;
+    width: 300px;
+
+  }
+  @media @bw600 {
+    width: 100%;
+
   }
 }
 
@@ -87,21 +90,19 @@
   width: auto; // Устанавливает автоматическую ширину
   margin: 0 auto; // Центрирует элемент по горизонтали
   padding: 0 15px; // Устанавливает внутренние отступы по 15px слева и справа
-  @media @bw1340 {
-
-  }
 }
 
 // Стиль точки пагинации
 .swiper-pagination-bullet {
   width: 15px; // Устанавливает ширину точки пагинации
   height: 2px; // Устанавливает высоту точки пагинации
-  border-top: 5px solid transparent; // Устанавливает верхнюю границу, создавая эффект "стрелки" (прозрачная)
-  border-bottom: 5px solid transparent; // Устанавливает нижнюю границу, создавая эффект "стрелки" (прозрачная)
   border-radius: 2px; // Скругляет углы точки пагинации
   background-color: @gray_dark; // Устанавливает фоновый цвет точки пагинации (использует переменную @gray_dark)
   background-clip: padding-box; // Ограничивает область фона до области отступов
   opacity: 1; // Устанавливает полную непрозрачность точки пагинации
+  @media @bw768 {
+      width: 9px; // Устанавливает ширину точки пагинации
+  }
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -112,4 +113,7 @@
 .swiper-pagination-horizontal.swiper-pagination-bullets
   .swiper-pagination-bullet {
   margin: 2px 3px;
+  @media @bw768 {
+    margin: 2px 2px;
+  }
 }

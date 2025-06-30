@@ -1,21 +1,15 @@
 .home_events-swiper {
   padding-top: 55px;
   background-image: url(../../assets/images/events/bg_event.png);
-  background-position: center top;
-  background-size: auto; /* масштабирует изображение так, чтобы оно полностью помещалось в элемент */
+  background-position: center;
+  background-size: cover; /* масштабирует изображение так, чтобы оно полностью помещалось в элемент */
   background-repeat: no-repeat; /* Избегаем повторения изображения */
   padding-bottom: 132px;
   margin-bottom: 31px;
-//
-//   @media @bw1340 {
-//     background-size: 1340px 1170px;
-//   }
-//   @media @bw768 {
-//     background-size: 768px 928px;
-//   }
-//   @media @bw600 {
-//     background-size: 320px 859px;
-//   }
+  @media @bw400 {
+    padding-bottom: 54px;
+    margin-bottom: 41px;
+  }
 
   &__box {
     .container();
@@ -34,6 +28,9 @@
     weight: 109px;
     justify-content: flex-end;
     margin-top: 15px;
+    @media @bw400 {
+      margin-top: 33px;
+    }
   }
 
   &__link {

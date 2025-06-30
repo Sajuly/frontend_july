@@ -1,6 +1,10 @@
 .home_blog {
   .container();
-  margin-bottom: 28px;
+  margin-bottom: 100px;
+
+  @media @bw768 { // Медиа-запрос для адаптивности
+    margin-bottom: 73px;
+  }
 
   &__title {
     .title-texts();
