@@ -9,6 +9,15 @@
     grid-template-columns: 1fr 1fr;
     gap: 98px;
     margin-bottom: 60px;
+    @media @bw1340 {
+      gap: 92px;
+    }
+    @media @bw768 {
+      gap: 52px;
+    }
+    @media @bw400 {
+      gap: 20px;
+    }
   }
 
   &__line1,
@@ -18,12 +27,21 @@
 
   &__line1::after {
     content: "";
-    background: linear-gradient(270.00deg, rgb(28, 27, 27), rgba(255, 255, 255, 0) 82.857%);
+    background: linear-gradient(270.00deg, rgb(28, 27, 27), rgba(255, 255, 255, 0) 100%);
     width: 618px; /* Ширина линии */
     height: 2px; /* Высота линии */
     position: absolute; /* Абсолютное позиционирование */
     left: 0; /* Позиция относительно родителя */
     top: 0; /* Позиция относительно родителя */
+    @media @bw1340 {
+      width: 584px; /* Ширина линии */
+    }
+    @media @bw768 {
+      width: 328px; /* Ширина линии */
+    }
+    @media @bw400 {
+      width: 130px; /* Ширина линии */
+    }
   }
 
   &__line2::after {
@@ -34,49 +52,67 @@
     position: absolute; /* Абсолютное позиционирование */
     left: 0; /* Позиция относительно родителя */
     top: 0; /* Позиция относительно родителя */
+    @media @bw1340 {
+      width: 584px; /* Ширина линии */
+    }
+    @media @bw768 {
+      width: 328px; /* Ширина линии */
+    }
+    @media @bw400 {
+      width: 130px; /* Ширина линии */
+    }
   }
 
   &__info {
-    display: grid;
-    grid-template-columns: 323px 1fr 430px;
-    height: 320px;
+    display: grid; /* Используем сетку */
+    grid-template-columns: 265px 1fr 1fr 500px;
+    grid-template-areas:
+      "red_list red_list red_list sub_form"
+      "red_list red_list red_list sub_form"
+      "millen cooky icons dignity"
+      "politic cooky icons dignity";
+    gap: 10px 10px;
+
+    @media @bw768 {
+      grid-template-columns: 1fr 1fr 388px;
+      grid-template-areas:
+        "red_list sub_form sub_form"
+        "red_list sub_form sub_form"
+        "icons icons icons"
+        "millen millen millen"
+        "politic cooky dignity";
+      gap: 10px 10px;
+    }
+    @media @bw400 {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__red-list {
+    grid-area: red_list;
     display: flex;
     flex-direction: column;
+    position: relative;
     height: 100%;
     align-items: center;
     align-items: flex-start;
-    li {
-      font-size: 16px;
-      font-family: @font1;
-      color: @black;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: @font1;
+    color: @black;
+    gap: 22px;
+
+    @media @bw400 {
+      margin-bottom: 62px;
+      gap: 27px;
+      font-size: 14px;
     }
     a {
-      font-weight: bold;
+      margin-left: 22px;
     }
   }
-
-  &__red-list-link1 {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: auto;
-    list-style-type: none; /* Убирает маркеры списка */
-    height: 198px;
-    padding-left: 26px;
-    gap: 22px;
-  }
-
-  &__link {
-    &:hover {
-      .text-hover(@black);
-    }
-  }
-
-  &__red-list-link1::before { // Красная полоса слева
+  &__red-list::before { // Красная полоса слева
     content: "";
     position: absolute; /* Абсолютное позиционирование */
     left: 0; /* Позиция слева */
@@ -85,117 +121,198 @@
     height: 100%; /* Высота на всю высоту родителя */
     background-color: @red; /* Цвет полосы */
   }
-
-  &__input-field {
-    flex: 1;
-    height: 100%; /* Высота поля ввода */
-    width: 275px;
-    padding: 0 28px; /* Внутренние отступы по горизонтали */
-    box-sizing: border-box;
+  &__link {
+    &:hover {
+      .text-hover(@red);
+    }
   }
 
-  &__red-list-link2 {
-    list-style-type: none; /* Убирает маркеры списка */
-    margin-bottom: 0px;
-    align-items: flex-end;
-    padding: 0px;
-  }
+  &__subscribe-form {
+    grid-area: sub_form;
+    margin-bottom: 59px;
+    justify-self: end;
 
-  &__logo-mill {
-    margin-bottom: 22px;
+    &--label {
+      font-size: 16px;
+      font-family: @font1;
+      margin-bottom: 14px;
+      @media @bw768 {
+        font-weight: bold;
+      }
+      @media @bw400 {
+        font-weight: normal;
+        font-size: 13px;
+        text-align: center;
+      }
+    }
+    &--email-enter {
+      margin-bottom: 15px;
+    }
+    &--email {
+      display:flex;
+      flex-direction: row;
+      margin-top: 14px;
+      height: 49px;
+      @media @bw400 {
+       width: 100%;
+      }
+    }
+    &--input-field {
+      height: 100%; /* Высота поля ввода */
+      width: 275px;
+      padding: 0 28px;
+      box-sizing: border-box;
+      @media @bw400 {
+        width: 200px;
+        padding: 0 20px;
+        font-size: 12px;
+      }
+    }
+    &--submit {
+      box-sizing: border-box;
+      width: 135px;
+      height: 100%;
+      background-color: @black;
+      color: @white;
+      font-family: @font1;
+      font-size: 16px;
+      cursor: pointer; /* Указывает, что элемент кликабельный */
+      &:hover {
+        border-color: @red; /* Цвет границы */
+        background-color: @red;
+        color: @white;
+      }
+      @media @bw400 {
+        font-size: 12px;
+      }
+    }
+    &__check {
+      position: relative;
+    }
+    &--input {
+      .check_input();
+    }
+    &--mark {
+      box-sizing: border-box; /* Учитывает границы и отступы в ширине и высоте */
+      display: block; /* Делает элемент блочным */
+      position: absolute; /* Позволяет свободно позиционировать элемент */
+      width: 24px; /* Ширина элемента */
+      height: 24px; /* Высота элемента */
+      border: 1px solid @black; /* Черная рамка вокруг элемента */
+    }
+    &--check-label {
+      margin-left: 39px;
+      font-size: 14px;
+      width: 241px;
+      line-height: 16px;
+      white-space: nowrap;
+      @media @bw400 {
+        font-size: 12px;
+        white-space: normal;
+      }
+    }
+    .check-error-message {
+      label.error,
+      span.error {
+        margin-left: 45px; /* Отступ слева от метки */
+      }
+    }
   }
 
   &__icons {
+    grid-area: icons;
     display: flex;
+    gap: 44px;
+    justify-content: center;
     align-items: flex-end;
+    align-self: end;
+    @media @bw768 {
+      justify-content: flex-end;
+    }
+    @media @bw768 {
+      justify-content: center;
+      align-self: center;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    @media @bw400 {
+      gap: 30px;
+      padding-top: 0px;
+    }
+  }
+
+  &__politic {
+    grid-area: politic;
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+    &--link {
+      &:hover {
+        .text-hover(@red);
+      }
+    }
+    @media @bw768 {
+      font-size: 14px;
+    }
+    @media @bw400 {
+       margin-bottom: 15px;
+    }
   }
 
   &__cooky {
-    margin-right: 203px;
-    &:hover {
-      .text-hover(@black);
+    grid-area: cooky;
+    font-weight: bold;
+    font-size: 16px;
+    align-self: end;
+    margin-left: 60px;
+    &--link {
+      &:hover {
+        .text-hover(@red);
+      }
+    }
+    @media @bw768 {
+      align-self: start;
+      margin-left: 0px;
+    }
+    @media @bw400 {
+      font-size: 14px;
+      margin-bottom: 20px;
     }
   }
 
-  &__svg {
-    margin-right: 44px;
-  }
-
-  &__email-input {
+  &__millennials {
+    grid-area: millen;
     display: flex;
-    flex-direction: column;
-  }
+    margin-top: 58px;
 
-  &__label {
-    font-size: 16px;
-    font-family: @font1;
-    font-weight: bold;
-    margin-bottom: 14px;
-  }
-  &__email-enter {
-    margin-bottom: 15px;
-  }
-  &__email {
-    display:flex;
-    flex-direction: row;
-    margin-top: 14px;
-    height: 49px;
-  }
-
-  &__input {
-    .check_input();
-  }
-
-  &__mark {
-    box-sizing: border-box; /* Учитывает границы и отступы в ширине и высоте */
-    display: block; /* Делает элемент блочным */
-    position: absolute; /* Позволяет свободно позиционировать элемент */
-    //top: 157px; /* Позиция сверху */
-    width: 24px; /* Ширина элемента */
-    height: 24px; /* Высота элемента */
-    border: 1px solid @black; /* Черная рамка вокруг элемента */
-  }
-
-  &__submit {
-    box-sizing: border-box;
-    width: 135px;
-    height: 100%;
-    background-color: @black;
-    color: @white;
-    font-family: @font1;
-    font-size: 16px;
-    cursor: pointer; /* Указывает, что элемент кликабельный */
-
-    &:hover {
-      border-color: @red; /* Цвет границы */
-      background-color: @red;
-      color: @white;
+    @media @bw768 {
+      margin-top: 0px;
+      justify-content: start;
+    }
+    @media @bw400 {
+      justify-content: flex-end;
     }
   }
 
-  &__check-label {
-    margin-left: 39px;
-  }
+  &__dignity {
+    grid-area: dignity;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-self: end;
 
-  &__logo {
-    margin-top: auto;
-    margin-left: auto;
-  }
-
-  &__logo-text {
-    font-size: 16px;
-    font-family: @font1;
-    font-weight: bold;
-  }
-
-  &__icon {
-    margin-left: 9px;
-  }
-
-  .check-error-message {
-    label.error,
-    span.error {
-      margin-left: 45px; /* Отступ слева от метки */
+    span {
+      font-size: 16px;
+      font-family: @font1;
+      font-weight: bold;
+      @media @bw400 {
+        font-size: 13px;
+        height: 19px;
+      }
+    }
+    &--svg {
+      padding-left: 10px;
     }
   }
+
 }

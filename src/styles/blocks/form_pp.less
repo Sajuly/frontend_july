@@ -46,7 +46,6 @@
 
   }
 
-
   &__sticky-close {
     position: sticky; /* Прилипание к верхней части при прокрутке */
     top: 0; /* Прикрепление к верхнему краю */
@@ -74,13 +73,17 @@
     min-height: 80px; /* Минимальная высота */
     background-color: @black; /* Фоновый цвет заголовка */
     text-transform: uppercase; /* Преобразование текста в верхний регистр */
-    font-weight: 400; /* Нагрузка шрифта */
+    font-weight: 400;
     font-family: @font2; /* Шрифт */
     font-size: 22px; /* Размер шрифта */
     line-height: 1.36; /* Межстрочный интервал */
     color: @white; /* Цвет текста */
     letter-spacing: 0.02em; /* Расстояние между буквами */
     z-index: 1; /* Уровень наложения */
+    @media @bw768 {
+      width: 485px;
+      padding: 10px 59px 10px 18px;
+    }
   }
 
   &__radio-group {

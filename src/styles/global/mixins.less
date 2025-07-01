@@ -162,7 +162,7 @@
 .text-hover(@color) {
   cursor: pointer;
   color: @color; // Меняет цвет текста
-  text-decoration: underline; // Добавляет подчеркивание
+//   text-decoration: underline; // Добавляет подчеркивание
   text-decoration-color: @color; // Устанавливает цвет подчеркивания
 }
 
@@ -170,7 +170,7 @@
   .is-hidden();  /* Скрываем стандартный элемент <input> */
   &:checked {
     & ~ .form_check__mark,
-    & ~ .page-footer__mark,
+    & ~ .page-footer__subscribe-form--mark,
     & ~ .event_check-table__mark {
       background-color: @black; /* Устанавливает фоновый цвет элемента в черный (переменная @black) */
       &::after { /* Псевдоэлемент, который добавляется после содержимого элемента */
