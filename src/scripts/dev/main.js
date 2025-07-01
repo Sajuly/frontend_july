@@ -376,6 +376,9 @@
   }
 
   const footer_email = $('#js-footer_email');
+  console.log(footer_email);
+
+
   if (footer_email.length) {
     const subscribeAction = footer_email.attr("action");
     const subscribeEmail = footer_email.find("#js-subscribeEmail");
