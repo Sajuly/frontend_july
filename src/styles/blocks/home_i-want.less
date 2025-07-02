@@ -2,7 +2,7 @@
   width: 624px;
   margin: 0 auto; /* Центрируем контейнер */
   display: grid; /* Используем Grid Layout */
-  margin-bottom: 200px;
+  padding-bottom: 100px;
   grid-template-areas:
     "text text"
     "btn1 btn2";
@@ -17,7 +17,6 @@
   }
   @media @bw768 {
     max-width: 566px;
-    margin-bottom: 130px;
   }
   @media @bw600 {
     grid-template-areas:
@@ -28,7 +27,6 @@
   }
   @media @bw400 {
     max-width: 280px;
-    margin-bottom: 100px;
     grid-template-areas:
     "text"
     "btn1"

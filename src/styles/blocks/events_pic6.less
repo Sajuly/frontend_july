@@ -35,7 +35,7 @@
     flex-direction: column; /* Вертикальное размещение элементов */
     justify-content: center; /* Центрирование по вертикали */
     align-items: center; /* Центрирование по горизонтали */
-    margin-bottom: 55px;
+    margin-bottom: 100px;
     width: 100%; /* Убедитесь, что кнопка занимает всю ширину */
   }
 
@@ -44,6 +44,15 @@
     line-height: 22px; // Высота строки
     margin-top: 71px;
     margin-bottom: 18px;
+    @media @bw1340 {
+      margin-top: 55px;
+    }
+    @media @bw768 {
+      margin-top: 60px;
+    }
+    @media @bw400 {
+      margin-top: 50px;
+    }
   }
 
 }

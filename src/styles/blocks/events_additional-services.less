@@ -3,6 +3,7 @@
 
   &__title {
     .title-texts();
+    font-size: 22px;
   }
 
   &__text {
@@ -13,6 +14,23 @@
     font-weight: 400;
     line-height: 22px;
     margin-bottom: 60px;
+    @media @bw400 {
+      width: 100%;
+    }
+  }
+
+  &__table {
+
+    @media @bw400 {
+      display: none;
+    }
+  }
+
+  &__table320 {
+    display: none;
+    @media @bw400 {
+      display: block;
+    }
   }
 
 }

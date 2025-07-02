@@ -4,6 +4,10 @@
   padding-left: 40px;
   display: flex;
   margin-top: 40px;
+
+  @media @bw400 {
+    visibility: hidden; /* Скрывает элемент, но он занимает место */
+  }
   &__item {
     &:hover {
       text-decoration: underline; /* Подчеркивание при наведении */
@@ -18,4 +22,16 @@
     content: " / "; /* Разделитель между элементами */
     padding: 0 5px;
   }
+
+  &__events {
+    margin-bottom: 138px;
+    @media @bw768 {
+      margin-bottom: 90px;
+      font-size: 14px;
+    }
+    @media @bw400 {
+      margin-bottom: 50px;
+    }
+  }
+
 }

@@ -2,9 +2,13 @@
   display: flex;
   justify-content: space-between;
   gap: 57px; /* Отступ между колонками */
-
   @media @bw768 {
     gap: 0px;
+  }
+  @media @bw400 {
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
   }
 
   &__submit,

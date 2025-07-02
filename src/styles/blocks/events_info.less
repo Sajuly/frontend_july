@@ -5,9 +5,40 @@
   grid-template-rows: 253px;
   grid-column-gap: 65px; /* Расстояние между колонками */
   margin-bottom: 10px;
+  @media @bw1340 {
+    grid-column-gap: 28px;
+  }
+  @media @bw768 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px 50px;
+  }
+  @media @bw400 {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 
   &__box {
     justify-items: center; /* Центрирует элементы по горизонтали */
+  }
+  &__center {
+    @media @bw768 {
+      width: 300px;
+      grid-column: 1 / -1; /* Занимает всю ширину сетки */
+      justify-self: center;
+    }
+  }
+
+  &__svg {
+    width: 110px;
+    height: 110px;
+    @media @bw400 {
+      width: 110px;
+      height: 110px;
+    }
+  }
+
+  &__sq {
+    justify-content: center;
   }
 
   &__title {
@@ -21,11 +52,14 @@
     font-family: @font1;
     font-size: 16px;
     text-align: center;
+    @media @bw768 {
+
+    }
   }
 
   &__link {
     &:hover {
-      .text-hover(@black);
+      .text-hover(@red);
     }
   }
 

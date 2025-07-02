@@ -11,6 +11,12 @@
   overflow-y: auto; /* Прокрутка по вертикали при переполнении */
   z-index: 110; /* Уровень наложения */
   display: none; /* Скрытие элемента по умолчанию */
+  @media @bw768 {
+    padding: 75px 40px 50px; /* Внутренние отступы */
+  }
+  @media @bw400 {
+    padding: 75px 20px 50px; /* Внутренние отступы */
+  }
 
   &__wrapper {
     box-sizing: border-box; /* Учитывает padding и border */
@@ -33,17 +39,30 @@
     max-width: 950px; /* Максимальная ширина */
     margin: 0 auto; /* Центрирование */
     padding: 0 40px 40px; /* Внутренние отступы */
+    @media @bw400 {
+      padding: 0 20px 20px; /* Внутренние отступы */
+    }
   }
 
   &__container1 {
     display: grid; /* Используем сетку */;
     grid-template-columns: 1fr 1fr;
-    gap: 30px 60px; /* 30px между строками и 66px между колонками */
+    gap: 30px 60px;
     margin-bottom: 30px;
     grid-template-areas:
           "radio visitors"
           "radio date";
-
+    @media @bw768 {
+      gap: 30px 20px; /* 30px между строками и 66px между колонками */
+    }
+    @media @bw400 {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "radio"
+        "visitors"
+        "date";
+      gap: 30px;
+    }
   }
 
   &__sticky-close {
@@ -61,6 +80,10 @@
     right: -30px; /* Расположение справа от родителя */
     background: none; /* Убирает фон */
     border: none; /* Убирает рамку */
+    @media @bw400 {
+      top: -20px; /* Расположение выше родителя */
+      right: -20px; /* Расположение справа от родителя */
+    }
   }
 
   &__title {
@@ -80,9 +103,19 @@
     color: @white; /* Цвет текста */
     letter-spacing: 0.02em; /* Расстояние между буквами */
     z-index: 1; /* Уровень наложения */
+    @media @bw1340 {
+      margin: -40px 0 70px -45px; /* Отступы вокруг заголовка */
+    }
     @media @bw768 {
       width: 485px;
       padding: 10px 59px 10px 18px;
+      margin: -40px 0 70px -13px; /* Отступы вокруг заголовка */
+    }
+    @media @bw400 {
+      width: 225px;
+      padding: 9px 22px 11px 20px;
+      margin: -40px 0 40px -14px; /* Отступы вокруг заголовка */
+      font-size: 14px;
     }
   }
 
@@ -98,6 +131,15 @@
   &__block-title {
     font-size: 30px;
     line-height: 25px;
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    @media @bw400 {
+      width: 39px;
+      height: 39px;
+    }
   }
 
 }
