@@ -1,13 +1,27 @@
 .event_reserve {
   .container();
+  margin-bottom: 150px;
+  @media @bw768 {
+    margin-bottom: 100px;
+  }
 
   &__grid-box {
     display: grid;
     grid-template-columns: 545px 1fr;
     gap: 67px 50px; /* 100px между строками, 50px между колонками */
+    @media @bw400 {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "scheme"
+        "price"
+        "checks"
+        "order";
+      gap: 60px;
+    }
   }
 
   &__checks {
+    grid-area: checks;
     &--title {
       margin-bottom: 31px;
     }
@@ -18,10 +32,11 @@
   }
 
   &__scheme {
-     display: flex;
-     flex-direction: column;
-     justify-content: center; /* Центрирует элементы по горизонтали */
-     align-items: center; /* Центрирует элементы по вертикали */
+    grid-area: scheme;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрирует элементы по горизонтали */
+    align-items: center; /* Центрирует элементы по вертикали */
     &--title {
       color: @white; /* Цвет текста - белый */
       background-color: @black; /* Цвет фона - черный */
@@ -54,13 +69,15 @@
     }
   }
 
-  &__checks--title,
-  &__order--title{
+  h4 {
     margin-block-start: 0px;
     margin-block-end: 0px;
+    font-size: 18px;
+    line-height: 25px;
   }
 
   &__order {
+    grid-area: order;
     width: 405px;
     justify-self: start;
     text-align: left;
@@ -123,8 +140,8 @@
     }
   }
 
-
   &__price {
+    grid-area: price;
     width: 355px;
     justify-self: end;
     text-align: right;

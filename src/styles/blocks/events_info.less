@@ -4,13 +4,14 @@
   grid-template-columns: repeat(3, 401px);
   grid-template-rows: 253px;
   grid-column-gap: 65px; /* Расстояние между колонками */
-  margin-bottom: 10px;
+  margin-bottom: 150px;
   @media @bw1340 {
     grid-column-gap: 28px;
   }
   @media @bw768 {
     grid-template-columns: repeat(2, 1fr);
     gap: 100px 50px;
+    margin-bottom: 100px;
   }
   @media @bw400 {
     grid-template-columns: 1fr;
@@ -19,6 +20,9 @@
 
   &__box {
     justify-items: center; /* Центрирует элементы по горизонтали */
+    @media @bw400 {
+      width: 100%;
+    }
   }
   &__center {
     @media @bw768 {
@@ -47,13 +51,16 @@
     font-weight: bold;
     margin-top: 40px;
     margin-bottom: 0px;
+    @media @bw400 {
+       margin-top: 30px;
+    }
   }
   &__text {
     font-family: @font1;
     font-size: 16px;
     text-align: center;
-    @media @bw768 {
-
+    @media @bw400 {
+      font-size: 13px;
     }
   }
 

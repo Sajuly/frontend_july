@@ -45,7 +45,7 @@
       flex-direction: row;
       margin-top: 0px;
       align-items: center;
-      gap: 60px;
+      gap: 0px;
       width: 100%;
       height: 224px;
     }
@@ -53,7 +53,6 @@
       flex-direction: column;
       align-items: start;
       height: 287px;
-      gap: 0px;
     }
   }
   &__objects {
@@ -66,6 +65,17 @@
     @media @bw400 {
       flex-direction: row;
       text-align: left;
+    }
+  }
+
+  &__middle-obj {
+    @media @bw768 {
+      margin-left: 27px;
+      margin-right: 69px;
+    }
+    @media @bw400 {
+      margin-left: 0px;
+      margin-right: 0px;
     }
   }
 

@@ -5,7 +5,21 @@
     display: flex;
     justify-content: center;
     align-items: center; /* Вертикальное центрирование */
-    gap: 59px;
+    gap: 60px;
+    @media @bw1340 {
+      gap: 50px;
+    }
+    @media @bw768 {
+      gap: 41px;
+    }
+    @media @bw400 {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       grid-template-areas:
+        "woman-pic woman-pic"
+        "left-text right-text";
+        gap: 40px 20px;
+    }
   }
 
   p {
@@ -22,10 +36,35 @@
     text-align: center;
     margin-top: 38px;
     margin-bottom: 80px;
+    @media @bw768 {
+      font-size: 40px;
+      margin-bottom: 64px;
+    }
+    @media @bw400 {
+      font-size: 20px;
+      margin-top: 0px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__picture {
+    grid-area: woman-pic;
+    @media @bw400 {
+      grid-column: 1 / -1;
+    }
   }
   &__woman {
-    width: 497px;    /* Ширина */
-    height: auto;  /* Высота автоматически подстраивается */
+    width: 497px;
+    height: auto;
+    @media @bw1340 {
+      width: 426px;
+    }
+    @media @bw768 {
+      width: 245px;
+    }
+    @media @bw400 {
+      width: 100%;
+    }
   }
 
   &__left1,
@@ -37,6 +76,26 @@
     line-height: 36px;
     letter-spacing: 0%;
     text-transform: uppercase; // Верхний регистр
+    @media @bw768 {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+  &__left1 {
+    @media @bw768 {
+      font-size: 18px;
+      line-height: 22px;
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+  }
+
+  p {
+    @media @bw768 {
+      margin-block-start: 6px;
+      margin-block-end: 6px;
+      line-height: 22px;
+    }
   }
 
   &__left2,
@@ -47,42 +106,52 @@
     font-weight: 700;
     line-height: 19px;
     letter-spacing: 0%;
-    text-align: center;
     text-transform: uppercase; // Верхний регистр
+    white-space: nowrap;
+    @media @bw768 {
+      font-size: 12px;
+    }
+  }
+  &__left2 {
+    text-align: right;
   }
 
   &__left-text {
     position: relative; /* Позволяет псевдоэлементам позиционироваться относительно этого элемента */
     text-align: right;
+    grid-area: left-text;
 
     &::before,
     &::after {
       content: ""; /* Псевдоэлемент должен иметь содержимое */
+      position: absolute; /* Абсолютное позиционирование */
       display: block; // Делаем элемент блочным
       background: linear-gradient(270.00deg, rgb(28, 27, 27),rgba(255, 255, 255, 0) 82.857%);
       width: 139px; /* Ширина линии */
       height: 1px; /* Высота линии */
-      position: absolute; /* Абсолютное позиционирование */
-      left: 50%; /* Центрирование по горизонтали */
-      transform: translateX(-50%); /* Сдвиг на половину ширины влево */
+      right: 0; /* Центрирование по горизонтали */
     }
     &::before {
       top: -12px; /* Сдвиг на 12 пикселей выше текста */
+      @media @bw768 {
+        top: 0px;
+      }
     }
   }
 
   &__right-text {
     position: relative;
     text-align: left;
+    grid-area: right-text;
 
     &::before,
     &::after {
       content: ""; /* Псевдоэлемент должен иметь содержимое */
+      position: absolute; /* Абсолютное позиционирование */
       display: block; // Делаем элемент блочным
       background: linear-gradient(270.00deg, rgb(28, 27, 27),rgba(255, 255, 255, 0) 82.857%);
       width: 139px; /* Ширина линии */
       height: 1px; /* Высота линии */
-      position: absolute; /* Абсолютное позиционирование */
       transform: rotate(180.00deg)
     }
   }
