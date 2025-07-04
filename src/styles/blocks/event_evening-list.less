@@ -2,6 +2,9 @@
   .container();
   margin-top: 61px;
   margin-bottom: 80px;
+  @media @bw768 {
+    margin-bottom: 54px;
+  }
   @media @bw400 {
     margin-bottom: 40px;
   }
@@ -21,6 +24,8 @@
     }
   }
   &__list2 {
+    min-height: 278px;
+    line-height: 22px;
     @media @bw400 {
       line-height: 19px;
       min-height: 211px;

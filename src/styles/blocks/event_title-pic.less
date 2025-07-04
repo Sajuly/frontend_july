@@ -18,7 +18,7 @@
        grid-template-areas:
         "woman-pic woman-pic"
         "left-text right-text";
-        gap: 40px 20px;
+        gap: 40px 37px;
     }
   }
 
@@ -50,6 +50,7 @@
   &__picture {
     grid-area: woman-pic;
     @media @bw400 {
+      margin: 0 auto 0 auto;
       grid-column: 1 / -1;
     }
   }
@@ -62,9 +63,9 @@
     @media @bw768 {
       width: 245px;
     }
-    @media @bw400 {
-      width: 100%;
-    }
+//     @media @bw400 {
+//       width: 100%;
+//     }
   }
 
   &__left1,
