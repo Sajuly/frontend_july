@@ -415,4 +415,87 @@
     });
   }
 
+  //------------ Закрашивать резервированные столы ----------//
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('checkbox_t1').addEventListener('change', function () {
+
+      const table = document.getElementById('table1');
+      const ellipseIds = ['ellipse_t1_1', 'ellipse_t1_2', 'ellipse_t1_3', 'ellipse_t1_4', 'ellipse_t1_5'];
+      const numb_t = document.getElementById('t1');
+
+      // Устанавливаем цвет в зависимости от состояния чекбокса
+      const fillColor = this.checked ? '#BC3324' : '';
+      const numbColor = this.checked ? '#FFFFFF' : '#BC3324';
+
+      // Устанавливаем цвет для table1 и эллипсов
+      table.setAttribute('fill', fillColor);
+      ellipseIds.forEach(id => {
+        document.getElementById(id).setAttribute('fill', fillColor);
+      });
+      numb_t.setAttribute('fill', numbColor);
+
+    });
+
+    document.getElementById('checkbox_t4').addEventListener('change', function () {
+      const table = document.getElementById('table4');
+      const ellipseIds = ['ellipse_t4_1', 'ellipse_t4_2', 'ellipse_t4_3', 'ellipse_t4_4', 'ellipse_t4_5'];
+      const numb_t = document.getElementById('t4');
+
+      // Устанавливаем цвет в зависимости от состояния чекбокса
+      const fillColor = this.checked ? '#BC3324' : '';
+      const numbColor = this.checked ? '#FFFFFF' : '#BC3324';
+      
+      // Устанавливаем цвет для table1 и эллипсов
+      table.setAttribute('fill', fillColor);
+      ellipseIds.forEach(id => {
+        document.getElementById(id).setAttribute('fill', fillColor);
+      });
+      numb_t.setAttribute('fill', numbColor);
+    });
+
+    document.getElementById('checkbox_t7').addEventListener('change', function () {
+      const table = document.getElementById('table7');
+      const ellipseIds = ['ellipse_t7_1', 'ellipse_t7_2', 'ellipse_t7_3', 'ellipse_t7_4'];
+      const numb_t = document.getElementById('t7');
+
+      // Устанавливаем цвет в зависимости от состояния чекбокса
+      const fillColor = this.checked ? '#BC3324' : '';
+      const numbColor = this.checked ? '#FFFFFF' : '#BC3324';
+      
+      // Устанавливаем цвет для table1 и эллипсов
+      table.setAttribute('fill', fillColor);
+      ellipseIds.forEach(id => {
+        document.getElementById(id).setAttribute('fill', fillColor);
+      });
+      numb_t.setAttribute('fill', numbColor);
+    });
+
+  });
+
 })();
+
+
+      // const elipse_t1_1 = document.getElementById('ellipse_t1_1');
+      // const elipse_t1_2 = document.getElementById('ellipse_t1_2');
+      // const elipse_t1_3 = document.getElementById('ellipse_t1_3');
+      // const elipse_t1_4 = document.getElementById('ellipse_t1_4');
+      // const elipse_t1_5 = document.getElementById('ellipse_t1_5');
+      // const numb_t1 = document.getElementById('t1');
+      // if (this.checked) {
+      //   table1.setAttribute('fill', '#BC3324');
+      //   elipse_t1_1.setAttribute('fill', '#BC3324');
+      //   elipse_t1_2.setAttribute('fill', '#BC3324');
+      //   elipse_t1_3.setAttribute('fill', '#BC3324');
+      //   elipse_t1_4.setAttribute('fill', '#BC3324');
+      //   elipse_t1_5.setAttribute('fill', '#BC3324');
+      //   numb_t1.setAttribute('fill', '#FFFFFF');
+      // } else {
+      //   table1.setAttribute('fill', ''); // Исходный цвет
+      //   elipse_t1_1.setAttribute('fill', '');
+      //   elipse_t1_2.setAttribute('fill', '');
+      //   elipse_t1_3.setAttribute('fill', '');
+      //   elipse_t1_4.setAttribute('fill', '');
+      //   elipse_t1_5.setAttribute('fill', '');
+      //   numb_t1.setAttribute('fill', '#BC3324');
+      // }
