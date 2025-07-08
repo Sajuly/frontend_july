@@ -418,84 +418,176 @@
   //------------ Закрашивать резервированные столы ----------//
 
   document.addEventListener('DOMContentLoaded', function () {
+
+    // --------- Функция для красных столов
+    function updateColorsRed(checkboxId, tableId, ellipseIds, numbId) {
+      const checkbox = document.getElementById(checkboxId);
+      const table = document.getElementById(tableId);
+      const numb_t = document.getElementById(numbId);
+      // Устанавливаем цвет в зависимости от состояния чекбокса
+      const fillColor = checkbox.checked ? '#BC3324' : '';  // красный и нет цвета
+      const numbColor = checkbox.checked ? '#FFFFFF' : '#BC3324';  // белый и красный
+      // Устанавливаем цвет для таблицы и эллипсов
+      table.setAttribute('fill', fillColor);
+      ellipseIds.forEach(id => {
+        document.getElementById(id).setAttribute('fill', fillColor);
+      });
+      numb_t.setAttribute('fill', numbColor);
+    }
+
+    // --------- Функция для черных столов
+    function updateColorsBlack(checkboxId, tableId, ellipseIds, numbId) {
+      const checkbox = document.getElementById(checkboxId);
+      const table = document.getElementById(tableId);
+      const numb_t = document.getElementById(numbId);
+      // Устанавливаем цвет в зависимости от состояния чекбокса
+      const fillColor = checkbox.checked ? '#1F1E1E' : '';  // черный и нет цвета
+      const numbColor = checkbox.checked ? '#FFFFFF' : '#1F1E1E';  // белый и черный
+      // Устанавливаем цвет для таблицы и эллипсов
+      table.setAttribute('fill', fillColor);
+      ellipseIds.forEach(id => {
+        document.getElementById(id).setAttribute('fill', fillColor);
+      });
+      numb_t.setAttribute('fill', numbColor);
+    }
+
+    // -------- Функция для стола №10
+    function updateColorsBlackTen(checkboxId, tableId, ellipseIds, numbId) {
+      const checkbox = document.getElementById(checkboxId);
+      const table = document.getElementById(tableId);
+      const numb_t = document.getElementById(numbId);
+      // Устанавливаем цвет в зависимости от состояния чекбокса
+      const fillTable = checkbox.checked ? 'nonzero' : 'evenodd';
+      const fillColor = checkbox.checked ? '#1F1E1E' : '';  // черный и нет цвета
+      const numbColor = checkbox.checked ? '#FFFFFF' : '#1F1E1E';  // белый и черный
+      // Устанавливаем цвет для таблицы и эллипсов
+      table.setAttribute('fill-rule', fillTable);
+      ellipseIds.forEach(id => {
+        document.getElementById(id).setAttribute('fill', fillColor);
+      });
+      numb_t.setAttribute('fill', numbColor);
+    }
+
+    // Добавляем обработчики событий для красных чекбоксов
     document.getElementById('checkbox_t1').addEventListener('change', function () {
-
-      const table = document.getElementById('table1');
-      const ellipseIds = ['ellipse_t1_1', 'ellipse_t1_2', 'ellipse_t1_3', 'ellipse_t1_4', 'ellipse_t1_5'];
-      const numb_t = document.getElementById('t1');
-
-      // Устанавливаем цвет в зависимости от состояния чекбокса
-      const fillColor = this.checked ? '#BC3324' : '';
-      const numbColor = this.checked ? '#FFFFFF' : '#BC3324';
-
-      // Устанавливаем цвет для table1 и эллипсов
-      table.setAttribute('fill', fillColor);
-      ellipseIds.forEach(id => {
-        document.getElementById(id).setAttribute('fill', fillColor);
-      });
-      numb_t.setAttribute('fill', numbColor);
-
-    });
-
+        updateColorsRed('checkbox_t1', 'table1', ['ellipse_t1_1', 'ellipse_t1_2', 'ellipse_t1_3', 'ellipse_t1_4', 'ellipse_t1_5'], 't1');});
     document.getElementById('checkbox_t4').addEventListener('change', function () {
-      const table = document.getElementById('table4');
-      const ellipseIds = ['ellipse_t4_1', 'ellipse_t4_2', 'ellipse_t4_3', 'ellipse_t4_4', 'ellipse_t4_5'];
-      const numb_t = document.getElementById('t4');
-
-      // Устанавливаем цвет в зависимости от состояния чекбокса
-      const fillColor = this.checked ? '#BC3324' : '';
-      const numbColor = this.checked ? '#FFFFFF' : '#BC3324';
-      
-      // Устанавливаем цвет для table1 и эллипсов
-      table.setAttribute('fill', fillColor);
-      ellipseIds.forEach(id => {
-        document.getElementById(id).setAttribute('fill', fillColor);
-      });
-      numb_t.setAttribute('fill', numbColor);
-    });
-
+        updateColorsRed('checkbox_t4', 'table4', ['ellipse_t4_1', 'ellipse_t4_2', 'ellipse_t4_3', 'ellipse_t4_4', 'ellipse_t4_5'], 't4');});
     document.getElementById('checkbox_t7').addEventListener('change', function () {
-      const table = document.getElementById('table7');
-      const ellipseIds = ['ellipse_t7_1', 'ellipse_t7_2', 'ellipse_t7_3', 'ellipse_t7_4'];
-      const numb_t = document.getElementById('t7');
+        updateColorsRed('checkbox_t7', 'table7', ['ellipse_t7_1', 'ellipse_t7_2', 'ellipse_t7_3', 'ellipse_t7_4'], 't7');});
+    document.getElementById('checkbox_t8').addEventListener('change', function () {
+        updateColorsRed('checkbox_t8', 'table8', ['ellipse_t8_1', 'ellipse_t8_2', 'ellipse_t8_3'], 't8');});
+    document.getElementById('checkbox_t9').addEventListener('change', function () {
+        updateColorsRed('checkbox_t9', 'table9', ['ellipse_t9_1', 'ellipse_t9_2', 'ellipse_t9_3'], 't9');});
 
-      // Устанавливаем цвет в зависимости от состояния чекбокса
-      const fillColor = this.checked ? '#BC3324' : '';
-      const numbColor = this.checked ? '#FFFFFF' : '#BC3324';
-      
-      // Устанавливаем цвет для table1 и эллипсов
-      table.setAttribute('fill', fillColor);
-      ellipseIds.forEach(id => {
-        document.getElementById(id).setAttribute('fill', fillColor);
-      });
-      numb_t.setAttribute('fill', numbColor);
-    });
-
+    // Добавляем обработчики событий для черных чекбоксов
+    document.getElementById('checkbox_t10').addEventListener('change', function () {
+      updateColorsBlackTen('checkbox_t10', 'table10', ['ellipse_t10_1', 'ellipse_t10_2', 'ellipse_t10_3', 'ellipse_t10_4'], 't10');});
+    document.getElementById('checkbox_t2').addEventListener('change', function () {
+      updateColorsBlack('checkbox_t2', 'table2', ['ellipse_t2_1', 'ellipse_t2_2', 'ellipse_t2_3', 'ellipse_t2_4', 'ellipse_t2_5', 'ellipse_t2_6', 'ellipse_t2_7'], 't2');});
+    document.getElementById('checkbox_t3').addEventListener('change', function () {
+      updateColorsBlack('checkbox_t3', 'table3', ['ellipse_t3_1', 'ellipse_t3_2', 'ellipse_t3_3', 'ellipse_t3_4', 'ellipse_t3_5', 'ellipse_t3_6', 'ellipse_t3_7'], 't3');});
+    document.getElementById('checkbox_t5').addEventListener('change', function () {
+      updateColorsBlack('checkbox_t5', 'table5', ['ellipse_t5_1', 'ellipse_t5_2', 'ellipse_t5_3', 'ellipse_t5_4', 'ellipse_t5_5', 'ellipse_t5_6', 'ellipse_t5_7'], 't5');});
+    document.getElementById('checkbox_t6').addEventListener('change', function () {
+      updateColorsBlack('checkbox_t6', 'table6', ['ellipse_t6_1', 'ellipse_t6_2', 'ellipse_t6_3', 'ellipse_t6_4', 'ellipse_t6_5', 'ellipse_t6_6', 'ellipse_t6_7'], 't6');});
+    document.getElementById('checkbox_t11').addEventListener('change', function () {
+      updateColorsBlack('checkbox_t11', 'table11', ['ellipse_t11_1', 'ellipse_t11_2', 'ellipse_t11_3', 'ellipse_t11_4', 'ellipse_t11_5', 'ellipse_t11_6', 'ellipse_t11_7'], 't11');});
   });
 
+  //------------ Считает кол-во билетов------------------------------//
+
+function updateTicketCount() {
+    const checkboxT1 = document.getElementById('checkbox_t1');
+    const checkboxT2 = document.getElementById('checkbox_t2');
+    const checkboxT3 = document.getElementById('checkbox_t3');
+    const checkboxT4 = document.getElementById('checkbox_t4');
+    const checkboxT5 = document.getElementById('checkbox_t5');
+    const checkboxT6 = document.getElementById('checkbox_t6');
+    const checkboxT7 = document.getElementById('checkbox_t7');
+    const checkboxT8 = document.getElementById('checkbox_t8');
+    const checkboxT9 = document.getElementById('checkbox_t9');
+    const checkboxT10 = document.getElementById('checkbox_t10');
+    const checkboxT11 = document.getElementById('checkbox_t11');
+
+    const ticket1 = document.getElementById('js_ticket1');
+    const ticket2 = document.getElementById('js_ticket2');
+    const price1 = document.getElementById('js_price1');
+    const price2 = document.getElementById('js_price2');
+
+    const totalElement = document.getElementById('js_total');
+
+    const ticketPrice1 = 1400; // Цена за билет стола 2
+    const ticketPrice2 = 1250; // Цена за билет стола 3
+
+    let total_tickets1 = 0;
+    let total_sum1 = 0;
+
+    let total_tickets2 = 0;
+    let total_sum2 = 0;
+
+    let totalPrice = 0;
+
+    // Проверяем состояние чекбоксов
+    if (checkboxT1.checked) { //красный1
+      total_tickets1 += 5; 
+    }
+    if (checkboxT2.checked) { //черный2
+      total_tickets2 += 7; 
+    }
+    if (checkboxT3.checked) { //черный2
+      total_tickets2 += 7; 
+    }
+    if (checkboxT4.checked) { //красный1
+      total_tickets1 += 5; 
+    }
+    if (checkboxT5.checked) { //черный2
+      total_tickets2 += 7; 
+    }
+    if (checkboxT6.checked) { //черный2
+      total_tickets2 += 7; 
+    }
+    if (checkboxT7.checked) { //красный1
+      total_tickets1 += 4; 
+    }
+    if (checkboxT8.checked) { //красный1
+      total_tickets1 += 3; 
+    }
+    if (checkboxT9.checked) { //красный1
+      total_tickets1 += 3; 
+    }
+    if (checkboxT10.checked) { //черный2
+      total_tickets2 += 4; 
+    }
+    if (checkboxT11.checked) { //черный2
+      total_tickets2 += 7; 
+    }
+
+    // Рассчитываем общую сумму
+    total_sum1 = ticketPrice1 * total_tickets1;
+    total_sum2 = ticketPrice2 * total_tickets2;
+
+    // Обновляем элементы на странице
+    ticket1.setAttribute('data-caption', `${total_tickets1} шт.`);
+    price1.textContent = `${total_sum1}`;
+    ticket2.setAttribute('data-caption', `${total_tickets2} шт.`);
+    price2.textContent = `${total_sum2}`; 
+
+    totalPrice = total_sum1 + total_sum2; 
+    totalElement.textContent = `${totalPrice}`; 
+  }
+
+  // Добавляем обработчики событий для чекбоксов
+  document.getElementById('checkbox_t1').addEventListener('change', updateTicketCount);
+  document.getElementById('checkbox_t2').addEventListener('change', updateTicketCount);
+  document.getElementById('checkbox_t3').addEventListener('change', updateTicketCount);
+  document.getElementById('checkbox_t4').addEventListener('change', updateTicketCount);
+  document.getElementById('checkbox_t5').addEventListener('change', updateTicketCount);
+  document.getElementById('checkbox_t6').addEventListener('change', updateTicketCount);
+  document.getElementById('checkbox_t7').addEventListener('change', updateTicketCount);
+  document.getElementById('checkbox_t8').addEventListener('change', updateTicketCount);
+  document.getElementById('checkbox_t9').addEventListener('change', updateTicketCount);
+  document.getElementById('checkbox_t10').addEventListener('change', updateTicketCount);
+  document.getElementById('checkbox_t11').addEventListener('change', updateTicketCount);
+
 })();
-
-
-      // const elipse_t1_1 = document.getElementById('ellipse_t1_1');
-      // const elipse_t1_2 = document.getElementById('ellipse_t1_2');
-      // const elipse_t1_3 = document.getElementById('ellipse_t1_3');
-      // const elipse_t1_4 = document.getElementById('ellipse_t1_4');
-      // const elipse_t1_5 = document.getElementById('ellipse_t1_5');
-      // const numb_t1 = document.getElementById('t1');
-      // if (this.checked) {
-      //   table1.setAttribute('fill', '#BC3324');
-      //   elipse_t1_1.setAttribute('fill', '#BC3324');
-      //   elipse_t1_2.setAttribute('fill', '#BC3324');
-      //   elipse_t1_3.setAttribute('fill', '#BC3324');
-      //   elipse_t1_4.setAttribute('fill', '#BC3324');
-      //   elipse_t1_5.setAttribute('fill', '#BC3324');
-      //   numb_t1.setAttribute('fill', '#FFFFFF');
-      // } else {
-      //   table1.setAttribute('fill', ''); // Исходный цвет
-      //   elipse_t1_1.setAttribute('fill', '');
-      //   elipse_t1_2.setAttribute('fill', '');
-      //   elipse_t1_3.setAttribute('fill', '');
-      //   elipse_t1_4.setAttribute('fill', '');
-      //   elipse_t1_5.setAttribute('fill', '');
-      //   numb_t1.setAttribute('fill', '#BC3324');
-      // }

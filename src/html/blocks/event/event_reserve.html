@@ -15,7 +15,7 @@
       <div class="event_reserve__scheme--title"><h4>Сцена</h4></div>
 
       <div class="event_reserve__scheme--wrapper">
-         @@include('reserve.html')
+         @@include('reserve_svg.html')
       </div>
     </div>
 
@@ -24,15 +24,15 @@
 
       <div class="event_reserve__order--tickets-list">
         <div class="event_reserve__order--tickets">
-          <div class="event_reserve__order--qty" data-caption="шт." data-price="1400 ₽">9</div>
-          <div class="event_reserve__order--sum" data-currency="₽">12 600</div>
+          <div id="js_ticket1" class="event_reserve__order--qty" data-caption="0 шт." data-price="1400 ₽"></div>
+          <div id="js_price1" class="event_reserve__order--sum" data-currency="₽">0</div>
         </div>
         <div class="event_reserve__order--tickets">
-          <div class="event_reserve__order--qty" data-caption="шт." data-price="1250 ₽">4</div>
-          <div class="event_reserve__order--sum" data-currency="₽">5000</div>
+          <div id="js_ticket2" class="event_reserve__order--qty" data-caption="0 шт." data-price="1250 ₽"></div>
+          <div id="js_price2" class="event_reserve__order--sum" data-currency="₽">0</div>
         </div>
       </div>
-      <div class="event_reserve__order--total" data-caption="Сумма" data-currency="₽">17 000</div>
+      <div id="js_total" class="event_reserve__order--total" data-caption="Сумма" data-currency="₽">0</div>
       <button type="submit" class="btn btn--red event_reserve__order--submit">
         Купить билеты
       </button>

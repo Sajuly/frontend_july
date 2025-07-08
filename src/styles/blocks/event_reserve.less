@@ -18,7 +18,9 @@
       "checks scheme"
       "order price";
     gap: 67px 50px;
-
+    @media @bw1340 {
+      grid-template-columns: 1fr 780px;
+    }
     @media @bw768 {
       grid-template-columns: 192px 1fr;
       grid-template-areas:
@@ -83,12 +85,6 @@
       position: relative;
       width: 100%;
       max-height: 399px;
-      &::after {
-        content: "";
-        display: block;
-        width: 100%;
-        padding-top: 51.15384%;
-      }
     }
   }
 
